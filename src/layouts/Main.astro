@@ -12,6 +12,22 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-black">
+		<nav class="bg-gray-6 w-full py-4 text-gray-2 mb-10 font-mono shadow-sm border-gray-4/10 border-t-2">
+			<div class="max-w-prose flex justify-between mx-auto px-8">
+				<ul class="flex gap-x-8">
+				  <li class="hover:text-gray-1 hover:underline"><a href="/">home</a></li>
+				  <li class="hover:text-gray-1 hover:underline"><a href="/blog">blog</a></li>
+				  <li class="hover:text-gray-1 hover:underline"><a href="/projects">projects</a></li>
+				</ul>
+				<ul class="flex">
+				  <li class="hover:text-gray-1 hover:underline">
+						<a href="https://github.com/NikitaRevenco">
+						  github
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 	  <slot />
 	</body>
 </html>
