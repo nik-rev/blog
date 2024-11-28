@@ -8,7 +8,21 @@ const allPosts = await getCollection('blog');
 ---
 
 <Layout>
-  <main>
-    {allPosts.map((post) => <a href={'/blog/' + post.slug}>{post.data.title}</a>)}
+  <main class="max-w-prose mx-auto flex flex-start flex-col">
+    <h2 class="text-xl text-gray-1 ml-4 mb-6">Recent Posts</h2>
+    <ol>
+      {allPosts.map((post) => 
+        <a href={`/blog/${post.slug}`}>
+          <li class="p-4 text-gray-2 border-b border-gray-5 hover:border-gray-3 transition-colors">
+            <strong class="mb-1">
+              {post.data.title}
+            </strong>
+            <p>
+              {post.data.description}
+            </p>
+          </li>
+        </a>
+      )}
+    </ol>
   </main>
 </Layout>
