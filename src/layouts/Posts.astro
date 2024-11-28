@@ -11,7 +11,7 @@ const { page } = Astro.props;
 
 <ul>
   {
-    page.data.map(({ data: { title, description }, slug }) => (
+    page.data.map(({ data: { title }, slug }) => (
     <li class="my-6">
       <a
         href={`/blog/${slug}`}
@@ -19,7 +19,6 @@ const { page } = Astro.props;
       >
         <h2>{title}</h2>
       </a>
-      <p>{description}</p>
     </li>
     ))
   }
