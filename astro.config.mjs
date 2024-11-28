@@ -6,6 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 
 import expressiveCode from "astro-expressive-code";
+import { pluginCollapsibleSections } from "@expressive-code/plugin-collapsible-sections";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,5 +14,11 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [expressiveCode(), mdx()],
+  integrations: [
+    expressiveCode({
+      themes: ["everforest-dark"],
+      plugins: [pluginCollapsibleSections()],
+    }),
+    mdx(),
+  ],
 });
