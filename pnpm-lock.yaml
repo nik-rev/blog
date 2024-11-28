@@ -20,6 +20,9 @@ importers:
       '@expressive-code/plugin-collapsible-sections':
         specifier: ^0.38.3
         version: 0.38.3
+      '@expressive-code/plugin-line-numbers':
+        specifier: ^0.38.3
+        version: 0.38.3
       astro:
         specifier: ^4.16.16
         version: 4.16.16(lightningcss@1.28.2)(rollup@4.27.4)(typescript@5.7.2)
@@ -350,6 +353,9 @@ packages:
 
   '@expressive-code/plugin-frames@0.38.3':
     resolution: {integrity: sha512-qL2oC6FplmHNQfZ8ZkTR64/wKo9x0c8uP2WDftR/ydwN/yhe1ed7ZWYb8r3dezxsls+tDokCnN4zYR594jbpvg==}
+
+  '@expressive-code/plugin-line-numbers@0.38.3':
+    resolution: {integrity: sha512-QbK9NL44ST9w5ANVEu0a7fkjlq+fXgxyPqiSyFC4Nw/sAXd0MUwT1C8V0qlve4pZYLz53CR9tn4JQQbR0Z1tOg==}
 
   '@expressive-code/plugin-shiki@0.38.3':
     resolution: {integrity: sha512-kqHnglZeesqG3UKrb6e9Fq5W36AZ05Y9tCREmSN2lw8LVTqENIeCIkLDdWtQ5VoHlKqwUEQFTVlRehdwoY7Gmw==}
@@ -2653,6 +2659,10 @@ snapshots:
       '@expressive-code/core': 0.38.3
 
   '@expressive-code/plugin-frames@0.38.3':
+    dependencies:
+      '@expressive-code/core': 0.38.3
+
+  '@expressive-code/plugin-line-numbers@0.38.3':
     dependencies:
       '@expressive-code/core': 0.38.3
 

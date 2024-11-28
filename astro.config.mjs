@@ -7,6 +7,7 @@ import mdx from "@astrojs/mdx";
 
 import expressiveCode from "astro-expressive-code";
 import { pluginCollapsibleSections } from "@expressive-code/plugin-collapsible-sections";
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,7 +18,10 @@ export default defineConfig({
   integrations: [
     expressiveCode({
       themes: ["everforest-dark"],
-      plugins: [pluginCollapsibleSections()],
+      plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
+      defaultProps: {
+        showLineNumbers: false,
+      },
     }),
     mdx(),
   ],

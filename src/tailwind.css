@@ -12,21 +12,22 @@
   --color-gray-3: oklch(63.7% 0.0297 140.16);
   --color-gray-4: oklch(45.89% 0.0289 141.42);
   --color-gray-5: oklch(34.04% 0.0302 139.43);
-  --color-gray-6: oklch(26.99% 0.0296 139.03);
+  --color-gray-6: oklch(30.01% 0.0299 139.2);
+  --color-gray-7: oklch(26.99% 0.0296 139.03);
   --color-black: oklch(20.99% 0.0155 136.77);
 }
 
 .prose {
   --tw-prose-lead: var(--color-gray-3);
-  --tw-prose-th-borders: var(--color-gray-6);
-  --tw-prose-td-borders: var(--color-gray-6);
+  --tw-prose-th-borders: var(--color-gray-7);
+  --tw-prose-td-borders: var(--color-gray-7);
 
   --tw-prose-headings: var(--color-gray-2);
   --tw-prose-links: var(--color-accent-1);
   --tw-prose-body: var(--color-gray-2);
   --tw-prose-bold: var(--color-gray-2);
   --tw-prose-code: var(--color-gray-2);
-  --tw-prose-hr: var(--color-gray-6);
+  --tw-prose-hr: var(--color-gray-7);
   --tw-prose-bullets: var(--color-gray-4);
 
   --tw-prose-quotes: var(--color-gray-3);
@@ -35,11 +36,14 @@
   --tw-prose-captions: var(--color-gray-3);
 
   code {
-    background-color: var(--color-gray-6);
+    background-color: var(--color-gray-7);
     font-family: monospace;
     font-weight: normal;
-    padding: 0.08rem 0.2rem;
-    margin: -0.08rem 0;
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0 0.2rem;
+    border-radius: 0.2rem;
+    margin: -0.2rem 0rem;
     &::after,
     &::before {
       content: "";
@@ -63,18 +67,37 @@
   }
 }
 
-.expressive-code pre {
+.expressive-code pre,
+.expressive-code code {
   background-color: var(--color-gray-5) !important;
-  border-color: var(--color-gray-6) !important;
+  border-color: var(--color-gray-7) !important;
+}
 
-  @media screen and (max-width: 600px) {
-    border-radius: 0 !important;
-    border-right: none !important;
-    border-left: none !important;
+.expressive-code .header::after {
+  border-color: var(--color-gray-6) !important;
+}
+
+.expressive-code .is-terminal .header {
+  background-color: var(--color-gray-6) !important;
+  border-color: var(--color-gray-7) !important;
+  &::before {
+    background-color: var(--color-gray-3) !important;
+  }
+}
+
+.expressive-code .has-title .header {
+  &::before {
+    background-color: var(--color-gray-6) !important;
+    border-color: var(--color-gray-7) !important;
+  }
+  background-color: var(--color-gray-7) !important;
+  border-color: var(--color-gray-7) !important;
+  .title {
+    background-color: var(--color-gray-7) !important;
   }
 }
 
 .copy button {
   background-color: var(--color-gray-5) !important;
-  border-color: var(--color-gray-6) !important;
+  border-color: var(--color-gray-7) !important;
 }
