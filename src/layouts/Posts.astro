@@ -1,0 +1,26 @@
+---
+import type { Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  page: Page<CollectionEntry<"blog">>;
+}
+
+const { page } = Astro.props;
+---
+
+<ul>
+  {
+    page.data.map(({ data: { title, description }, slug }) => (
+    <li class="my-6">
+      <a
+        href={`/blog/${slug}`}
+        class="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+      >
+        <h2>{title}</h2>
+      </a>
+      <p>{description}</p>
+    </li>
+    ))
+  }
+</ul>

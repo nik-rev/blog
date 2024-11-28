@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Main.astro';
+ 
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+ 
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog');
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+ 
+<Layout>
+  <div class="flex justify-center">
+    <article class="prose">
+      <h1 class="md:!text-5xl md:!leading-[1.2]">{post.data.title}</h1>
+      <p class="lead">{post.data.description}</p>
+      <div>
+        <Content />
+      </div>
+    </article>
+  </div>
+</Layout>

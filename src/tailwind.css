@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-accent-1: #aad7a0;
+  --color-accent-2: #247f00;
+  --color-accent-3: #072d00;
+  --color-white: #ffffff;
+  --color-gray-1: oklch(94.84% 0.0124 137.78);
+  --color-gray-2: oklch(81.22% 0.0146 138.72);
+  --color-gray-3: oklch(63.7% 0.0297 140.16);
+  --color-gray-4: oklch(45.89% 0.0289 141.42);
+  --color-gray-5: oklch(34.04% 0.0302 139.43);
+  --color-gray-6: oklch(26.99% 0.0296 139.03);
+  --color-black: oklch(20.99% 0.0155 136.77);
+}
+
+.prose {
+  --tw-prose-lead: var(--color-gray-3);
+  --tw-prose-th-borders: var(--color-gray-6);
+  --tw-prose-td-borders: var(--color-gray-6);
+
+  --tw-prose-headings: var(--color-gray-2);
+  --tw-prose-links: var(--color-accent-1);
+  --tw-prose-body: var(--color-gray-2);
+  --tw-prose-bold: var(--color-gray-2);
+  --tw-prose-code: var(--color-gray-2);
+  --tw-prose-hr: var(--color-gray-6);
+  --tw-prose-bullets: var(--color-gray-4);
+
+  --tw-prose-quotes: var(--color-gray-3);
+  --tw-prose-quote-borders: var(--color-gray-3);
+
+  --tw-prose-captions: var(--color-gray-3);
+
+  code {
+    background-color: var(--color-gray-6);
+    font-family: monospace;
+    font-weight: normal;
+    padding: 0.08rem 0.2rem;
+    margin: -0.08rem 0;
+    &::after,
+    &::before {
+      content: "";
+    }
+  }
+
+  a {
+    &:has(code) {
+      text-decoration: none;
+    }
+    &:hover {
+      opacity: 90%;
+    }
+    code {
+      border-bottom: 2px solid var(--color-accent-1);
+    }
+  }
+
+  ol li::marker {
+    color: var(--color-gray -4);
+  }
+}
+
+.expressive-code pre {
+  background-color: var(--color-gray-5) !important;
+  border-color: var(--color-gray-6) !important;
+
+  @media screen and (max-width: 600px) {
+    border-radius: 0 !important;
+    border-right: none !important;
+    border-left: none !important;
+  }
+}
+
+.copy button {
+  background-color: var(--color-gray-5) !important;
+  border-color: var(--color-gray-6) !important;
+}
