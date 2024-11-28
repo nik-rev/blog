@@ -1,0 +1,41 @@
+---
+title: Making my first open-source Rust contribution after just 1 week of learning
+description: I've never tried a language like Rust before, and now I'm hooked
+---
+
+Recently, I decided to switch from Neovim to [Helix](https://helix-editor.vercel.app/) for several reasons. Tired of endlessly bloating my config, I just wanted something that worked out of the box.
+
+# What I Wanted
+
+Helix is written in Rust, and it was lacking a feature that I really missed. Specifically, I really wanted the following features:
+
+- Surround selection with a HTML tag
+- Delete the nearest pair of HTML tags
+- Rename the nearest pair of HTML tags
+
+These features were really important to me, because I could do them in Neovim but not Helix. The kind of programming I mostly did is making static websites in React for fun. The only language I knew was TypeScript.
+
+# Learning Rust
+
+I decided to try out the challenge of learing Rust specifically so that I can add this feature. I completed the entire Rust Book, which took at least 40 hours -- it was very hard to get through because concepts like ownership were completely foreign to me. 
+
+I had no idea what a stack or a heap was, but I managed to get through it because it was really interesting. While completing it, I also made about [10 other pull requests](https://github.com/helix-editor/helix/pulls/NikitaRevenco), each a lot smaller in scale and fairly trivial but it was enough for me to start feeling confident.
+
+# Creating the Feature
+
+So finally comes the day I sit down and try to develop the feature. Helix is a huge project for someone like me. It's about 83,000 line of Rust code. They don't have a lot of documentation so what was really hard for me was to find out where do I even begin and try to make sense of the project, how it works.
+
+Thankfully with the power of rust-analyzer (a language server for Rust), ripgrep and fd I was able to figure out what gets called where and where I should make my changes.
+
+Once I understood their internal APIs on how changes to documents are made, I needed to create an algorithm that finds closing tags by searching forward and opening tags by searching backward. 
+
+Then it filters out all tags that don't make a pair, and extracts the exact position of the tag's name. For someone who hasn't done any algorithm stuff before, this was non-trivial.
+
+After about 2 whole days of trying to get it to work, I finally did it: [https://github.com/helix-editor/helix/pull/12055](https://github.com/helix-editor/helix/pull/12055)!
+
+I'm really happy with myself because I never thought I could learn Rust enough to make an actual non-trivial contribution in just a week and actually start feeling more comfortable with the language. 
+
+As a sidenote, I only have about 11 months of programming experience, all of which I did as a hobby and wasn't for work or anything. 
+
+Now my plan is to learn backend web development because after doing front-end stuff I realised I really like working with algorithms more. And I'll do it with Rust.
+
