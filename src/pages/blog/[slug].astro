@@ -22,7 +22,6 @@ const { Content } = await post.render();
   <div class="mb-16">
     <article class="prose mx-auto max-sm:px-2">
       <h1>{post.data.title}</h1>
-      <p class="lead">{post.data.description}</p>
       <Content components={{ h1: "h2", h2: "h3", h3: "h4" }}/>
     </article>
   </div>

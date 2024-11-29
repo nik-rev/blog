@@ -8,7 +8,6 @@ const blogPosts = await getCollection("blog");
   blogPosts.map(blogPost => {
     <div>
       <a href={`/blog/${blogPost.slug}`}>{blogPost.data.title}</a>
-      <p>{blogPost.data.description}</p>
     </div>
   })
 }
