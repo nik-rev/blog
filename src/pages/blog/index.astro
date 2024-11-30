@@ -1,31 +1,60 @@
 ---
 import Layout from "@/layouts/Main.astro"
+import type { CollectionEntry } from "astro:content";
 
 import { getCollection } from 'astro:content';
  
-const allPosts = await getCollection('blog');
- 
+const allPosts = (await getCollection("blog")).toSorted(
+  (prevPost, post) => post.data.date.getTime() - prevPost.data.date.getTime(),
+);
+
+const byYear = allPosts.reduce<Record<string, Array<CollectionEntry<"blog">>>>(
+  (postsByYear, post) => {
+    // for unknown reasons, getFullYear returns +1 of the actual year.
+    const currentYear = post.data.date.getFullYear() - 1;
+    return {
+      ...postsByYear,
+      [currentYear]: [post].concat(
+        postsByYear[currentYear] ? postsByYear[currentYear] : [],
+      ),
+    };
+  },
+  {},
+);
+
+const postsWithYear = Object.entries(byYear).sort(
+  ([prevYear], [year]) => Number(year) - Number(prevYear),
+);
 ---
 
 <Layout>
   <main class="max-w-[80%] mx-auto flex flex-start flex-col mb-8">
     <h2 class="text-xl text-gray-1 mb-6 self-center">Recent Posts</h2>
-    <h3 class="text-gray-1 font-bold text-lg border-b mb-4 border-gray-4">2024</h3>
-    <div class="flex">
-      <ol class="space-y-0.5 space-y-8">
-        {allPosts.map((post) => 
-          <li>
-            <a href={`/blog/${post.slug}`} class="flex flex-col gap-y-1  justify-between text-gray-2 gap-x-8 hover:text-gray-1 sm:gap-0">
-                <p class="before:content-['»'] relative before:absolute before:-left-6 transition-colors max-w-[500px]">
-                 {post.data.title}
-                </p>
-                <date class="whitespace-nowrap text-xs my-auto align-baseline text-gray-3">
-                  March 22
-                </date>
-            </a>
-          </li>
-        )}
-      </ol>
+    <div class="space-y-16">
+      {postsWithYear.map(([year, posts]) => {
+          return <div>
+            <h3 class="text-gray-1 font-bold text-lg border-b mb-4 border-gray-4">{year}</h3>
+            <div class="flex">
+              <ol class="space-y-0.5 space-y-8">
+                {posts.map((post) => 
+                  <li>
+                    <a href={`/blog/${post.slug}`} class="flex flex-col gap-y-1  justify-between text-gray-2 gap-x-8 hover:text-gray-1 sm:gap-0">
+                        <p class="before:content-['»'] relative before:absolute before:-left-6 transition-colors max-w-[500px]">
+                         {post.data.title}
+                        </p>
+                        <date class="whitespace-nowrap text-xs my-auto align-baseline text-gray-3">
+                          {new Intl.DateTimeFormat("en-GB", {
+                            month: "long",
+                            day: "numeric",
+                          }).format(post.data.date)}
+                        </date>
+                    </a>
+                  </li>
+                )}
+              </ol>
+            </div>
+          </div>
+      })}
     </div>
   </main>
 </Layout>
