@@ -20,7 +20,7 @@ const styleCurrentPath = (path: string = "") => (new RegExp(`^/${path}/?$`)).tes
 		<title>{title}</title>
 	</head>
 	<body class="bg-base flex flex-col min-h-full font-mono">
-		<nav class="bg-mantle w-full py-4 text-subtext1 mb-10 shadow-sm px-6">
+		<nav class="bg-mantle w-full py-4 text-subtext1 mb-10 px-6">
 			<div class="max-w-prose flex justify-between mx-auto">
 				<ul class="flex gap-x-8 *:hover:text-maroon *:hover:underline">
 				  <li class={styleCurrentPath()}><a href="/">home</a></li>
