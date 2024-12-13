@@ -29,20 +29,20 @@ const postsWithYear = Object.entries(byYear).sort(
 
 <Layout>
   <main class="max-w-[80%] mx-auto flex flex-start flex-col mb-8">
-    <h2 class="text-xl text-gray-1 mb-6 self-center">Recent Posts</h2>
+    <h2 class="text-xl text-text mb-6 self-center">Recent Posts</h2>
     <div class="space-y-16">
       {postsWithYear.map(([year, posts]) => {
           return <div>
-            <h3 class="text-gray-1 font-bold text-lg border-b mb-4 border-gray-4">{year}</h3>
+            <h3 class="text-green font-bold text-lg border-b mb-4 border-gray-4">{year}</h3>
             <div class="flex">
               <ol class="space-y-0.5 space-y-8">
                 {posts.map((post) => 
                   <li>
-                    <a href={`/blog/${post.slug}`} class="flex flex-col gap-y-1  justify-between text-gray-2 gap-x-8 hover:text-gray-1 sm:gap-0">
+                    <a href={`/blog/${post.slug}`} class="flex flex-col gap-y-1  justify-between text-text gap-x-8 hover:text-subtext1 sm:gap-0">
                         <p class="before:content-['»'] relative before:absolute before:-left-6 transition-colors max-w-[500px]">
                          {post.data.title}
                         </p>
-                        <date class="whitespace-nowrap text-xs my-auto align-baseline text-gray-3">
+                        <date class="whitespace-nowrap text-xs my-auto align-baseline text-subtext0">
                           {new Intl.DateTimeFormat("en-GB", {
                             month: "long",
                             day: "numeric",
