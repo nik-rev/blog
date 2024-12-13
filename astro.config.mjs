@@ -17,7 +17,7 @@ export default defineConfig({
 
   integrations: [
     expressiveCode({
-      themes: ["everforest-dark"],
+      themes: ["catppuccin-mocha"],
       plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
       defaultProps: {
         showLineNumbers: false,

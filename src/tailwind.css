@@ -1,103 +1,182 @@
 @import "tailwindcss";
 
-@plugin "@tailwindcss/typography";
-
 @theme {
-  --color-accent-1: #aad7a0;
-  --color-accent-2: #247f00;
-  --color-accent-3: #072d00;
-  --color-white: #ffffff;
-  --color-gray-1: oklch(94.84% 0.0124 137.78);
-  --color-gray-2: oklch(81.22% 0.0146 138.72);
-  --color-gray-3: oklch(63.7% 0.0297 140.16);
-  --color-gray-4: oklch(45.89% 0.0289 141.42);
-  --color-gray-5: oklch(34.04% 0.0302 139.43);
-  --color-gray-6: oklch(30.01% 0.0299 139.2);
-  --color-gray-7: oklch(26.99% 0.0296 139.03);
-  --color-black: oklch(20.99% 0.0155 136.77);
+  --color-rosewater: hsl(10deg, 56%, 91%);
+  --color-flamingo: hsl(0deg, 59%, 88%);
+  --color-pink: hsl(316deg, 72%, 86%);
+  --color-mauve: hsl(267deg, 84%, 81%);
+  --color-red: hsl(343deg, 81%, 75%);
+  --color-maroon: hsl(350deg, 65%, 77%);
+  --color-peach: hsl(23deg, 92%, 75%);
+  --color-yellow: hsl(41deg, 86%, 83%);
+  --color-green: hsl(115deg, 54%, 76%);
+  --color-teal: hsl(170deg, 57%, 73%);
+  --color-sky: hsl(189deg, 71%, 73%);
+  --color-sapphire: hsl(199deg, 76%, 69%);
+  --color-blue: hsl(217deg, 92%, 76%);
+  --color-lavender: hsl(232deg, 97%, 85%);
+  --color-text: hsl(226deg, 64%, 88%);
+  --color-subtext1: hsl(227deg, 35%, 80%);
+  --color-subtext0: hsl(228deg, 24%, 72%);
+  --color-overlay2: hsl(228deg, 17%, 64%);
+  --color-overlay1: hsl(230deg, 13%, 55%);
+  --color-overlay0: hsl(231deg, 11%, 47%);
+  --color-surface2: hsl(233deg, 12%, 39%);
+  --color-surface1: hsl(234deg, 13%, 31%);
+  --color-surface0: hsl(237deg, 16%, 23%);
+  --color-base: hsl(240deg, 21%, 15%);
+  --color-mantle: hsl(240deg, 21%, 12%);
+  --color-crust: hsl(240deg, 23%, 9%);
 }
 
-.prose {
-  --tw-prose-lead: var(--color-gray-3);
-  --tw-prose-th-borders: var(--color-gray-7);
-  --tw-prose-td-borders: var(--color-gray-7);
+article {
+  .expressive-code .frame {
+    box-shadow: none !important;
+  }
 
-  --tw-prose-headings: var(--color-gray-2);
-  --tw-prose-links: var(--color-accent-1);
-  --tw-prose-body: var(--color-gray-2);
-  --tw-prose-bold: var(--color-gray-2);
-  --tw-prose-code: var(--color-gray-2);
-  --tw-prose-hr: var(--color-gray-7);
-  --tw-prose-bullets: var(--color-gray-4);
-
-  --tw-prose-quotes: var(--color-gray-3);
-  --tw-prose-quote-borders: var(--color-gray-3);
-
-  --tw-prose-captions: var(--color-gray-3);
-
-  code {
-    background-color: var(--color-gray-7);
-    font-family: monospace;
-    font-weight: normal;
-    display: inline-block;
-    white-space: nowrap;
-    padding: 0 0.2rem;
-    border-radius: 0.2rem;
-    margin: -0.2rem 0rem;
-    &::after,
+  .expressive-code pre {
+    /* background-color: var(--color-mantle) !important; */
+    border-radius: 0 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    position: relative !important;
+    &::after {
+      content: "```" !important;
+      color: var(--color-overlay0);
+      position: absolute;
+      bottom: 0;
+    }
     &::before {
-      content: "";
+      content: "```" attr(data-language) !important;
+      color: var(--color-overlay0);
+      position: absolute;
+      top: 0;
+    }
+
+    & > code {
+      padding-top: 1.6rem !important;
+      padding-bottom: 1.6rem !important;
+    }
+  }
+
+  ul {
+    @apply space-y-4 my-8;
+    & > li {
+      @apply space-y-4;
+      margin-left: 2rem;
+      position: relative;
+      &::before {
+        content: "-";
+        position: absolute;
+        left: -1.4rem;
+        color: var(--color-mauve);
+      }
     }
   }
 
   a {
-    &:has(code) {
-      text-decoration: none;
+    @apply text-blue;
+    &::before {
+      content: "[";
+      @apply text-surface2;
     }
-    &:hover {
-      opacity: 90%;
-    }
-    code {
-      border-bottom: 2px solid var(--color-accent-1);
+    &::after {
+      content: "]";
+      @apply text-surface2;
     }
   }
 
-  ol li::marker {
-    color: var(--color-gray -4);
+  strong {
+    @apply font-bold;
+  }
+
+  i {
+    @apply italic;
+  }
+
+  p code {
+    color: var(--color-flamingo);
+    &::before {
+      content: "`";
+      color: var(--color-subtext0);
+    }
+    &::after {
+      content: "`";
+      color: var(--color-subtext0);
+    }
+  }
+
+  h2 {
+    @apply mt-12;
+    color: var(--color-green);
+    &::before {
+      content: "## ";
+      color: var(--color-peach);
+    }
+  }
+
+  hr {
+    border: none;
+    height: 2rem;
+    position: relative;
+    &::after {
+      content: "---";
+      color: var(--color-sky);
+      z-index: 10;
+      position: absolute;
+    }
+  }
+
+  h3 {
+    @apply mt-10;
+    color: var(--color-mauve);
+    &::before {
+      content: "### ";
+      color: var(--color-peach);
+    }
+  }
+
+  h4 {
+    @apply mt-8;
+    color: var(--color-yellow);
+    &::before {
+      content: "#### ";
+      color: var(--color-peach);
+    }
   }
 }
 
-.expressive-code pre,
-.expressive-code code {
-  background-color: var(--color-gray-5) !important;
-  border-color: var(--color-gray-7) !important;
-}
+/* .expressive-code pre, */
+/* .expressive-code code { */
+/* background-color: var(--color-gray-5) !important; */
+/* border-color: var(--color-gray-7) !important; */
+/* } */
 
-.expressive-code .header::after {
-  border-color: var(--color-gray-6) !important;
-}
+/* .expressive-code .header::after { */
+/* border-color: var(--color-gray-6) !important; */
+/* } */
 
-.expressive-code .is-terminal .header {
-  background-color: var(--color-gray-6) !important;
-  border-color: var(--color-gray-7) !important;
-  &::before {
-    background-color: var(--color-gray-3) !important;
-  }
-}
+/* .expressive-code .is-terminal .header { */
+/* background-color: var(--color-gray-6) !important; */
+/* border-color: var(--color-gray-7) !important; */
+/* &::before { */
+/* background-color: var(--color-gray-3) !important; */
+/* } */
+/* } */
 
-.expressive-code .has-title .header {
-  &::before {
-    background-color: var(--color-gray-6) !important;
-    border-color: var(--color-gray-7) !important;
-  }
-  background-color: var(--color-gray-7) !important;
-  border-color: var(--color-gray-7) !important;
-  .title {
-    background-color: var(--color-gray-7) !important;
-  }
-}
+/* .expressive-code .has-title .header { */
+/* &::before { */
+/* background-color: var(--color-gray-6) !important; */
+/* border-color: var(--color-gray-7) !important; */
+/* } */
+/* background-color: var(--color-gray-7) !important; */
+/* border-color: var(--color-gray-7) !important; */
+/* .title { */
+/* background-color: var(--color-gray-7) !important; */
+/* } */
+/* } */
 
-.copy button {
-  background-color: var(--color-gray-5) !important;
-  border-color: var(--color-gray-7) !important;
-}
+/* .copy button { */
+/* background-color: var(--color-gray-5) !important; */
+/* border-color: var(--color-gray-7) !important; */
+/* } */

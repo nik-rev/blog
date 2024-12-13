@@ -19,10 +19,10 @@ const styleCurrentPath = (path: string = "") => (new RegExp(`^/${path}/?$`)).tes
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-black h-full flex flex-col">
+	<body class="bg-base flex flex-col">
 		<nav class="bg-gray-6 w-full py-4 text-gray-2 mb-10 font-mono shadow-sm px-6">
 			<div class="max-w-prose flex justify-between mx-auto">
-				<ul class="flex gap-x-8 *:hover:text-gray-1 *:hover:underline">
+				<ul class="flex gap-x-8 *:hover:text-red *:hover:underline">
 				  <li class={styleCurrentPath()}><a href="/">home</a></li>
 				  <li class={styleCurrentPath("blog")}><a href="/blog">blog</a></li>
 				  <li class={styleCurrentPath("projects")}><a href="/projects">projects</a></li>
@@ -30,8 +30,5 @@ const styleCurrentPath = (path: string = "") => (new RegExp(`^/${path}/?$`)).tes
 			</div>
 		</nav>
 	  <slot />
-		<footer class="w-full bg-gray-6 text-center py-4 text-gray-2 mt-auto">
-			Made with 💚 by Nikita
-		</footer>
 	</body>
 </html>
