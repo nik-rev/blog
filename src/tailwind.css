@@ -152,7 +152,8 @@ article {
   }
 
   p code,
-  table code {
+  table code,
+  li code {
     color: var(--color-flamingo);
     &::before {
       content: "`";
