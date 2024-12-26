@@ -46,8 +46,16 @@ article {
       position: absolute;
       bottom: 0;
     }
-    &::before {
-      content: "```" attr(data-language) !important;
+
+    &[data-language="plaintext"]::before {
+      content: "```"; /* Only render backticks for 'plaintext' */
+      color: var(--color-overlay0);
+      position: absolute;
+      top: 0;
+    }
+
+    &:not([data-language="plaintext"])::before {
+      content: "```" attr(data-language); /* Render backticks and the data-language value */
       color: var(--color-overlay0);
       position: absolute;
       top: 0;
@@ -74,6 +82,54 @@ article {
     }
   }
 
+  table {
+    thead::after {
+      content: "";
+      display: block;
+      height: 1.5ch;
+    }
+    tr {
+      &::before {
+        content: "|";
+        color: var(--color-sky);
+        margin-right: 2ch;
+      }
+
+      &::after {
+        content: "|";
+        color: var(--color-sky);
+        margin-left: 2ch;
+      }
+
+      td:not(:first-child),
+      th:not(:first-child) {
+        &::before {
+          content: "|";
+          color: var(--color-sky);
+          margin-left: 2ch;
+          margin-right: 2ch;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  ol {
+    @apply space-y-4 my-8;
+    & > li {
+      @apply space-y-4;
+      counter-increment: step-counter;
+      margin-left: 2.5rem;
+      position: relative;
+      &::before {
+        content: counter(step-counter) ".";
+        position: absolute;
+        left: -1.9rem;
+        color: var(--color-mauve);
+      }
+    }
+  }
+
   a {
     @apply text-blue;
     &::before {
@@ -94,7 +150,8 @@ article {
     @apply italic;
   }
 
-  p code {
+  p code,
+  table code {
     color: var(--color-flamingo);
     &::before {
       content: "`";
@@ -145,38 +202,3 @@ article {
     }
   }
 }
-
-/* .expressive-code pre, */
-/* .expressive-code code { */
-/* background-color: var(--color-gray-5) !important; */
-/* border-color: var(--color-gray-7) !important; */
-/* } */
-
-/* .expressive-code .header::after { */
-/* border-color: var(--color-gray-6) !important; */
-/* } */
-
-/* .expressive-code .is-terminal .header { */
-/* background-color: var(--color-gray-6) !important; */
-/* border-color: var(--color-gray-7) !important; */
-/* &::before { */
-/* background-color: var(--color-gray-3) !important; */
-/* } */
-/* } */
-
-/* .expressive-code .has-title .header { */
-/* &::before { */
-/* background-color: var(--color-gray-6) !important; */
-/* border-color: var(--color-gray-7) !important; */
-/* } */
-/* background-color: var(--color-gray-7) !important; */
-/* border-color: var(--color-gray-7) !important; */
-/* .title { */
-/* background-color: var(--color-gray-7) !important; */
-/* } */
-/* } */
-
-/* .copy button { */
-/* background-color: var(--color-gray-5) !important; */
-/* border-color: var(--color-gray-7) !important; */
-/* } */

@@ -20,6 +20,7 @@ export default defineConfig({
     expressiveCode({
       themes: ["catppuccin-mocha"],
       plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
+      frames: false,
       defaultProps: {
         showLineNumbers: false,
       },
