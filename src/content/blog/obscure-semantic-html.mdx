@@ -26,6 +26,7 @@ It's better to use HTML elements designed specifically to describe the meaning o
 ```
 
 Semantic HTML is extremely important for websites due to two main factors:
+
 - Accessibility
 
   Screen readers understand the context of the page by reading HTML elements, not tags or class names.
@@ -42,7 +43,8 @@ To quote, you can use the `blockquote` element:
 
 ```html
 <blockquote>
-  We cannot solve our problems with the same thinking we used when we created them.
+  We cannot solve our problems with the same thinking we used when we created
+  them.
 </blockquote>
 ```
 
@@ -52,19 +54,18 @@ But what if you wanted to give credit to the original author? You might try some
 
 ```html
 <blockquote>
-    We cannot solve our problems with the same 
-    thinking we used when we created them.
-  <cite>
-    Albert Einstein
-  </cite>
+  We cannot solve our problems with the same thinking we used when we created
+  them.
+  <cite> Albert Einstein </cite>
 </blockquote>
 ```
 
 But the above aproach is actually semantically incorrect. There are two problems with it:
 
-1. A `cite` element [should refer to *work* and not *people*](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite#usage_notes).
+1. A `cite` element [should refer to _work_ and not _people_](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite#usage_notes).
 
-  For example, we could put the link to a social media post or an article in a `cite` element. But not an individual person.
+For example, we could put the link to a social media post or an article in a `cite` element. But not an individual person.
+
 1. Putting a `cite` element within a `blockquote` is [forbidden by the HTML spec](https://www.w3.org/TR/html5-author/the-blockquote-element.html#the-blockquote-element), due to the fact that it would make the citation a part of the quote.
 
 ## parent element
@@ -75,13 +76,11 @@ An alternative idea would be to use a `div` to group the quote and the citation 
 <div>
   <blockquote>
     <p>
-      We cannot solve our problems with the same
-      thinking we used when we created them.
+      We cannot solve our problems with the same thinking we used when we
+      created them.
     </p>
   </blockquote>
-  <p>
-    Albert Einstein
-  </p>
+  <p>Albert Einstein</p>
 </div>
 ```
 
@@ -95,14 +94,12 @@ Finally, after researching I stumbled across a new solution, using the `figure` 
 <figure>
   <blockquote>
     <p>
-      We cannot solve our problems with the same 
-      thinking we used when we created them.
+      We cannot solve our problems with the same thinking we used when we
+      created them.
     </p>
   </blockquote>
   <figcaption>
-    <p>
-      Albert Einstein
-    </p>
+    <p>Albert Einstein</p>
   </figcaption>
 </figure>
 ```
@@ -120,7 +117,7 @@ It transforms markdown syntax like this:
 ```md
 > We cannot solve our problems with the same thinking we used when we created them.
 >
-> @ Albert Einstein  
+> @ Albert Einstein
 ```
 
 Into the following HTML:
