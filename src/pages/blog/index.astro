@@ -5,13 +5,12 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from 'astro:content';
  
 const allPosts = (await getCollection("blog")).toSorted(
-  (prevPost, post) => post.data.date.getTime() - prevPost.data.date.getTime(),
+  (prevPost, post) => prevPost.data.date.getTime() - post.data.date.getTime(),
 );
 
 const byYear = allPosts.reduce<Record<string, Array<CollectionEntry<"blog">>>>(
   (postsByYear, post) => {
-    // for unknown reasons, getFullYear returns +1 of the actual year.
-    const currentYear = post.data.date.getFullYear() - 1;
+    const currentYear = post.data.date.getFullYear();
     return {
       ...postsByYear,
       [currentYear]: [post].concat(
