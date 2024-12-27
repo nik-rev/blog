@@ -1,27 +1,16 @@
 ---
+import { getEntry } from 'astro:content';
 import Layout from '../layouts/Main.astro';
+ 
+const home = await getEntry('home', "home");
 
-const ageDifferenceMs = Date.now() - new Date("2006-08-14").getTime();
-const ageDate = new Date(ageDifferenceMs);
-const age = Math.abs(ageDate.getUTCFullYear() - 1970);
+const { Content } = await home.render();
 ---
-
-<Layout >
-<article class="text-text max-w-[80%] mx-auto flex flex-start flex-col mb-8 space-y-4">
-  <p>
-    Hi, my name is Nikita Revenco. I'm {age} and from England 🇬🇧
-  </p>
-  <p>
-     I love programming, linux and contributing to open source software
-  </p>
-  <p>
-     My favorite languages are Rust and TypeScript
-  </p>
-  <p>
-     I use <a href="https://nixos.org/">NixOS</a> and the <a>Helix editor</a> as my development environment
-  </p>
-  <p>
-    My email is <code>pm@nikitarevenco.com</code>. You can also <a href="https://github.com/NikitaRevenco">find me on github</a>
-  </p>
-</article>
+ 
+<Layout>
+  <div class="mb-16">
+    <article class="bg-base text-text max-w-prose mx-auto max-sm:px-2 space-y-4">
+      <Content components={{ h1: "h2", h2: "h3", h3: "h4" }}/>
+    </article>
+  </div>
 </Layout>
