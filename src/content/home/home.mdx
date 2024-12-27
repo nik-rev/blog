@@ -1,4 +1,7 @@
-Hi, my name is Nikita Revenco. I'm {Math.abs(new Date(Date.now() - new Date("2006-08-14").getTime()).getUTCFullYear() - 1970)} and from England. 🇬🇧
+export const birthdate = new Date("2006-08-14").getTime();
+export const age = Math.abs(new Date(Date.now() - birthdate).getUTCFullYear() - 1970);
+
+Hi, my name is Nikita Revenco. I'm {age} and from England. 🇬🇧
 
 I love programming, linux and contributing to open source software.
 
