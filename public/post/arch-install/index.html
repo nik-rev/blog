@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><title>How I install Arch Linux with full disk encryption &ndash; Nikita Revenco</title>
+<meta name="description" content="My personal blog">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="http://localhost:1313/css/palettes/catppuccin_mocha.css">
+<link rel="stylesheet" href="http://localhost:1313/css/risotto.css">
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+
+
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><nav class="page__nav main-nav">
+    <ul>
+      <li class="nomarker"><h1 class="page__logo"><a href="http://localhost:1313/" class="page__logo-inner">Nikita Revenco</a></h1></li>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="http://localhost:1313/about/" title="">About</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item active" href="http://localhost:1313/post/" title="Posts">Posts</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>How I install Arch Linux with full disk encryption</h1>
+    </header>
+    <div class="content__body">
+        <p>I&rsquo;ve grown to love Arch Linux due to its simplicity and ease of use. However installing it can be a bit of a process, especially if you want to do it with full disk encryption. I&rsquo;ve compiled a quick guide on how I do it in this post.</p>
+<h1 id="installation">Installation</h1>
+<p>Go to <a href="https://archlinux.org/download/">arch linux downloads</a> and head over to the <code>geo.mirror.pkgbuild.com</code> link under the &ldquo;Worldwide&rdquo; HTTP direct downloads.</p>
+<p>Install the following files from there:</p>
+<ul>
+<li><code>archlinux-####.##.##-x86_64.iso</code></li>
+<li><code>archlinux-####.##.##-x86_64.iso.sig</code></li>
+</ul>
+<p>Now verify the signature of the file, to ensure that is has not been tampered with:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pacman-key -v arch.iso.sig
+</span></span></code></pre></div><p>Flash the <code>.iso</code> into a device, like <code>/dev/sdc</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo cp arch.iso /dev/sdc
+</span></span></code></pre></div><p>Boot the live environment.</p>
+<p><a href="https://wiki.archlinux.org/title/Installation_guide#Connect_to_the_internet">Connect to the internet.</a></p>
+<p>Setup the disk.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sgdisk -Z -n1:0:+1024M -t1:ef00 -c1:efi -n2:0:+4096M -t2:ef02 -c2:boot -N3 -t3:8309 -c3:root /dev/sda
+</span></span></code></pre></div><p>Load the encryption modules.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">modprobe dm-crypt <span class="o">&amp;&amp;</span> modprobe dm-mod
+</span></span></code></pre></div><p>Set up the encryption and then open it.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cryptsetup luksFormat -s <span class="m">512</span> -h sha512 /dev/sda3
+</span></span><span class="line"><span class="cl">cryptsetup open /dev/sda3 luks_lvm
+</span></span></code></pre></div><p>Create the volume and volume group.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pvcreate /dev/mapper/luks_lvm
+</span></span><span class="line"><span class="cl">vgcreate arch /dev/mapper/luks_lvm
+</span></span></code></pre></div><p>Create a volume for your swap space. A good size for this is your RAM size (find out with <code>free -h</code>) + 2GB.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lvcreate -n swap -L 18G arch
+</span></span></code></pre></div><p>Use entire disk space for your root volume.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lvcreate -n root -l +100%FREE arch
+</span></span></code></pre></div><p>Create filesystems</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkfs.fat -F32 /dev/sda1
+</span></span><span class="line"><span class="cl">mkfs.ext4 /dev/sda2
+</span></span><span class="line"><span class="cl">mkfs.btrfs -L root /dev/mapper/arch-root
+</span></span></code></pre></div><p>Setup swap device</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkswap /dev/mapper/arch-swap
+</span></span><span class="line"><span class="cl">swapon /dev/mapper/arch-swap
+</span></span><span class="line"><span class="cl">swapon -a
+</span></span></code></pre></div><p>Mount Root, Boot and EFI</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p /mnt/boot /mnt/boot/efi
+</span></span><span class="line"><span class="cl">mount /dev/mapper/arch-root /mnt
+</span></span><span class="line"><span class="cl">mount /dev/sda2 /mnt/boot
+</span></span><span class="line"><span class="cl">mount /dev/sda1 /mnt/boot/efi
+</span></span></code></pre></div><p>Install Arch</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pacstrap -K /mnt base sof-firmware base-devel linux linux-firmware neovim btrfs-progs lvm2 grub efibootmgr zsh
+</span></span></code></pre></div><p>Load the file table and chroot.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">genfstab -U -p /mnt &gt; /mnt/etc/fstab
+</span></span><span class="line"><span class="cl">arch-chroot /mnt /bin/bash
+</span></span></code></pre></div><p>Add hooks.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo sed -i <span class="s1">&#39;/^HOOKS=.*block/s/block /block encrypt lvm2 /&#39;</span> /etc/mkinitcpio.conf
+</span></span></code></pre></div><p>Setup grub on efi partition</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grub-install --efi-directory<span class="o">=</span>/boot/efi
+</span></span></code></pre></div><p>Add cryptdevice to linux commandline arguments</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sed -i <span class="s1">&#39;/^GRUB_CMDLINE_LINUX_DEFAULT=/ s/&#34;$/ root=\/dev\/mapper\/arch-root cryptdevice=UUID=&#39;</span><span class="k">$(</span>blkid -s UUID -o value /dev/sda3<span class="k">)</span><span class="s1">&#39;:luks_lvm&#34;/&#39;</span> /etc/default/grub
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir /secure
+</span></span><span class="line"><span class="cl">dd <span class="k">if</span><span class="o">=</span>/dev/random <span class="nv">of</span><span class="o">=</span>/secure/root_keyfile.bin <span class="nv">bs</span><span class="o">=</span><span class="m">512</span> <span class="nv">count</span><span class="o">=</span><span class="m">8</span>
+</span></span></code></pre></div><p>Change permissions</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">000</span> /secure/*
+</span></span><span class="line"><span class="cl">chmod <span class="m">600</span> /boot/initramfs*
+</span></span></code></pre></div><p>Add to partitions</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cryptsetup luksAddKey /dev/sda3 /secure/root_keyfile.bin
+</span></span></code></pre></div><p>Recognize root keyfile</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/FILES=()/FILES=(\/secure\/root_keyfile.bin)/&#39;</span> your_file
+</span></span></code></pre></div><p>Reload linux</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkinitcpio -p linux
+</span></span></code></pre></div><p>Create grub config</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grub-mkconfig -o /boot/grub/grub.cfg
+</span></span><span class="line"><span class="cl">grub-mkconfig -o /boot/efi/EFI/arch/grub.cfg
+</span></span></code></pre></div><p>Locale</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
+</span></span></code></pre></div><p>NTP</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[Time]\nNTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org\nFallbackNTP=0.pool.ntp.org 1.pool.ntp.org&#34;</span> &gt; /etc/systemd/timesyncd.conf
+</span></span></code></pre></div><p>Enable timesyncd</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> systemd-timesyncd.service
+</span></span></code></pre></div><p>Network manager for wifi</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pacman -S networkmanager
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> NetworkManager.service
+</span></span></code></pre></div><p>Locale</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sed -i -e <span class="s2">&#34;/^#&#34;</span>en_GB.UTF-8<span class="s2">&#34;/s/^#//&#34;</span> /mnt/etc/locale.gen
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;KEYMAP=us&#34;</span> &gt; /etc/vconsole.conf
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;LANG=en_GB.UTF-8&#34;</span> &gt; /etc/locale.conf
+</span></span><span class="line"><span class="cl">locale-gen
+</span></span></code></pre></div><p>Hostname</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;arch&#34;</span> &gt; /etc/hostname
+</span></span></code></pre></div><p>First secure the root user by setting a password</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">passwd
+</span></span></code></pre></div><p>Add a new user as follows</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">useradd -m -k /var/empty -G wheel -s /bin/zsh e
+</span></span><span class="line"><span class="cl">passwd e
+</span></span></code></pre></div><p>Add the wheel group to sudoers</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;%wheel ALL=(ALL:ALL) ALL&#34;</span> &gt; /etc/sudoers.d/wheel
+</span></span></code></pre></div><p>Install amd or intel microcode depending on which processor you use (<code>lscpu</code>):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pacman -S amd-ucode <span class="c1"># or intel-ucode</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span><span class="line"><span class="cl">umount -R /mnt
+</span></span><span class="line"><span class="cl">reboot
+</span></span></code></pre></div><p>Put UEFI Secure Boot into &ldquo;Setup Mode&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo sbctl create-keys
+</span></span><span class="line"><span class="cl">sudo sbctl enroll-keys -m
+</span></span></code></pre></div><p>And with that, we&rsquo;re done! Installed Arch with full disk encryption.</p>
+
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    <span class="about__logo" role="img">🍚</span>&nbsp;
+    
+<h1 class="about__title">risotto</h1>
+<p class="about__description">My personal blog</p>
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://github.com/nik-rev" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="pm@nikrev.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            
+            2024-09-02
+        </p>
+    
+
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p class="copyright"></p>
+</footer>
+
+        </div>
+    </body>
+
+</html>

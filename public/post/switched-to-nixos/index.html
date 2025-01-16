@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><title>I switched to NixOS from Arch Linux and I&#39;m never going back &ndash; Nikita Revenco</title>
+<meta name="description" content="My personal blog">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="http://localhost:1313/css/palettes/catppuccin_mocha.css">
+<link rel="stylesheet" href="http://localhost:1313/css/risotto.css">
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+
+
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><nav class="page__nav main-nav">
+    <ul>
+      <li class="nomarker"><h1 class="page__logo"><a href="http://localhost:1313/" class="page__logo-inner">Nikita Revenco</a></h1></li>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="http://localhost:1313/about/" title="">About</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item active" href="http://localhost:1313/post/" title="Posts">Posts</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>I switched to NixOS from Arch Linux and I&rsquo;m never going back</h1>
+    </header>
+    <div class="content__body">
+        <p>10 months ago I tried Linux for the first time. First it was Ubuntu, then I switched to Debian, then Arch Linux.</p>
+<p>I tested them all for a few months and was mostly happy with my Arch Linux for about 6 months.</p>
+<h1 id="first-encounter-with-nixos">First Encounter with NixOS</h1>
+<p>That was until 1 week ago where I decided &ldquo;everyone seems to be talking about nix, idk what that is, I won&rsquo;t do any research, just going to boot it on my computer and see what happens&rdquo;</p>
+<p>For about a whole day I was transferring my <a href="https://github.com/nikitarevenco/dotfiles">dotfiles configuration</a> to NixOS. First I started doing it the primordial way, with configuration.nix and zero flakes.</p>
+<h2 id="initial-resistance-to-flakes">Initial Resistance to Flakes</h2>
+<p>I didn&rsquo;t want to use flakes because I didn&rsquo;t see a point, I just saw it as extra added complexity. After a few days I was really done tinkering with my setup and things worked fine now.</p>
+<h2 id="a-comparison-to-arch-linux">A Comparison to Arch Linux</h2>
+<p>My other laptop had arch on it, and after an update I couldn&rsquo;t boot into my system, so I decided to try install NixOS on it, again</p>
+<p>Wow, the entire installation literally took about 10 minutes. I didn&rsquo;t have to follow the Arch wiki for the 10th time then running a bunch of symlink commands and editing random /etc files and running random commands to get my system working.</p>
+<p>It was just as simple as git clone, <code>sudo nixos-rebuild switch</code>. I&rsquo;m impressed, seriously impressed.</p>
+<h1 id="switching-to-helix-editor">Switching to Helix Editor</h1>
+<p>During the setup, I decided to ditch my bloated Neovim configuration which I&rsquo;ve kept adding on and on to and it was becoming ugly.</p>
+<p>I wanted something that has everything built-in, is lightweight, fast, and made with Rust.</p>
+<p>So I decided to use Helix editor instead, because i just grew tired of having to manage my LSPs with Neovim. Helix is awesome at what it does, and I was mostly happy with it.</p>
+<h2 id="hard-times">Hard Times</h2>
+<p>But I was about to switch back, because the only thing Helix is missing is a way to properly navigate files. However, while looking at the pull requests for Helix I noticed that it has a <a href="https://github.com/helix-editor/helix/pull/11285">pull request</a> which adds a basic file navigator that really covers all my needs.</p>
+<p>So I was excited. I cloned, checked out and built it. But it was painful. Helix binary wasn&rsquo;t aware of the runtime directory that it usually knows about, which contains tools for syntax highlighting (treesitter) and it didn&rsquo;t recognize my configuration either. There were a few other pull requests I really wanted to use, but it started feeling like it was too much pain.</p>
+<h2 id="discovering-the-power-of-flakes">Discovering the Power of Flakes</h2>
+<p>Then I saw that they have a flake.nix file, so I researched flakes. I previously didn&rsquo;t want to use flakes because I didn&rsquo;t see the point, I have all my packages from nixpkgs. Why should I use them?</p>
+<p>But, as it turns out &ndash; flakes make the process I described above <em>comically easy</em>. I converted my setup to flakes, and then I pointed one of the inputs at the helix repository. And it built from <code>master</code>. I was astonished, because I could see the potential that this can have&hellip;</p>
+<p>I cloned helix repo, added the pull requests I wanted merged <em>now</em> rather having to wait a few months for the next release. Merged them into my own repo, then pointed my helix input at my own helix fork on my personal branch rather than helix/main. Holy crap! It successfully built the whole thing, and now I have a file browser. It took like 2 minutes.</p>
+<p>Doing this kind of thing on any other linux distribution would be far more painful. I made a post here one week ago saying that I think Nix is the best distribution, but now I think that 10x.</p>
+<p>I was changed as a person and I&rsquo;ll never be the same again.</p>
+
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    <span class="about__logo" role="img">🍚</span>&nbsp;
+    
+<h1 class="about__title">risotto</h1>
+<p class="about__description">My personal blog</p>
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://github.com/nik-rev" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="pm@nikrev.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            
+            2024-10-02
+        </p>
+    
+
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p class="copyright"></p>
+</footer>
+
+        </div>
+    </body>
+
+</html>
