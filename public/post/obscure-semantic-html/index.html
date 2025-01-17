@@ -1,70 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us"
+  dir="ltr">
 
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><title>What you might not know about Semantic Blockquotes in HTML &ndash; Nikita Revenco</title>
-<meta name="description" content="My personal blog">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8"/>
-
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="icon" type="image/ico" href="http://localhost:1313//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+<title>
+    
+    What you might not know about Semantic Blockquotes in HTML | Nikita Revenco
+    
+</title>
+
+<link rel="canonical" href="http://localhost:1313/post/obscure-semantic-html/"/>
+
+<meta property="og:url" content="http://localhost:1313/post/obscure-semantic-html/">
+  <meta property="og:site_name" content="Nikita Revenco">
+  <meta property="og:title" content="What you might not know about Semantic Blockquotes in HTML">
+  <meta property="og:description" content="I think most people know the basics about semantic HTML, where you use the correct HTML elements to clearly state the purpose of a page.
+For example, instead of a “soup of divs” like this:
+&lt;div class=&#34;content&#34;&gt; &lt;div class=&#34;header&#34; /&gt; &lt;div class=&#34;button&#34; /&gt; &lt;div class=&#34;footer&#34; /&gt; &lt;/div&gt; It’s better to use HTML elements designed specifically to describe the meaning of the page semantically:
+&lt;main&gt; &lt;header /&gt; &lt;button /&gt; &lt;footer /&gt; &lt;/main&gt; Semantic HTML is extremely important for websites due to two main factors:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-04-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-04-17T00:00:00+00:00">
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-<link rel="stylesheet" href="http://localhost:1313/css/palettes/catppuccin_mocha.css">
-<link rel="stylesheet" href="http://localhost:1313/css/risotto.css">
-<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
 
 
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.a904013acd8e3bd04ce56a64a8fe5525fd5f738ad6caa0bfbcbe39a8d7ed932d.css" media="all">
+
+
 
 
 
 </head>
 
-    <body>
-        <div class="page">
 
-            <header class="page__header"><nav class="page__nav main-nav">
-    <ul>
-      <li class="nomarker"><h1 class="page__logo"><a href="http://localhost:1313/" class="page__logo-inner">Nikita Revenco</a></h1></li>
-    
-    
-    <li class="main-nav__item"><a class="nav-main-item" href="http://localhost:1313/about/" title="">About</a></li>
-    
-    <li class="main-nav__item"><a class="nav-main-item active" href="http://localhost:1313/post/" title="Posts">Posts</a></li>
-    
-    </ul>
-</nav>
 
-</header>
 
-            <section class="page__body">
-    <header class="content__header">
-        <h1>What you might not know about Semantic Blockquotes in HTML</h1>
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="http://localhost:1313/">Nikita Revenco</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/projects" >
+                /projects
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
     </header>
-    <div class="content__body">
-        <p>I think most people know the basics about semantic HTML, where you use the correct HTML elements to clearly state the purpose of a page.</p>
+
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/post/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/post/obscure-semantic-html/">What you might not know about Semantic Blockquotes in HTML</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">What you might not know about Semantic Blockquotes in HTML</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-04-17T00:00:00&#43;00:00">April 17, 2024</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <p>I think most people know the basics about semantic HTML, where you use the correct HTML elements to clearly state the purpose of a page.</p>
 <p>For example, instead of a &ldquo;soup of divs&rdquo; like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;header&#34;</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;footer&#34;</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;div class=<span style="color:#666;font-style:italic">&#34;content&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;div class=<span style="color:#666;font-style:italic">&#34;header&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>  &lt;div class=<span style="color:#666;font-style:italic">&#34;button&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>  &lt;div class=<span style="color:#666;font-style:italic">&#34;footer&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;/div&gt;
 </span></span></code></pre></div><p>It&rsquo;s better to use HTML elements designed specifically to describe the meaning of the page semantically:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">header</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">button</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">footer</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;main&gt;
+</span></span><span style="display:flex;"><span>  &lt;header /&gt;
+</span></span><span style="display:flex;"><span>  &lt;button /&gt;
+</span></span><span style="display:flex;"><span>  &lt;footer /&gt;
+</span></span><span style="display:flex;"><span>&lt;/main&gt;
 </span></span></code></pre></div><p>Semantic HTML is extremely important for websites due to two main factors:</p>
 <ul>
 <li>
@@ -77,19 +189,25 @@
 </li>
 </ul>
 <p>But there are some semantic HTML patterns that aren&rsquo;t as obvious. For instance, if you want to cite the original author when using <code>blockquote</code>.</p>
-<h1 id="properly-representing-blockquotes-with-a-caption">Properly representing blockquotes with a caption</h1>
+<h2 class="heading" id="properly-representing-blockquotes-with-a-caption">
+  Properly representing blockquotes with a caption
+  <a href="#properly-representing-blockquotes-with-a-caption">#</a>
+</h2>
 <p>To quote, you can use the <code>blockquote</code> element:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  We cannot solve our problems with the same thinking we used when we created
-</span></span><span class="line"><span class="cl">  them.
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
-</span></span></code></pre></div><h2 id="cite-element">cite element</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;blockquote&gt;
+</span></span><span style="display:flex;"><span>  We cannot solve our problems with the same thinking we used when we created
+</span></span><span style="display:flex;"><span>  them.
+</span></span><span style="display:flex;"><span>&lt;/blockquote&gt;
+</span></span></code></pre></div><h3 class="heading" id="cite-element">
+  cite element
+  <a href="#cite-element">#</a>
+</h3>
 <p>But what if you wanted to give credit to the original author? You might try something like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  We cannot solve our problems with the same thinking we used when we created
-</span></span><span class="line"><span class="cl">  them.
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">cite</span><span class="p">&gt;</span> Albert Einstein <span class="p">&lt;/</span><span class="nt">cite</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;blockquote&gt;
+</span></span><span style="display:flex;"><span>  We cannot solve our problems with the same thinking we used when we created
+</span></span><span style="display:flex;"><span>  them.
+</span></span><span style="display:flex;"><span>  &lt;cite&gt; Albert Einstein &lt;/cite&gt;
+</span></span><span style="display:flex;"><span>&lt;/blockquote&gt;
 </span></span></code></pre></div><p>But the above aproach is actually semantically incorrect. There are two problems with it:</p>
 <ol>
 <li>A <code>cite</code> element <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite#usage_notes">should refer to <em>work</em> and not <em>people</em></a>.</li>
@@ -98,100 +216,163 @@
 <ol>
 <li>Putting a <code>cite</code> element within a <code>blockquote</code> is <a href="https://www.w3.org/TR/html5-author/the-blockquote-element.html#the-blockquote-element">forbidden by the HTML spec</a>, due to the fact that it would make the citation a part of the quote.</li>
 </ol>
-<h2 id="parent-element">parent element</h2>
+<h3 class="heading" id="parent-element">
+  parent element
+  <a href="#parent-element">#</a>
+</h3>
 <p>An alternative idea would be to use a <code>div</code> to group the quote and the citation together:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      We cannot solve our problems with the same thinking we used when we
-</span></span><span class="line"><span class="cl">      created them.
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Albert Einstein<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;div&gt;
+</span></span><span style="display:flex;"><span>  &lt;blockquote&gt;
+</span></span><span style="display:flex;"><span>    &lt;p&gt;
+</span></span><span style="display:flex;"><span>      We cannot solve our problems with the same thinking we used when we
+</span></span><span style="display:flex;"><span>      created them.
+</span></span><span style="display:flex;"><span>    &lt;/p&gt;
+</span></span><span style="display:flex;"><span>  &lt;/blockquote&gt;
+</span></span><span style="display:flex;"><span>  &lt;p&gt;Albert Einstein&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;/div&gt;
 </span></span></code></pre></div><p>But again, this can be used to help style those two elements, but semantically it doesn&rsquo;t join them together.</p>
-<h3 id="figure-element">figure element</h3>
+<h4 class="heading" id="figure-element">
+  figure element
+  <a href="#figure-element">#</a>
+</h4>
 <p>Finally, after researching I stumbled across a new solution, using the <code>figure</code> element:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      We cannot solve our problems with the same thinking we used when we
-</span></span><span class="line"><span class="cl">      created them.
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Albert Einstein<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;figure&gt;
+</span></span><span style="display:flex;"><span>  &lt;blockquote&gt;
+</span></span><span style="display:flex;"><span>    &lt;p&gt;
+</span></span><span style="display:flex;"><span>      We cannot solve our problems with the same thinking we used when we
+</span></span><span style="display:flex;"><span>      created them.
+</span></span><span style="display:flex;"><span>    &lt;/p&gt;
+</span></span><span style="display:flex;"><span>  &lt;/blockquote&gt;
+</span></span><span style="display:flex;"><span>  &lt;figcaption&gt;
+</span></span><span style="display:flex;"><span>    &lt;p&gt;Albert Einstein&lt;/p&gt;
+</span></span><span style="display:flex;"><span>  &lt;/figcaption&gt;
+</span></span><span style="display:flex;"><span>&lt;/figure&gt;
 </span></span></code></pre></div><p>This way, we are properly describing the relationship between the <code>blockquote</code> and the <code>figcaption</code>.</p>
-<h1 id="rehype-semantic-blockquotes-plugin"><code>rehype-semantic-blockquotes</code> plugin</h1>
+<h2 class="heading" id="rehype-semantic-blockquotes-plugin">
+  <code>rehype-semantic-blockquotes</code> plugin
+  <a href="#rehype-semantic-blockquotes-plugin">#</a>
+</h2>
 <p>I wanted to be able to create such blockquotes and figcaptions on-the-fly, in markdown. There wasn&rsquo;t a solution available, so I wrote a rehype plugin myself to accomplish this.</p>
 <p>Rehype is a parser for HTML and is commonly used with MDX and remark, a parser for markdown.</p>
 <p>It transforms markdown syntax like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">We cannot solve our problems with the same thinking we used when we created them.
-</span></span></span><span class="line"><span class="cl"><span class="ge"></span><span class="k">&gt;
-</span></span></span><span class="line"><span class="cl"><span class="k"></span><span class="ge">&gt; @ Albert Einstein
-</span></span></span></code></pre></div><p>Into the following HTML:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">figure</span> <span class="na">data-blockquote-container</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">blockquote</span> <span class="na">data-blockquote-content</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      We cannot solve our problems with the same thinking we used when we created
-</span></span><span class="line"><span class="cl">    them.
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">figcaption</span> <span class="na">data-blockquote-credit</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Albert Einstein<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">&gt; </span>We cannot solve our problems with the same thinking we used when we created them.
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline">&gt;
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold;text-decoration:underline"></span>&gt; @ Albert Einstein
+</span></span></code></pre></div><p>Into the following HTML:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>&lt;figure data-blockquote-container=<span style="color:#666;font-style:italic">&#34;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;blockquote data-blockquote-content=<span style="color:#666;font-style:italic">&#34;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;p&gt;
+</span></span><span style="display:flex;"><span>      We cannot solve our problems with the same thinking we used when we created
+</span></span><span style="display:flex;"><span>    them.
+</span></span><span style="display:flex;"><span>    &lt;/p&gt;
+</span></span><span style="display:flex;"><span>  &lt;/blockquote&gt;
+</span></span><span style="display:flex;"><span>  &lt;figcaption data-blockquote-credit=<span style="color:#666;font-style:italic">&#34;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;p&gt;Albert Einstein&lt;/p&gt;
+</span></span><span style="display:flex;"><span>  &lt;/figcaption&gt;
+</span></span><span style="display:flex;"><span>&lt;/figure&gt;
 </span></span></code></pre></div><p>The <code>data-*</code> attributes are useful for styling these blockquotes.</p>
 <p>You can find more information about how to use this on <a href="https://github.com/nikitarevenco/rehype-semantic-blockquotes"><code>rehype-semantic-blockquotes</code></a> plugin README!</p>
 
-    </div>
-    <footer class="content__footer"></footer>
-
-            </section>
-
-            <section class="page__aside">
-                <div class="aside__about">
-<div class="aside__about">
-    <span class="about__logo" role="img">🍚</span>&nbsp;
     
-<h1 class="about__title">risotto</h1>
-<p class="about__description">My personal blog</p>
-</div>
+  </div>
+
+  
 
 
-<ul class="aside__social-links">
-    
-    <li>
-        <a href="https://github.com/nik-rev" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
-    </li>
-    
-    <li>
-        <a href="pm@nikrev.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
-    </li>
-    
-</ul>
-</div>
-                <hr>
-                <div class="aside__content">
-    
-    
-        <p>
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
             
-            2024-04-17
-        </p>
-    
-
-    
-
-                </div>
-            </section>
-
-            <footer class="page__footer"><p class="copyright"></p>
-</footer>
-
         </div>
-    </body>
 
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/post/linux-first-time/">
+                        I was forced to use Linux. But now I love it.
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+     
+ 
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+<script defer src="/js/copy-code.js"></script>
 </html>

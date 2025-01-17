@@ -7,7 +7,7 @@ In December of 2023 I wanted to learn Web development, for fun. I was 6 months a
 
 I found this website called [The Odin Project](https://www.theodinproject.com/), which is a free and open-source curriculum for learning web development. Perfect!
 
-# Forced into Linux
+## Forced into Linux
 
 Unfortunately, one of the requirements for the course was to use Linux. Odin Project didn't support Windows, only Mac and Linux at the time. I didn't have a Mac, so...
 
@@ -17,7 +17,7 @@ But despite that fact, my curiosity got the best of me and I decided to try it o
 
 Having zero idea that it will change my life, I followed their installation instructions for Ubuntu. It took me an entire day to install it, but I finally did.
 
-# Descent into Madness
+## Descent into Madness
 
 Once I did, I opened the file manager and was terrified -- I had no idea what was going on. Where are all the Program Files? Why is everything empty?
 
@@ -27,7 +27,7 @@ The Odin Project also had several lessons on the command line, such as creating 
 
 It was extremely confusing to me, because I had no idea what was happening. But it was also super interesting and I wanted to learn more.
 
-## Researching Commands
+### Researching Commands
 
 I spent several days researching various Linux commands. Odin Project said that Linux is used everywhere in development, that's why I continued to go through with it.
 
@@ -35,7 +35,7 @@ But to be honest, I didn't really see a point in it. I thought that typing out a
 
 As I continued to use Linux full-time as my computer for several weeks, I slowly became more accustomed to it. I found myself more efficient in the command line than with their file explorer.
 
-## Becoming more Efficient
+### Becoming more Efficient
 
 And it all started from there. I found out that I can make aliases in bash, so I aliased `e` to `ls`, and `t` to `cd` and then `ls` in the new directory.
 

@@ -37,7 +37,7 @@ Semantic HTML is extremely important for websites due to two main factors:
 
 But there are some semantic HTML patterns that aren't as obvious. For instance, if you want to cite the original author when using `blockquote`.
 
-# Properly representing blockquotes with a caption
+## Properly representing blockquotes with a caption
 
 To quote, you can use the `blockquote` element:
 
@@ -48,7 +48,7 @@ To quote, you can use the `blockquote` element:
 </blockquote>
 ```
 
-## cite element
+### cite element
 
 But what if you wanted to give credit to the original author? You might try something like this:
 
@@ -68,7 +68,7 @@ For example, we could put the link to a social media post or an article in a `ci
 
 1. Putting a `cite` element within a `blockquote` is [forbidden by the HTML spec](https://www.w3.org/TR/html5-author/the-blockquote-element.html#the-blockquote-element), due to the fact that it would make the citation a part of the quote.
 
-## parent element
+### parent element
 
 An alternative idea would be to use a `div` to group the quote and the citation together:
 
@@ -86,7 +86,7 @@ An alternative idea would be to use a `div` to group the quote and the citation 
 
 But again, this can be used to help style those two elements, but semantically it doesn't join them together.
 
-### figure element
+#### figure element
 
 Finally, after researching I stumbled across a new solution, using the `figure` element:
 
@@ -106,7 +106,7 @@ Finally, after researching I stumbled across a new solution, using the `figure` 
 
 This way, we are properly describing the relationship between the `blockquote` and the `figcaption`.
 
-# `rehype-semantic-blockquotes` plugin
+## `rehype-semantic-blockquotes` plugin
 
 I wanted to be able to create such blockquotes and figcaptions on-the-fly, in markdown. There wasn't a solution available, so I wrote a rehype plugin myself to accomplish this.
 

@@ -5,7 +5,7 @@ date: 2024-09-02
 
 I've grown to love Arch Linux due to its simplicity and ease of use. However installing it can be a bit of a process, especially if you want to do it with full disk encryption. I've compiled a quick guide on how I do it in this post.
 
-# Installation
+## Installation
 
 Go to [arch linux downloads](https://archlinux.org/download/) and head over to the `geo.mirror.pkgbuild.com` link under the "Worldwide" HTTP direct downloads.
 

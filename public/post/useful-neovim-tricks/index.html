@@ -1,58 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us"
+  dir="ltr">
 
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><title>13 Neovim tips and life hacks that significantly improved my productivity &ndash; Nikita Revenco</title>
-<meta name="description" content="My personal blog">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8"/>
-
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="icon" type="image/ico" href="http://localhost:1313//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+<title>
+    
+    13 Neovim tips and life hacks that significantly improved my productivity | Nikita Revenco
+    
+</title>
+
+<link rel="canonical" href="http://localhost:1313/post/useful-neovim-tricks/"/>
+
+<meta property="og:url" content="http://localhost:1313/post/useful-neovim-tricks/">
+  <meta property="og:site_name" content="Nikita Revenco">
+  <meta property="og:title" content="13 Neovim tips and life hacks that significantly improved my productivity">
+  <meta property="og:description" content="I’ve been using Neovim for quite some time and have went through the entire Wiki. I would like to share some of my most loved tricks.
+^ to move to first non-whitespace character, $ for first character &#43; and - move to line below and above but non-whitespace characters 15 j, k, l, h to move down, up, left, right 1 G end of file, gg beginning of file 14 % jump to matching parenthesis t jump before character, f jump to character, T and F are the reverse , and ; repeat t, T, f, F in same and opposite directions / search forward, ? search backward I, i, a, A append at beginning of line / character and end of line / character guu, gUU and g~~ will make the current line lowercase, uppercase or alternate case 40gg to jump to the 40th line D, Y and C instead of d$, y$ and c$ gx opens link under cursor gf opens relative or absolute file path under cursor CTRL v visual block mode J join line dk and dj to delete 2 lines easily yib is the same as yi( but easier to type gu, gU and g~ are operators that make the text lowercase, uppercase, or alternate case in VISUAL g CTRL v increment each line in selection based on line number, e.g. 0 0 0 0 (separated by newlines) will become 1 2 3 4 d/hello deletes until hello is found, d/hello/e deletes including the hello # and * find the identifier under cursor forwards and backwards in VISUAL &lt; and &gt; dedent and indent selection in VISUAL BLOCK I to prepend to all lines at the start of selection, $A to append at end of lines and xp to swap 2 characters CTRL a increases numbr by 1, CTRL x decreases by 1. also takes in a count in VISUAL o will go to the opposite end of the selection gv to reselect the last selection CTRL wx swap window CTRL wv split vertically and CTRL ws horizontally CTRL wq quit window CTRL w= equalize window sizes vap select around paragraph r replace a character gp and gP are like p and P but leave cursor after pasted text CTRL g show filename and line count :center centers text zz, zt, zb position cursor in middle, top and bottom of screen ga prints info about character under the cursor g? is an operator that will rot13 encode the input Using a count with an insert operator e.g. o, a, I etc will write it in insert mode that many times gi insert text in same position as where insert mode was stopped last time /pattern/e search for pattern and put cursor on the last character of pattern /pattern/e&#43;1 ^ but &#43;1 char to the left :%s/pattern//n count number matches for pattern :sort u sort whole file or range in VISUAL mode unique :sort n sorts by number that it will find within the line /apple\C for case-sensitive search g; go to previous insert location g, to to next previous insert location gi insert mode in last edit location in INSERT CTRL u delete all characters in current line &#39;&#39; jump to before last jump [{, ]{, [( and ]( go to last/next unmatched { and ( g&amp; repeat last :s g$, g0, g^ are like $, 0 and ^ but will respect wrapped lines gJ joins lines without inserting space gq wrap lines In O-PENDING mode we can use v, V and CTRL v to force operator to work charwise, linewise or blockwise in command line CTRL g and CTRL t next and previous match (useful for when using / or ? with an operator) in command line CTRL r&#43; paste contents from register &#43; (so system clipboard, but we can use with other registers) in command line CTRL u remove all characters :%norm execute command on every line, or :norm for the lines selected. e.g. :%norm $ciwhello :g execute command on each line that match pattern, e.g. :g/^#/d delete all comments from bash file :%s substitute, e.g. :%s/foo/bar/g :g/foo/s/bar/baz/g substitute bar with baz on all lines that contain foo pipe output of commands into | nvim, super useful /\%V will search inside visual selection If clipboard register is unnamedplus, stuff we copy using system clipboard (not in vim) will also always be saved in the &#34;* register, which is handy. e.g. we dd a line, it won’t override what we copied! use dj and dk to delete the current line and the line above/below &lt;C-f&gt; edit ex mode in insert and normal modes use _ instead of ^ because it takes to first character on line and accepts a motion for N lines back, and easier to reach">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-09-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-09-11T00:00:00+00:00">
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-<link rel="stylesheet" href="http://localhost:1313/css/palettes/catppuccin_mocha.css">
-<link rel="stylesheet" href="http://localhost:1313/css/risotto.css">
-<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
 
 
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.a904013acd8e3bd04ce56a64a8fe5525fd5f738ad6caa0bfbcbe39a8d7ed932d.css" media="all">
+
+
 
 
 
 </head>
 
-    <body>
-        <div class="page">
 
-            <header class="page__header"><nav class="page__nav main-nav">
-    <ul>
-      <li class="nomarker"><h1 class="page__logo"><a href="http://localhost:1313/" class="page__logo-inner">Nikita Revenco</a></h1></li>
-    
-    
-    <li class="main-nav__item"><a class="nav-main-item" href="http://localhost:1313/about/" title="">About</a></li>
-    
-    <li class="main-nav__item"><a class="nav-main-item active" href="http://localhost:1313/post/" title="Posts">Posts</a></li>
-    
-    </ul>
-</nav>
 
-</header>
 
-            <section class="page__body">
-    <header class="content__header">
-        <h1>13 Neovim tips and life hacks that significantly improved my productivity</h1>
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="http://localhost:1313/">Nikita Revenco</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/projects" >
+                /projects
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
     </header>
-    <div class="content__body">
-        <p>I&rsquo;ve been using Neovim for quite some time and have went through the entire Wiki. I would like to share some of my most loved tricks.</p>
+
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/post/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/post/useful-neovim-tricks/">13 Neovim tips and life hacks that significantly improved my productivity</a>
+</div>
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">13 Neovim tips and life hacks that significantly improved my productivity</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-09-11T00:00:00&#43;00:00">September 11, 2024</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <p>I&rsquo;ve been using Neovim for quite some time and have went through the entire Wiki. I would like to share some of my most loved tricks.</p>
 <ul>
 <li><code>^</code> to move to first non-whitespace character, <code>$</code> for first character</li>
 <li><code>+</code> and <code>-</code> move to line below and above but non-whitespace characters 15</li>
@@ -128,52 +238,115 @@
 <li>use <code>_</code> instead of <code>^</code> because it takes to first character on line and accepts a motion for N lines back, and easier to reach</li>
 </ul>
 
-    </div>
-    <footer class="content__footer"></footer>
-
-            </section>
-
-            <section class="page__aside">
-                <div class="aside__about">
-<div class="aside__about">
-    <span class="about__logo" role="img">🍚</span>&nbsp;
     
-<h1 class="about__title">risotto</h1>
-<p class="about__description">My personal blog</p>
-</div>
+  </div>
+
+  
 
 
-<ul class="aside__social-links">
-    
-    <li>
-        <a href="https://github.com/nik-rev" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
-    </li>
-    
-    <li>
-        <a href="pm@nikrev.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
-    </li>
-    
-</ul>
-</div>
-                <hr>
-                <div class="aside__content">
-    
-    
-        <p>
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
             
-            2024-09-11
-        </p>
-    
-
-    
-
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/post/arch-install/">
+                        How I install Arch Linux with full disk encryption
+                    </a>
                 </div>
-            </section>
-
-            <footer class="page__footer"><p class="copyright"></p>
-</footer>
-
+            </div>
+            
         </div>
-    </body>
 
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/post/everything-is-a-file/">
+                        Quest to understand the idea of &#34;Everything is a file&#34;
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+     
+ 
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+<script defer src="/js/copy-code.js"></script>
 </html>

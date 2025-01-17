@@ -1,100 +1,81 @@
-baseURL = "https://risotto.joeroe.io"
-theme = "risotto"
-title = "Nikita Revenco"
-author = "Nikita Revenco"
-# paginate = 3
-languageCode = "en"
-DefaultContentLanguage = "en"
-enableInlineShortcodes = true
-# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
-# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
-ignoreErrors = ["error-remote-getjson"]
-
-# Automatically add content sections to main menu
-sectionPagesMenu = "main"
-
-[params]
-noindex = false
-
-[params.theme]
-palette = "catppuccin_mocha"
-
-# Sidebar: about/bio
-[params.about]
-title = "risotto"
-description = "My personal blog"
-# unicode/emoji logo:
-logo = "🍚"
-# or use an image:
-#logo_image = "images/rice.svg"
-
-# Sidebar: social links
-# Available icon sets:
-# * FontAwesome 6 <https://fontawesome.com/> ('fa-brands', 'fa-normal', or 'fa-solid' for brands)
-# * Academicons <https://jpswalsh.github.io/academicons> ('ai ai-')
-
-[[params.socialLinks]]
-icon = "fa-brands fa-github"
-title = "GitHub"
-url = "https://github.com/nik-rev"
-
-[[params.socialLinks]]
-icon = "fa-solid fa-envelope"
-title = "Email"
-url = "pm@nikrev.com"
-
-[menu]
-
-[[menu.main]]
-identifier = "about"
-name = "About"
-url = "/about/"
-weight = 10
+baseURL = 'https://nikrev.com'
+languageCode = 'en-us'
+title = 'Nikita Revenco'
+theme = 'typo'
 
 [taxonomies]
-category = "categories"
-tag = "tags"
-series = "series"
+tag = 'tags'
 
-[markup.highlight]
-noClasses = false
+# Google analytics code
+# googleAnalytics = "G-xxxxxxxxx"
 
-# For hugo >= 0.60.0, enable inline HTML
-[markup.goldmark.renderer]
-unsafe = true
+[params]
+# Meta description
+description = "Personal Website"
 
+# Appearance settings
+theme = 'auto'
+colorPalette = 'default'
+hideHeader = false
+
+# Intro on main page, content is markdown
+homeIntroTitle = 'Hi!'
+homeIntroContent = """
+I am 18 years old and from England. 🇬🇧
+
+In my free time I contribute to open-source software such as the [Helix Editor](https://github.com/helix-editor/helix/pulls/nik-rev) by fixing bugs and adding new features.
+
+I love learning new concepts and ideas, and I basically want to know **everything**, which I know is not possible, so I have to spend my time wisely. At the moment I'm learning backend development.
+
+Saying I'm a heavy terminal user is probably an understatement :). I practically live in the command-line. I use NixOS operating system and Helix as my IDE.
+
+Most of my time is spent on reading other people's code which made me realise just how important having clear conventions and readable code is. I care a lot about documentation and automated tests.
+
+So it should come as no surpsise then, that my favorite language is Rust. I've written code in over a dozen other languages, with Rust being both the most enjoyable *and* the most productive language. Honorable mentions include Haskell and TypeScript. I love me a strict type system.
+
+If you'd like to chat, send me an email at `pm@nikrev.com`.
+"""
+
+# Collection to display on home
+# homeCollectionTitle = 'Posts'
+# homeCollection = 'posts'
+
+# Lists parameters
+paginationSize = 100
+listSummaries = true
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+breadcrumbs = true
+
+[[params.social]]
+name = "github"
+url = "https://github.com/nik-rev"
+
+# Main menu pages
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "posts"
+url = "/posts"
+
+[[params.menu]]
+name = "projects"
+url = "/projects"
+
+# Syntax highlight on code blocks
 [markup]
+[markup.highlight]
+style = 'algol'
 
-# Table of contents
-# Add toc = true to content front matter to enable
-[markup.tableOfContents]
-startLevel = 2
-endLevel = 3
-ordered = true
-
-[privacy]
-
-[privacy.vimeo]
-disabled = false
-simple = true
-
-[privacy.twitter]
-disabled = false
-enableDNT = true
-simple = true
-
-[privacy.instagram]
-disabled = false
-simple = true
-
-[privacy.youtube]
-disabled = false
-privacyEnhanced = true
-
-[services]
-
-[services.instagram]
-disableInlineCSS = true
-
-[services.twitter]
-disableInlineCSS = true
+# Giscus comments
+# [params.giscus]
+# enable = false
+# repo = "nik-rev/nik-rev"
+# repoid = "repoId"
+# category = "Blog"
+# categoryid = "categoryId"
+# mapping = "pathname"
+# theme = "preferred_color_scheme"
