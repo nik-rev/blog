@@ -17,3 +17,7 @@
 - [Faster Than Lime](https://fasterthanli.me/)
 
   A rust blog which goes very in-depth and has hour long series and posts.
+
+- [Josh Comeau](https://www.joshwcomeau.com/)
+
+  Front-end interactive blog.
