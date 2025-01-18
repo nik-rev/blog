@@ -33,7 +33,7 @@ Most of my time is spent on reading other people's code which made me realise ju
 
 So it should come as no surpsise then, that my favorite language is Rust. I've written code in over a dozen other languages, with Rust being both the most enjoyable *and* the most productive language. Honorable mentions include Haskell and TypeScript. I love me a strict type system.
 
-If you'd like to chat, send me an email at `<redacted>`.
+If you'd like to chat, send me an email at <code><span class="obfuscated" data-website="moc.verkin" data-user="mp" /></code>.
 """
 
 # Collection to display on home
@@ -69,6 +69,10 @@ url = "/projects"
 [markup]
 [markup.highlight]
 style = 'algol'
+
+[markup.goldmark.renderer]
+# Do not strip inline HTML
+unsafe = true
 
 # Giscus comments
 # [params.giscus]
