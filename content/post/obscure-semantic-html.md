@@ -1,6 +1,7 @@
 ---
 title: What you might not know about Semantic Blockquotes in HTML
 date: 2024-04-17
+readTime: true
 ---
 
 I think most people know the basics about semantic HTML, where you use the correct HTML elements to clearly state the purpose of a page.

@@ -1,6 +1,7 @@
 ---
 title: I switched to NixOS from Arch Linux and I'm never going back
 date: 2024-10-02
+readTime: true
 ---
 
 10 months ago I tried Linux for the first time. First it was Ubuntu, then I switched to Debian, then Arch Linux.

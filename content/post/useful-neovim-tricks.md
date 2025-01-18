@@ -1,6 +1,7 @@
 ---
 title: 13 Neovim tips and life hacks that significantly improved my productivity
 date: 2024-09-11
+readTime: true
 ---
 
 I've been using Neovim for quite some time and have went through the entire Wiki. I would like to share some of my most loved tricks.
