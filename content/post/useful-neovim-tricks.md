@@ -5,6 +5,8 @@ date: 2024-09-11
 
 I've been using Neovim for quite some time and have went through the entire Wiki. I would like to share some of my most loved tricks.
 
+<!--more-->
+
 - `^` to move to first non-whitespace character, `$` for first character
 - `+` and `-` move to line below and above but non-whitespace characters 15
 - `j`, `k`, `l`, `h` to move down, up, left, right 1

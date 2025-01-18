@@ -5,7 +5,9 @@ date: 2024-10-02
 
 10 months ago I tried Linux for the first time. First it was Ubuntu, then I switched to Debian, then Arch Linux.
 
-I tested them all for a few months and was mostly happy with my Arch Linux for about 6 months.
+<!--more-->
+
+I tested them all for a few months and was mostly happy with my Arch Linux for about 6 months. But then I tried NixOS...
 
 ## First Encounter with NixOS
 

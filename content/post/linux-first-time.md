@@ -7,6 +7,8 @@ In December of 2023 I wanted to learn Web development, for fun. I was 6 months a
 
 I found this website called [The Odin Project](https://www.theodinproject.com/), which is a free and open-source curriculum for learning web development. Perfect!
 
+<!--more-->
+
 ## Forced into Linux
 
 Unfortunately, one of the requirements for the course was to use Linux. Odin Project didn't support Windows, only Mac and Linux at the time. I didn't have a Mac, so...

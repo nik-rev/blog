@@ -3,7 +3,11 @@ title: How I install Arch Linux with full disk encryption
 date: 2024-09-02
 ---
 
-I've grown to love Arch Linux due to its simplicity and ease of use. However installing it can be a bit of a process, especially if you want to do it with full disk encryption. I've compiled a quick guide on how I do it in this post.
+I've grown to love Arch Linux due to its simplicity and ease of use. However installing it can be a bit of a process, especially if you want to do it with full disk encryption.
+
+I've compiled a quick guide on how I do it in this post.
+
+<!--more-->
 
 ## Installation
 

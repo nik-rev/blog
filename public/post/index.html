@@ -154,9 +154,7 @@
         </p>
 
         
-        <p class="line-summary"> <p>I&rsquo;ve been using VSCode for several months when I first started programming. It was fine, but I was tired of using like 40 plugins and not using any of them to their capabilities.</p>
-<p>At the end of the day it felt like I had no control over my editor and I didn&rsquo;t have an idea of how things were going on. Because I didn&rsquo;t.</p>
-<p>I&rsquo;ve been hearing about Neovim for a while until this point decided to give it a try. I expected it to be difficult to get started, because it&rsquo;s a mouseless modal editor &ndash; a completely new way of editing code than what I&rsquo;ve been used to.</p> </p>
+        <p class="line-summary"> <p>I&rsquo;ve been using VSCode for several months when I first started programming. It was fine, but I was tired of using like 40 plugins and not using any of them to their capabilities.</p> </p>
         
     </div>
 </div>
@@ -182,13 +180,7 @@
         </p>
 
         
-        <p class="line-summary"> <p>10 months ago I tried Linux for the first time. First it was Ubuntu, then I switched to Debian, then Arch Linux.</p>
-<p>I tested them all for a few months and was mostly happy with my Arch Linux for about 6 months.</p>
-<h2 class="heading" id="first-encounter-with-nixos">
-  First Encounter with NixOS
-  <a href="#first-encounter-with-nixos">#</a>
-</h2>
-<p>That was until 1 week ago where I decided &ldquo;everyone seems to be talking about nix, idk what that is, I won&rsquo;t do any research, just going to boot it on my computer and see what happens&rdquo;</p> </p>
+        <p class="line-summary"> <p>10 months ago I tried Linux for the first time. First it was Ubuntu, then I switched to Debian, then Arch Linux.</p> </p>
         
     </div>
 </div>
@@ -214,8 +206,7 @@
         </p>
 
         
-        <p class="line-summary"> <p>I had been using Windows for most of my life. I didn&rsquo;t know much about files &ndash; I thought that files are just what programs use to store their data (e.g. Notepad using <code>.txt</code> extension, Photoshop with its <code>.psd</code>, etc.)</p>
-<p>I assumed that a file&rsquo;s purpose is <em>defined by its extension</em>. And this conclusion made sense to me at the time, since for example I couldn&rsquo;t open a <code>.mp4</code> file format in Photoshop.</p> </p>
+        <p class="line-summary"> <p>I had been using Windows for most of my life. I didn&rsquo;t know much about files &ndash; I thought that files are just what programs use to store their data (e.g. Notepad using <code>.txt</code> extension, Photoshop with its <code>.psd</code>, etc.)</p> </p>
         
     </div>
 </div>
@@ -241,81 +232,7 @@
         </p>
 
         
-        <p class="line-summary"> <p>I&rsquo;ve been using Neovim for quite some time and have went through the entire Wiki. I would like to share some of my most loved tricks.</p>
-<ul>
-<li><code>^</code> to move to first non-whitespace character, <code>$</code> for first character</li>
-<li><code>+</code> and <code>-</code> move to line below and above but non-whitespace characters 15</li>
-<li><code>j</code>, <code>k</code>, <code>l</code>, <code>h</code> to move down, up, left, right 1</li>
-<li><code>G</code> end of file, <code>gg</code> beginning of file 14</li>
-<li><code>%</code> jump to matching parenthesis</li>
-<li><code>t</code> jump before character, <code>f</code> jump to character, <code>T</code> and <code>F</code> are the reverse</li>
-<li><code>,</code> and <code>;</code> repeat <code>t</code>, <code>T</code>, <code>f</code>, <code>F</code> in same and opposite directions</li>
-<li><code>/</code> search forward, <code>?</code> search backward</li>
-<li><code>I</code>, <code>i</code>, <code>a</code>, <code>A</code> append at beginning of line / character and end of line / character</li>
-<li><code>guu</code>, <code>gUU</code> and <code>g~~</code> will make the current line lowercase, uppercase or alternate case</li>
-<li><code>40gg</code> to jump to the 40th line</li>
-<li><code>D</code>, <code>Y</code> and <code>C</code> instead of <code>d$</code>, <code>y$</code> and <code>c$</code></li>
-<li><code>gx</code> opens link under cursor</li>
-<li><code>gf</code> opens relative or absolute file path under cursor</li>
-<li><code>CTRL v</code> visual block mode</li>
-<li><code>J</code> join line</li>
-<li><code>dk</code> and <code>dj</code> to delete 2 lines easily</li>
-<li><code>yib</code> is the same as <code>yi(</code> but easier to type</li>
-<li><code>gu</code>, <code>gU</code> and <code>g~</code> are operators that make the text lowercase, uppercase, or alternate case</li>
-<li>in VISUAL <code>g CTRL v</code> increment each line in selection based on line number, e.g. <code>0 0 0 0</code> (separated by newlines) will become <code>1 2 3 4</code></li>
-<li><code>d/hello</code> deletes until hello is found, <code>d/hello/e</code> deletes including the hello</li>
-<li><code>#</code> and <code>*</code> find the identifier under cursor forwards and backwards</li>
-<li>in VISUAL <code>&lt;</code> and <code>&gt;</code> dedent and indent selection</li>
-<li>in VISUAL BLOCK <code>I</code> to prepend to all lines at the start of selection, <code>$A</code> to append at end of lines</li>
-<li>and <code>xp</code> to swap 2 characters</li>
-<li>CTRL a increases numbr by 1, CTRL x decreases by 1. also takes in a count</li>
-<li>in VISUAL <code>o</code> will go to the opposite end of the selection</li>
-<li><code>gv</code> to reselect the last selection</li>
-<li><code>CTRL wx</code> swap window</li>
-<li><code>CTRL wv</code> split vertically and <code>CTRL ws</code> horizontally</li>
-<li><code>CTRL wq</code> quit window</li>
-<li><code>CTRL w=</code> equalize window sizes</li>
-<li><code>vap</code> select around paragraph</li>
-<li><code>r</code> replace a character</li>
-<li><code>gp</code> and <code>gP</code> are like <code>p</code> and <code>P</code> but leave cursor after pasted text</li>
-<li><code>CTRL g</code> show filename and line count</li>
-<li><code>:center</code> centers text</li>
-<li><code>zz</code>, <code>zt</code>, <code>zb</code> position cursor in middle, top and bottom of screen</li>
-<li><code>ga</code> prints info about character under the cursor</li>
-<li><code>g?</code> is an operator that will rot13 encode the input</li>
-<li>Using a count with an insert operator e.g. <code>o</code>, <code>a</code>, <code>I</code> etc will write it in insert mode that many times</li>
-<li><code>gi</code> insert text in same position as where insert mode was stopped last time</li>
-<li><code>/pattern/e</code> search for pattern and put cursor on the last character of pattern</li>
-<li><code>/pattern/e+1</code> ^ but +1 char to the left</li>
-<li><code>:%s/pattern//n</code> count number matches for pattern</li>
-<li><code>:sort u</code> sort whole file or range in VISUAL mode unique</li>
-<li><code>:sort n</code> sorts by number that it will find within the line</li>
-<li><code>/apple\C</code> for case-sensitive search</li>
-<li><code>g;</code> go to previous insert location</li>
-<li><code>g,</code> to to next previous insert location</li>
-<li><code>gi</code> insert mode in last edit location</li>
-<li>in INSERT <code>CTRL u</code> delete all characters in current line</li>
-<li><code>''</code> jump to before last jump</li>
-<li><code>[{</code>, <code>]{</code>, <code>[(</code> and <code>](</code> go to last/next unmatched <code>{</code> and <code>(</code></li>
-<li><code>g&amp;</code> repeat last <code>:s</code></li>
-<li><code>g$</code>, <code>g0</code>, <code>g^</code> are like <code>$</code>, <code>0</code> and <code>^</code> but will respect wrapped lines</li>
-<li><code>gJ</code> joins lines without inserting space</li>
-<li><code>gq</code> wrap lines</li>
-<li>In O-PENDING mode we can use <code>v</code>, <code>V</code> and <code>CTRL v</code> to force operator to work charwise, linewise or blockwise</li>
-<li>in command line <code>CTRL g</code> and <code>CTRL t</code> next and previous match (useful for when using <code>/</code> or <code>?</code> with an operator)</li>
-<li>in command line <code>CTRL r+</code> paste contents from register <code>+</code> (so system clipboard, but we can use with other registers)</li>
-<li>in command line <code>CTRL u</code> remove all characters</li>
-<li><code>:%norm</code> execute command on every line, or <code>:norm</code> for the lines selected. e.g. <code>:%norm $ciwhello</code></li>
-<li><code>:g</code> execute command on each line that match pattern, e.g. <code>:g/^#/d</code> delete all comments from bash file</li>
-<li><code>:%s</code> substitute, e.g. <code>:%s/foo/bar/g</code></li>
-<li><code>:g/foo/s/bar/baz/g</code> substitute bar with baz on all lines that contain foo</li>
-<li>pipe output of commands into <code>| nvim</code>, super useful</li>
-<li><code>/\%V</code> will search inside visual selection</li>
-<li>If clipboard register is <code>unnamedplus</code>, stuff we copy using system clipboard (not in vim) will also always be saved in the <code>&quot;*</code> register, which is handy. e.g. we <code>dd</code> a line, it won&rsquo;t override what we copied!</li>
-<li>use <code>dj</code> and <code>dk</code> to delete the current line and the line above/below</li>
-<li><code>&lt;C-f&gt;</code> edit ex mode in insert and normal modes</li>
-<li>use <code>_</code> instead of <code>^</code> because it takes to first character on line and accepts a motion for N lines back, and easier to reach</li>
-</ul> </p>
+        <p class="line-summary"> <p>I&rsquo;ve been using Neovim for quite some time and have went through the entire Wiki. I would like to share some of my most loved tricks.</p> </p>
         
     </div>
 </div>
@@ -341,13 +258,8 @@
         </p>
 
         
-        <p class="line-summary"> <p>I&rsquo;ve grown to love Arch Linux due to its simplicity and ease of use. However installing it can be a bit of a process, especially if you want to do it with full disk encryption. I&rsquo;ve compiled a quick guide on how I do it in this post.</p>
-<h2 class="heading" id="installation">
-  Installation
-  <a href="#installation">#</a>
-</h2>
-<p>Go to <a href="https://archlinux.org/download/">arch linux downloads</a> and head over to the <code>geo.mirror.pkgbuild.com</code> link under the &ldquo;Worldwide&rdquo; HTTP direct downloads.</p>
-<p>Install the following files from there:</p> </p>
+        <p class="line-summary"> <p>I&rsquo;ve grown to love Arch Linux due to its simplicity and ease of use. However installing it can be a bit of a process, especially if you want to do it with full disk encryption.</p>
+<p>I&rsquo;ve compiled a quick guide on how I do it in this post.</p> </p>
         
     </div>
 </div>
@@ -374,12 +286,7 @@
 
         
         <p class="line-summary"> <p>In December of 2023 I wanted to learn Web development, for fun. I was 6 months away from my A-Level exams and I was really bored.</p>
-<p>I found this website called <a href="https://www.theodinproject.com/">The Odin Project</a>, which is a free and open-source curriculum for learning web development. Perfect!</p>
-<h2 class="heading" id="forced-into-linux">
-  Forced into Linux
-  <a href="#forced-into-linux">#</a>
-</h2>
-<p>Unfortunately, one of the requirements for the course was to use Linux. Odin Project didn&rsquo;t support Windows, only Mac and Linux at the time. I didn&rsquo;t have a Mac, so&hellip;</p> </p>
+<p>I found this website called <a href="https://www.theodinproject.com/">The Odin Project</a>, which is a free and open-source curriculum for learning web development. Perfect!</p> </p>
         
     </div>
 </div>
@@ -405,20 +312,7 @@
         </p>
 
         
-        <p class="line-summary"> <p>I think most people know the basics about semantic HTML, where you use the correct HTML elements to clearly state the purpose of a page.</p>
-<p>For example, instead of a &ldquo;soup of divs&rdquo; like this:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;div class=<span style="color:#666;font-style:italic">&#34;content&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;div class=<span style="color:#666;font-style:italic">&#34;header&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>  &lt;div class=<span style="color:#666;font-style:italic">&#34;button&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>  &lt;div class=<span style="color:#666;font-style:italic">&#34;footer&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;/div&gt;
-</span></span></code></pre></div><p>It&rsquo;s better to use HTML elements designed specifically to describe the meaning of the page semantically:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;main&gt;
-</span></span><span style="display:flex;"><span>  &lt;header /&gt;
-</span></span><span style="display:flex;"><span>  &lt;button /&gt;
-</span></span><span style="display:flex;"><span>  &lt;footer /&gt;
-</span></span><span style="display:flex;"><span>&lt;/main&gt;
-</span></span></code></pre></div><p>Semantic HTML is extremely important for websites due to two main factors:</p> </p>
+        <p class="line-summary"> <p>I think most people know the basics about semantic HTML, where you use the correct HTML elements to clearly state the purpose of a page.</p> </p>
         
     </div>
 </div>

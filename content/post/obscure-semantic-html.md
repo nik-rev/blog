@@ -5,6 +5,8 @@ date: 2024-04-17
 
 I think most people know the basics about semantic HTML, where you use the correct HTML elements to clearly state the purpose of a page.
 
+<!--more-->
+
 For example, instead of a "soup of divs" like this:
 
 ```html

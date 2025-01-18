@@ -5,6 +5,8 @@ date: 2024-10-04
 
 I've been using VSCode for several months when I first started programming. It was fine, but I was tired of using like 40 plugins and not using any of them to their capabilities.
 
+<!--more-->
+
 At the end of the day it felt like I had no control over my editor and I didn't have an idea of how things were going on. Because I didn't.
 
 I've been hearing about Neovim for a while until this point decided to give it a try. I expected it to be difficult to get started, because it's a mouseless modal editor -- a completely new way of editing code than what I've been used to.
