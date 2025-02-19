@@ -4,11 +4,13 @@ date: 2024-04-17
 readTime: true
 ---
 
-I think most people know the basics about semantic HTML, where you use the correct HTML elements to clearly state the purpose of a page.
+I think most people know the basics about semantic HTML, where you use certain HTML elements to describe the structure of your page in order to make it more accessible for screen readers.
+
+But not all semantic HTML is straightforward. Specifically, how do you represent a quote by someone and give them credit for it in a semantic way?
 
 <!--more-->
 
-For example, instead of a "soup of divs" like this:
+To understand, first let's talk about semantic HTML. An example below, instead of a "soup of divs" as follows:
 
 ```html
 <div class="content">
@@ -51,7 +53,7 @@ To quote, you can use the `blockquote` element:
 </blockquote>
 ```
 
-### cite element
+### `cite` element
 
 But what if you wanted to give credit to the original author? You might try something like this:
 
@@ -63,15 +65,15 @@ But what if you wanted to give credit to the original author? You might try some
 </blockquote>
 ```
 
-But the above approach is actually semantically incorrect. There are two problems with it:
+But the above approach is semantically incorrect. There are two problems with it:
 
 1. A `cite` element [should refer to _work_ and not _people_](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite#usage_notes).
 
-For example, we could put the link to a social media post or an article in a `cite` element. But not an individual person.
+   For example, we could put the link to a social media post or an article in a `cite` element. But not an individual person.
 
 1. Putting a `cite` element within a `blockquote` is [forbidden by the HTML spec](https://www.w3.org/TR/html5-author/the-blockquote-element.html#the-blockquote-element), due to the fact that it would make the citation a part of the quote.
 
-### parent element
+### `parent` element
 
 An alternative idea would be to use a `div` to group the quote and the citation together:
 
@@ -87,9 +89,9 @@ An alternative idea would be to use a `div` to group the quote and the citation 
 </div>
 ```
 
-But again, this can be used to help style those two elements, but semantically it doesn't join them together.
+But again, this can be used to help style those two elements, but semantically it doesn't join them together. To a screen reader they would appear as two distinct, unrelated elements.
 
-#### figure element
+#### `figure` element
 
 Finally, after researching I stumbled across a new solution, using the `figure` element:
 
@@ -109,13 +111,13 @@ Finally, after researching I stumbled across a new solution, using the `figure` 
 
 This way, we are properly describing the relationship between the `blockquote` and the `figcaption`.
 
-## `rehype-semantic-blockquotes` plugin
+## A plugin that adds a new syntax to Markdown to represent blockquotes semantically
 
-I wanted to be able to create such blockquotes and figcaptions on-the-fly, in markdown. There wasn't a solution available, so I wrote a rehype plugin myself to accomplish this.
+I wanted to be able to create such blockquotes and figcaptions on-the-fly, in markdown. There wasn't a solution available, so I wrote a plugin in order to accomplish this.
 
-Rehype is a parser for HTML and is commonly used with MDX and remark, a parser for markdown.
+[Rehype](https://github.com/rehypejs/rehype) is a parser for HTML and is commonly used with MDX and [remark](https://github.com/remarkjs/remark) -- a parser for markdown. Together, these tools allow you to get very creative with your markdown editing.
 
-It transforms markdown syntax like this:
+My plugin is called [`rehype-semantic-blockquotes`](https://github.com/nik-rev/rehype-semantic-blockquotes), and it transforms markdown syntax such as this:
 
 ```md
 > We cannot solve our problems with the same thinking we used when we created them.
@@ -139,6 +141,6 @@ Into the following HTML:
 </figure>
 ```
 
-The `data-*` attributes are useful for styling these blockquotes.
+The `@` syntax is added by the plugin. It makes it easy to author accessible content in markdown.
 
 You can find more information about how to use this on [`rehype-semantic-blockquotes`](https://github.com/nikitarevenco/rehype-semantic-blockquotes) plugin README!
