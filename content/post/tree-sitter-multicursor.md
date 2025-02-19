@@ -2,6 +2,7 @@
 title: Let's create a Tree Sitter grammar for the Helix Editor
 date: 2025-01-18
 readTime: true
+draft: true
 ---
 
 I've always been fascinated with [Tree Sitter](https://github.com/tree-sitter/tree-sitter), a powerful framework for creating grammars that parse text into syntax trees and incrementally update them.

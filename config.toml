@@ -1,6 +1,6 @@
 baseURL = 'https://nikrev.com'
 languageCode = 'en-us'
-title = 'Nikita Revenco'
+title = 'Nik Revenco'
 theme = 'typo'
 
 [taxonomies]
@@ -21,19 +21,18 @@ hideHeader = false
 # Intro on main page, content is markdown
 homeIntroTitle = 'Hi!'
 homeIntroContent = """
-I am 18 years old and from England. 🇬🇧
+I'm Nik, I am a fully self taught developer who started programming at 17 and fell in love with it ever since.
 
-In my free time I contribute to open-source software such as the [Helix Editor](https://github.com/helix-editor/helix/pulls/nik-rev) by fixing bugs and adding new features.
+In my free time I contribute to open source projects such as the [Helix Editor](https://github.com/helix-editor/helix) as a hobby. Here are some of my most proud pull requests:
+- Adding file operations to the file explorer such as delete files, rename files -- [#12902](https://github.com/helix-editor/helix/pull/12902)
+- Implemented a Language Server Protocol feature that shows you colored boxes next to colors in the file, such as in CSS -- [#12308](https://github.com/helix-editor/helix/pull/12308)
+- [*and a bunch more...*](https://github.com/search?q=author%3Anik-rev&type=pullrequests)
 
-I love learning new concepts and ideas. At the moment I'm learning backend development.
+I started with web development in TypeScript and React, it was fun but I realised that I am most interested in low-level performance optimizations, compilers, etc.
 
-Saying I'm a heavy terminal user is probably an understatement :). I practically live in the command-line. I use NixOS operating system and Helix as my IDE.
+My favorite language is Rust, of course :), it's the language that makes me feel really confident that my code isn't going to explode once its in production.
 
-Most of my time is spent on reading other people's code which made me realise just how important having clear conventions and readable code is. I care a lot about documentation and automated tests.
-
-So it should come as no surpsise then, that my favorite language is Rust. I've written code in over a dozen other languages, with Rust being both the most enjoyable *and* the most productive language. Honorable mentions include Haskell and TypeScript. I love me a strict type system.
-
-If you'd like to chat, send me an email at <code><span class="obfuscated" data-website="moc.verkin" data-user="mp" /></code>.
+I like monads. And NixOS!
 """
 
 # Collection to display on home
@@ -51,6 +50,10 @@ breadcrumbs = true
 [[params.social]]
 name = "github"
 url = "https://github.com/nik-rev"
+
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/nik-revenco-897b91310/"
 
 # Main menu pages
 [[params.menu]]
