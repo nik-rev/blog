@@ -1,82 +1,119 @@
 ---
-title: 13 Neovim tips and life hacks that significantly improved my productivity
+title: Neovim tips and life hacks that significantly improved my productivity
 date: 2024-09-11
 readTime: true
 ---
 
-I've been using Neovim for quite some time and have went through the entire Wiki. I would like to share some of my most loved tricks.
+I've been using Neovim for quite some time and have went through the entire Wiki. I would like to share some of my most loved tricks that have really skyrocketed my productivity.
 
 <!--more-->
 
-- `^` to move to first non-whitespace character, `$` for first character
-- `+` and `-` move to line below and above but non-whitespace characters 15
-- `j`, `k`, `l`, `h` to move down, up, left, right 1
-- `G` end of file, `gg` beginning of file 14
-- `%` jump to matching parenthesis
-- `t` jump before character, `f` jump to character, `T` and `F` are the reverse
-- `,` and `;` repeat `t`, `T`, `f`, `F` in same and opposite directions
-- `/` search forward, `?` search backward
-- `I`, `i`, `a`, `A` append at beginning of line / character and end of line / character
-- `guu`, `gUU` and `g~~` will make the current line lowercase, uppercase or alternate case
-- `40gg` to jump to the 40th line
-- `D`, `Y` and `C` instead of `d$`, `y$` and `c$`
-- `gx` opens link under cursor
-- `gf` opens relative or absolute file path under cursor
-- `CTRL v` visual block mode
-- `J` join line
-- `dk` and `dj` to delete 2 lines easily
-- `yib` is the same as `yi(` but easier to type
-- `gu`, `gU` and `g~` are operators that make the text lowercase, uppercase, or alternate case
-- in VISUAL `g CTRL v` increment each line in selection based on line number, e.g. `0 0 0 0` (separated by newlines) will become `1 2 3 4`
-- `d/hello` deletes until hello is found, `d/hello/e` deletes including the hello
-- `#` and `*` find the identifier under cursor forwards and backwards
-- in VISUAL `<` and `>` dedent and indent selection
-- in VISUAL BLOCK `I` to prepend to all lines at the start of selection, `$A` to append at end of lines
-- and `xp` to swap 2 characters
-- CTRL a increases numbr by 1, CTRL x decreases by 1. also takes in a count
-- in VISUAL `o` will go to the opposite end of the selection
-- `gv` to reselect the last selection
-- `CTRL wx` swap window
-- `CTRL wv` split vertically and `CTRL ws` horizontally
-- `CTRL wq` quit window
-- `CTRL w=` equalize window sizes
-- `vap` select around paragraph
-- `r` replace a character
-- `gp` and `gP` are like `p` and `P` but leave cursor after pasted text
-- `CTRL g` show filename and line count
-- `:center` centers text
-- `zz`, `zt`, `zb` position cursor in middle, top and bottom of screen
-- `ga` prints info about character under the cursor
-- `g?` is an operator that will rot13 encode the input
-- Using a count with an insert operator e.g. `o`, `a`, `I` etc will write it in insert mode that many times
-- `gi` insert text in same position as where insert mode was stopped last time
-- `/pattern/e` search for pattern and put cursor on the last character of pattern
-- `/pattern/e+1` ^ but +1 char to the left
-- `:%s/pattern//n` count number matches for pattern
-- `:sort u` sort whole file or range in VISUAL mode unique
-- `:sort n` sorts by number that it will find within the line
-- `/apple\C` for case-sensitive search
-- `g;` go to previous insert location
-- `g,` to to next previous insert location
-- `gi` insert mode in last edit location
-- in INSERT `CTRL u` delete all characters in current line
-- `''` jump to before last jump
-- `[{`, `]{`, `[(` and `](` go to last/next unmatched `{` and `(`
-- `g&` repeat last `:s`
-- `g$`, `g0`, `g^` are like `$`, `0` and `^` but will respect wrapped lines
-- `gJ` joins lines without inserting space
-- `gq` wrap lines
-- In O-PENDING mode we can use `v`, `V` and `CTRL v` to force operator to work charwise, linewise or blockwise
-- in command line `CTRL g` and `CTRL t` next and previous match (useful for when using `/` or `?` with an operator)
-- in command line `CTRL r+` paste contents from register `+` (so system clipboard, but we can use with other registers)
-- in command line `CTRL u` remove all characters
-- `:%norm` execute command on every line, or `:norm` for the lines selected. e.g. `:%norm $ciwhello`
-- `:g` execute command on each line that match pattern, e.g. `:g/^#/d` delete all comments from bash file
-- `:%s` substitute, e.g. `:%s/foo/bar/g`
-- `:g/foo/s/bar/baz/g` substitute bar with baz on all lines that contain foo
-- pipe output of commands into `| nvim`, super useful
-- `/\%V` will search inside visual selection
-- If clipboard register is `unnamedplus`, stuff we copy using system clipboard (not in vim) will also always be saved in the `"*` register, which is handy. e.g. we `dd` a line, it won't override what we copied!
-- use `dj` and `dk` to delete the current line and the line above/below
-- `<C-f>` edit ex mode in insert and normal modes
-- use `_` instead of `^` because it takes to first character on line and accepts a motion for N lines back, and easier to reach
+## Basic Navigation
+
+- `h`, `l` ~ Move left, right by one character
+- `j`, `k` ~ Move down, up by one line
+- `+`, `-` ~ Move to the next/previous non-whitespace character on the line
+- `^` ~ Move to the first non-whitespace character
+- `_` ~ Move to the first character on the line (also takes a count)
+- `$` ~ Move to the last character on the line
+- `G` ~ Move to the end of the file
+- `gg` ~ Move to the beginning of the file
+- `40gg` ~ Jump to line 40
+- `%` ~ Jump to matching parenthesis or bracket
+- `t{char}` ~ Jump before the next occurrence of `{char}`
+- `f{char}` ~ Jump to the next occurrence of `{char}`
+- `T{char}` / `F{char}` ~ Reverse of `t` and `f`
+- `,` and `;` ~ Repeat `t`, `T`, `f`, `F` in opposite/same direction
+
+## Searching
+
+- `/pattern` ~ Search forward
+- `?pattern` ~ Search backward
+- `#` and `*` ~ Search for the identifier under the cursor (backward/forward)
+- `/pattern/e` ~ Place cursor on last character of pattern
+- `/pattern/e+1` ~ Place cursor one character to the right of match
+- `/apple\C` ~ Case-sensitive search
+- `:%s/pattern//n` ~ Count occurrences of pattern
+- `/\%V` ~ Search inside visual selection
+
+## Editing
+
+- `i`, `I` ~ Insert at cursor / start of line
+- `a`, `A` ~ Append after cursor / end of line
+- `gi` ~ Insert at last edit position
+- `o`, `O` ~ Open new line below / above and enter insert mode
+- `r{char}` ~ Replace character under cursor
+- `J` ~ Join line with next one
+- `gJ` ~ Join lines without inserting space
+- `xp` ~ Swap two characters
+- `D`, `Y`, `C` ~ Instead of `d$`, `y$`, `c$`
+- `gq` ~ Wrap long lines
+
+## Case Modification
+
+- `guu` / `gUU` / `g~~` ~ Make current line lowercase, uppercase, or toggle case
+- `gu`, `gU`, `g~` ~ Operator to change case
+
+## Copying & Deleting
+
+- `yy` / `dd` ~ Yank/Delete entire line
+- `yib` ~ Yank inside `()`
+- `d/hello` ~ Delete until "hello"
+- `d/hello/e` ~ Delete up to and including "hello"
+- `dk` / `dj` ~ Delete current and previous/next line
+- `gp` / `gP` ~ Paste like `p` / `P` but leave cursor after pasted text
+
+## Visual Mode Tricks
+
+- `CTRL v` ~ Visual block mode
+- `<` / `>` ~ Dedent/Indent selected text
+- `I` in visual block ~ Insert text at the beginning of each line
+- `$A` in visual block ~ Append text at the end of each line
+- `o` ~ Jump to the other end of the selection
+- `gv` ~ Reselect last visual selection
+- `g CTRL v` ~ Increment each line numerically (e.g., `0 0 0 0` ~ `1 2 3 4`)
+
+## Window Management
+
+- `CTRL wx` ~ Swap windows
+- `CTRL wv` ~ Split vertically
+- `CTRL ws` ~ Split horizontally
+- `CTRL wq` ~ Quit window
+- `CTRL w=` ~ Equalize window sizes
+
+## Useful Operators & Motions
+
+- `vap` ~ Select around paragraph
+- `[{`, `]{`, `[(`, `](` ~ Move to last/next unmatched `{`, `(`
+- `g;` ~ Jump to previous insert location
+- `g,` ~ Jump to next insert location
+- `''` ~ Jump to before last jump
+
+## Command-line Mode Tricks
+
+- `CTRL r+` ~ Paste from system clipboard
+- `CTRL u` ~ Delete all characters
+- `CTRL g` / `CTRL t` ~ Next/previous match in search results
+- `:%norm` ~ Apply a command to every line (`:%norm $ciwhello`)
+- `:g/^#/d` ~ Delete all comments from a Bash file
+- `:g/foo/s/bar/baz/g` ~ Replace "bar" with "baz" in lines containing "foo"
+- `g&` ~ Repeat last substitution
+
+## Clipboard & Registers
+
+- `gx` ~ Open link under cursor
+- `gf` ~ Open file under cursor
+- If `unnamedplus` is set, copying with system clipboard (`CTRL c`) won’t overwrite Vim’s yank buffer.
+
+## Miscellaneous
+
+- `CTRL g` ~ Show filename and line count
+- `zz`, `zt`, `zb` ~ Center cursor on screen (middle, top, bottom)
+- `:center` ~ Center text
+- `ga` ~ Show character info under cursor
+- `g?` ~ ROT13 encode input
+- `CTRL a` / `CTRL x` ~ Increment/decrement number under cursor
+- `:sort u` ~ Sort lines uniquely
+- `:sort n` ~ Sort numerically
+- `<C-f>` ~ Edit Ex command in a full-page view
+- `_` instead of `^` ~ `_` moves to the first character on a line but also accepts a motion
