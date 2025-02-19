@@ -4,21 +4,21 @@ date: 2024-08-21
 readTime: true
 ---
 
-In December of 2023 I wanted to learn Web development, for fun. I was 6 months away from my A-Level exams and I was really bored.
+In December of 2023 I wanted to learn Web development out of curiosity. I was 6 months away from my A-Level exams and I was really bored.
 
-I found this website called [The Odin Project](https://www.theodinproject.com/), which is a free and open-source curriculum for learning web development. Perfect!
+I found this website called [The Odin Project](https://www.theodinproject.com/), which is a free and open-source curriculum for learning web development. Perfect...!
 
 <!--more-->
 
 ## Forced into Linux
 
-Unfortunately, one of the requirements for the course was to use Linux. Odin Project didn't support Windows, only Mac and Linux at the time. I didn't have a Mac, so...
+"Unfortunately", one of the requirements for the course was to use Linux. Odin Project didn't support Windows, only Mac and Linux at the time. I didn't have a Mac, so...
 
-It was an all-or-nothing situation. Either I use Linux, or I can't complete this course. Mind you, I had absolutely zero idea what a Linux was. I've only ever been using Windows before.
+It was an all-or-nothing situation. Either I use Linux, or I can't complete this course. Mind you, I had absolutely zero idea what a Linux was. I've only ever been using Windows before. (_and I didn't know much about programming either._)
 
 But despite that fact, my curiosity got the best of me and I decided to try it out.
 
-Having zero idea that it will change my life, I followed their installation instructions for Ubuntu. It took me an entire day to install it, but I finally did.
+Having zero idea that it will change my life, I followed their installation instructions for Ubuntu. It took me an entire day to install it, but after lots of pain I was able to do it (having never installed an operating system before :D).
 
 ## Descent into Madness
 
@@ -63,3 +63,5 @@ touch file{1..67}
 And oh wow. That just worked. It worked like a charm. I saved so much time from this. And from there on, I started learning more about Unix commands.
 
 I learned how to use `grep` to search for strings fast, and `find` to dig through the filesystem in order to find a file matching a pattern, which turned out _very_ useful for adjusting to unfamiliar codebases.
+
+And ever since then I've been using Linux. I embraced the commandline and my productivity skyrocketed!
