@@ -73,7 +73,7 @@ First, let's create `text`. `text` is just "any characters", _other than_ our re
 text: ($) => /[^#\[\]\(\)\|]+/,
 ```
 
-`text` will match one or more characters which are not the aformentioned ones.
+`text` will match one or more characters which are not the aforementioned ones.
 
 Now let's create `right_primary`, which means "**Primary** selection, with cursor on the **Right**".
 

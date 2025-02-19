@@ -65,8 +65,8 @@ name = "posts"
 url = "/posts"
 
 [[params.menu]]
-name = "projects"
-url = "/projects"
+name = "open-source"
+url = "/open-source"
 
 # Syntax highlight on code blocks
 [markup]

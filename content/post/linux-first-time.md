@@ -54,7 +54,7 @@ touch file1 file2 file3 file4 file5 ... file67
 
 Typing out the above is actually so much faster than if I were to use a GUI like a file manager to do the same thing.
 
-But better yet, I dicovered there was a way to do that much more concisely:
+But better yet, I discovered there was a way to do that much more concisely:
 
 ```sh
 touch file{1..67}

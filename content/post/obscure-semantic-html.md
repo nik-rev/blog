@@ -63,7 +63,7 @@ But what if you wanted to give credit to the original author? You might try some
 </blockquote>
 ```
 
-But the above aproach is actually semantically incorrect. There are two problems with it:
+But the above approach is actually semantically incorrect. There are two problems with it:
 
 1. A `cite` element [should refer to _work_ and not _people_](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite#usage_notes).
 

@@ -16,7 +16,9 @@ But honestly, it was way easier to get started than I originally anticipated. It
 
 Thankfully, Neovim supported all of those. But actually getting any of it setup was immense pain. It took me about 2 weeks of wrestling and tinkering with my neovim config to finally get a setup that felt right.
 
-There was quite a lot of bloat in my config, a lot of "eye candy" that I ended up getting rid of. For example [noice.nvim](https://github.com/folke/noice.nvim) which becomes distracting after a while.
+There was quite a lot of bloat in my config, a lot of "eye candy" that I ended up getting rid of. For example
+[noice <!--typos-ignore-->
+.nvim](https://github.com/folke/noice.nvim) which becomes distracting after a while.
 
 I've been using Neovim for several months by this point and things were starting to settle. But every week or so I had to spend **several hours** fixing my configs because a new error arose due to one of my 60+ plugins updating.
 
