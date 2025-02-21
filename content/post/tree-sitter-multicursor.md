@@ -1,101 +1,132 @@
 ---
-title: Let's create a Tree Sitter grammar for the Helix Editor
+title: Let's create a Tree Sitter grammar for Rust's string interpolation macros like println!
 date: 2025-01-18
 readTime: true
 draft: true
+toc: true
 ---
 
-I've always been fascinated with [Tree Sitter](https://github.com/tree-sitter/tree-sitter), a powerful framework for creating grammars that parse text into syntax trees and incrementally update them.
+I am using the [Helix Editor](https://github.com/helix-editor/helix) which uses tree-sitter for syntax highlighting. However, the Rust tree-sitter grammar does _not_ support parsing the string interpolations of macros like `format!` and `eprintln!`. This means that Helix cannot have syntax highlighting for these macros. **_for now!_**
+
+In this blog post we will learn how to create a Tree Sitter grammar from scratch, in order to add syntax highlighting for these macros! _Exciting_!
 
 <!--more-->
 
-This is perfect for text editors, because when you're editing a file more often than not the file will be in an invalid state and wouldn't be able to compile.
+An example of some Rust code that uses string interpolation:
 
-But with Tree Sitter, only the region which you are editing is affected. Syntax highlighting takes milliseconds and happens in real time. Other parts of the code are not affected!
+```rs
+fn main() {
+    let (name, age) = ("Bob", 25);
 
-## Purpose of this grammar
+    println!("My name is {name} and I am {age} years old.");
+    // ^ My name is Bob and I am 25 years old.
 
-I'm really glad to finally have an excuse to learn how Tree Sitter works for a real world project. Specifically, I've been using the [Helix Editor](https://github.com/helix-editor/helix) for a while now which is lacking the `:help` command to view documentation on various commands right within the editor.
+    println!("Pi to 3 decimal places: {:.3}", f64::consts::PI);
+    // ^ Pi to 3 decimal places: 3.141
 
-Now, Helix is a selection-first editor with multi-cursor functionality as a core editing primitive. We could just write the help files in plaintext or markdown, but in my opiniont that wouldn't be enough.
-
-We need a way to _render_ Helix selections right within the editor, like this for example:
-
-![helix selections rendered in the editor](/helix-selections.png)
-
-## Creating the grammar
-
-I followed the [Creating Parsers](https://tree-sitter.github.io/tree-sitter/creating-parsers/1-getting-started.html) guide in order to set up my environment.
-
-But basically, these are the commands we need to run:
-
-```sh
-mkdir tree-sitter-multicursor
-cd tree-sitter-multicursor
-tree-sitter init
-tree-sitter generate
-pnpm install
+    println!("Debug: {:?}", ("tuple", [1, 2, 3], Some("value")));
+    // ^ Debug: ("tuple", [1, 2, 3], Some("value"))
+}
 ```
 
-Our point of interest is the `grammar.js` file. This is where we'll be doing all of our work, by using high-level APIs that Tree Sitter provides. Not all parsers will be possible using the JavaScript API, so sometimes using C is required to implement certain rules. But in our case, we're good to go!
+## The Grammar of String Interpolation Macros
 
-This is our file:
+Grammars of languages can be expressed in a language called [Backus-Naur form](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form) (BNF). This is the [official grammar for string interpolations](https://doc.rust-lang.org/std/fmt/index.html#syntax) in rust:
 
-```js
-module.exports = grammar({
-  name: "multicursor",
+```
+format_string := text [ maybe_format text ] *
+maybe_format := '{' '{' | '}' '}' | format
+format := '{' [ argument ] [ ':' format_spec ] [ ws ] * '}'
+argument := integer | identifier
 
-  rules: {
-    // TODO: add the actual grammar rules
-    source_file: ($) => "hello",
-  },
-});
+format_spec := [[fill]align][sign]['#']['0'][width]['.' precision]type
+fill := character
+align := '<' | '^' | '>'
+sign := '+' | '-'
+width := count
+precision := count | '*'
+type := '' | '?' | 'x?' | 'X?' | identifier
+count := parameter | integer
+parameter := argument '$'
 ```
 
-First, let's implement rules for the primary selection with cursor on the left: `hello #[|world]#`. If we can get this one right, the others will be quite straightforward.
+### A quick tour of BNF Syntax
 
-If you mentally break down every token above, you can think of it like this:
+In order to understand the rest of this post, we'll need to know some BNF notation.
 
-- Text: `hello `
-- Primary Selection with Cursor on the Left:
-  - Opening: `#[|`
-  - Cursor: `w`
-  - Text (optional): `orld`
-  - Closing: `]#`
+`[stuff]` means that `stuff` is optional. We don't have to include it.
 
-That's right, we need a specific sequence of characters. We must **always** have the cursor, so the contents of each selection must be at least 1 character.
+For instance, say we have `:= '100'['.100'['.100']]`. Valid forms would be:
 
-Tree Sitter has a handy function called `seq` which matches any number of other rules, one after the other.
+- `100`
+- `100.100`
+- `100.100.100`
 
-First, let's create `text`. `text` is just "any characters", _other than_ our reserved ones. We don't want to allow users to write the characters `#`, `[`, `]`, `(`, `)` or `|` for a simple implementation. We'll think about how we can allow those characters later.
+An asterisk `*` means that a repetition of 0 or more.
 
-```js
-text: ($) => /[^#\[\]\(\)\|]+/,
+So if we have `:= '10'*`. Valid forms are:
+
+- `10`
+- `1010`
+- `101010`
+- _..._
+
+The pipe `|` means an OR. If we have two patterns, we choose one of them.
+
+If we have `:= 'a' | 'b' | 'c'`, then valid forms are:
+
+- `a`
+- `b`
+- `c`
+
+Finally, we can also reference other variables. If we have:
+
+```
+alice := 'alice'
+bob := 'bob'
+person := alice | bob
 ```
 
-`text` will match one or more characters which are not the aforementioned ones.
+Then valid forms for `person` are:
 
-Now let's create `right_primary`, which means "**Primary** selection, with cursor on the **Right**".
+- `alice`
+- `bob`
 
-```js
-right_primary: ($) =>
-  seq(
-    "#[",
-    repeat($.text),
-    "|]#",
-  ),
+Given all of the knowledge learned above, we can express numbers with the following BNF notation:
+
+```
+digit_nonzero := '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+digit := '0' | digit_nonzero
+floating_part := '.' digit *
+number := digit_nonzero * [floating_part]
 ```
 
-Our structure will look something as follows:
+Examples of valid forms for `number` in the above BNF notation:
 
-```js
-right_primary: ($) =>
-  seq(
-    /* ,
-    repeat(alias($.char_primary, $.char)),
-    $.cursor_primary,
-    $.end_right_primary,
-  ),
+- `100` which is `digit_nonzero digit_nonzero digit_nonzero`
+- `.412` which is `floating_part`
+- `100.412` which is `digit_nonzero digit_nonzero digit_nonzero floating_part`
+
+## Creating the Tree-Sitter Grammar
+
+Okay, now we can finally get to the interesting stuff. We will translate the following BNF syntax into a tree-sitter parser that can parse this syntax:
+
+```
+format_string := text [ maybe_format text ] *
+maybe_format := '{' '{' | '}' '}' | format
+format := '{' [ argument ] [ ':' format_spec ] [ ws ] * '}'
+argument := integer | identifier
+
+format_spec := [[fill]align][sign]['#']['0'][width]['.' precision]type
+fill := character
+align := '<' | '^' | '>'
+sign := '+' | '-'
+width := count
+precision := count | '*'
+type := '' | '?' | 'x?' | 'X?' | identifier
+count := parameter | integer
+parameter := argument '$'
+
 ```
 
-To start implementing our rules, first let's think about what our requirements are:
+### Initialising the Project
