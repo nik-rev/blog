@@ -10,6 +10,6 @@ Some of the stuff I've worked on!
 
 ### Patchy
 
-[`patchy`] is a command line app that makes it easy to declaratively manage personal forks by automatically merging pull requests.
+[`patchy`](https://github.com/nik-rev/patchy) is a command line app that makes it easy to declaratively manage personal forks by automatically merging pull requests.
 
 ![patchy](https://github.com/user-attachments/assets/3091e192-0587-4b38-b0d5-557ac7dff49f)
