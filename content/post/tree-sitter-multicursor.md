@@ -62,9 +62,9 @@ For instance, say we have `:= '100'['.100'['.100']]`. Valid forms would be:
 - `100.100`
 - `100.100.100`
 
-An asterisk `*` means that a repetition of 0 or more.
+An asterisk `*` is a repetition of 0 or more.
 
-So if we have `:= '10'*`. Valid forms are:
+So if we have `:= '10' *`. Valid forms are:
 
 - `10`
 - `1010`
