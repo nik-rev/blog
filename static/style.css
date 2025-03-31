@@ -1,3 +1,58 @@
+/* fonts */
+@font-face {
+  font-family: "Literata";
+  src: url("fonts/Literata/Literata-Light.woff2") format("woff2");
+  font-weight: light;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Literata";
+  src: url("fonts/Literata/Literata-LightItalic.woff2") format("woff2");
+  font-weight: light;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Literata";
+  src: url("fonts/Literata/Literata-SemiBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Literata";
+  src: url("fonts/Literata/Literata-SemiBoldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monaspace";
+  src: url("fonts/Monaspace/MonaspaceArgon-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monaspace";
+  src: url("/fonts/Monaspace/MonaspaceArgon-SemiBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-body: "Literata", Georgia, Cambria, "Noto Serif", "Droif Serif",
+    ui-serif, serif;
+  --font-mono: "Monaspace", ui-monospace, monospace;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --foreground: #222;
@@ -26,6 +81,7 @@
 }
 body {
   color: var(--foreground);
+  font-family: var(--font-body);
   background-color: var(--background);
 }
 .secondary {
@@ -34,7 +90,13 @@ body {
 a,
 a:link,
 a:visited {
-  color: var(--link);
+  color: var(--foreground);
+  &:hover {
+    color: var(--link);
+  }
+}
+code {
+  font-family: var(--font-mono);
 }
 a:has(code) {
   text-decoration-color: var(--accent) !important;
@@ -127,6 +189,9 @@ h4,
 h5,
 h6 {
   line-height: 1.25;
+  code {
+    font-size: inherit;
+  }
 }
 h2 {
   margin-top: 60px;
@@ -172,12 +237,6 @@ table td {
 	 */
   border-left-style: none;
   padding: 0.6em;
-}
-table th:first-child,
-table td:first-child {
-  border-left-width: 6px;
-  border-left-color: var(--background2);
-  border-left-style: solid;
 }
 table th {
   border-top-width: 1px;
