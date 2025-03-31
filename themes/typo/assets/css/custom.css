@@ -1,7 +1,0 @@
-/* Place custom css here */
-
-.obfuscated::before {
-  content: attr(data-website) "\0040" attr(data-user);
-  direction: rtl;
-  unicode-bidi: bidi-override;
-}

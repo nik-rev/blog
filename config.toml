@@ -1,88 +1,36 @@
-baseURL = 'https://nikrev.com'
-languageCode = 'en-us'
-title = 'Nik Revenco'
-theme = 'typo'
+# The URL the site will be built for
+base_url = "https://inputusername.github.io/zola-hook/"
 
-[taxonomies]
-tag = 'tags'
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
 
-# Google analytics code
-# googleAnalytics = "G-xxxxxxxxx"
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
 
-[params]
-# Meta description
-description = "Personal Website"
+title = "Hook"
+description = "Hook is a theme for Zola"
 
-# Appearance settings
-theme = 'auto'
-colorPalette = 'default'
-hideHeader = false
+taxonomies = [{ name = "categories" }, { name = "tags" }]
 
-# Intro on main page, content is markdown
-homeIntroTitle = 'Hi!'
-homeIntroContent = """
-I'm Nik, I am a fully self taught developer who started programming at 17 and fell in love with it ever since.
+[markdown]
 
-In my free time I contribute to open source projects such as the [Helix Editor](https://github.com/helix-editor/helix) as a hobby. Here are some of my most proud pull requests:
-- Adding file operations to the file explorer such as delete files, rename files -- [#12902](https://github.com/helix-editor/helix/pull/12902)
-- Implemented a Language Server Protocol feature that shows you colored boxes next to colors in the file, such as in CSS -- [#12308](https://github.com/helix-editor/helix/pull/12308)
-- [*and a bunch more...*](https://github.com/search?q=author%3Anik-rev&type=pullrequests)
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+highlight_theme = "css"
+highlight_themes_css = [
+  { theme = "white", filename = "syntax-white.css" },
+  { theme = "black", filename = "syntax-black.css" },
+]
+extra_syntaxes_and_themes = ["highlight_themes"]
 
-I started with web development in TypeScript and React, it was fun but I realised that I am most interested in low-level performance optimizations, compilers, etc.
+bottom_footnotes = true
 
-My favorite language is Rust, of course :), it's the language that makes me feel really confident that my code isn't going to explode once its in production.
+[extra]
+# Put all your custom variables here
 
-I like monads. And NixOS!
-"""
-
-# Collection to display on home
-# homeCollectionTitle = 'Posts'
-# homeCollection = 'posts'
-
-# Lists parameters
-paginationSize = 100
-listSummaries = true
-listDateFormat = '2 Jan 2006'
-
-# Breadcrumbs
-breadcrumbs = true
-
-[[params.social]]
-name = "github"
-url = "https://github.com/nik-rev"
-
-[[params.social]]
-name = "linkedin"
-url = "https://www.linkedin.com/in/nik-revenco-897b91310/"
-
-# Main menu pages
-[[params.menu]]
-name = "home"
-url = "/"
-
-[[params.menu]]
-name = "posts"
-url = "/posts"
-
-[[params.menu]]
-name = "open-source"
-url = "/open-source"
-
-# Syntax highlight on code blocks
-[markup]
-[markup.highlight]
-style = 'algol'
-
-[markup.goldmark.renderer]
-# Do not strip inline HTML
-unsafe = true
-
-# Giscus comments
-# [params.giscus]
-# enable = false
-# repo = "nik-rev/nik-rev"
-# repoid = "repoId"
-# category = "Blog"
-# categoryid = "categoryId"
-# mapping = "pathname"
-# theme = "preferred_color_scheme"
+links = [
+  { title = "Mail", href = "mailto:example@example.com" },
+  { title = "GitHub", href = "https://github.com" },
+  { title = "LinkedIn", href = "https://linkedin.com" },
+]
