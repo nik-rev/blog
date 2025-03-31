@@ -1,6 +1,3 @@
-@import url("syntax-black.css") (prefers-color-scheme: dark);
-@import url("syntax-white.css") (prefers-color-scheme: light);
-
 @media (prefers-color-scheme: light) {
   :root {
     --foreground: #222222;
@@ -27,6 +24,35 @@
     --table-border: var(--tertiary);
     --table-row: #1e1e1e;
   }
+}
+
+.z-code {
+  color: var(--foreground);
+  background-color: var(--background2);
+}
+.z-punctuation {
+  color: var(--secondary);
+}
+
+.z-comment {
+  color: var(--secondary);
+}
+.z-string {
+  color: var(--link);
+  font-weight: bold;
+}
+.z-constant.z-numeric {
+  color: var(--link);
+  font-weight: bold;
+}
+.z-constant.z-language {
+  color: var(--link);
+  font-weight: bold;
+}
+.z-storage,
+.z-entity.z-name.z-tag,
+.z-keyword {
+  color: var(--accent);
 }
 
 body {
