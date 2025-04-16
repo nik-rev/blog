@@ -2,6 +2,12 @@
 
 Some of the stuff I've worked on!
 
+### Ferrishot
+
+[`ferrishot`] is a screenshot app written in Rust. Inspired by flameshot!
+
+![ferrishot](https://github.com/user-attachments/assets/e5a35b44-f9f8-4a05-8e4c-f703b85ce4da)
+
 ### Countryfetch
 
 [`countryfetch`](https://github.com/nik-rev/countryfetch) is a Neofetch-inspired command line tool that retrieves information about countries.
