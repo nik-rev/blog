@@ -60,6 +60,11 @@
     .date {
       margin-bottom: 5px;
     }
+    .ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;      
+    }
   </style>
   <body>
     {% block header %}
@@ -91,16 +96,18 @@
           {% endif %}
           {% if blog.pages %}
             <h2>Recent posts</h2>
-            <ul>
+            <ul class="ul">
               {% for post in blog.pages | slice(end=20) %}
-                <p class="secondary small date">
-                  {% if post.date -%}
-                    {{ post.date | date(format="%-d %B, %Y") }}
-                  {%- endif %}
-                </p>
-                <li>
-                  <a href="{{ post.permalink }}">{{ post.title }}</a>
-                </li>
+                <div class="non">
+                  <p class="secondary small date">
+                    {% if post.date -%}
+                      {{ post.date | date(format="%-d %B, %Y") }}
+                    {%- endif %}
+                  </p>
+                  <li>
+                    <a href="{{ post.permalink }}">{{ post.title }}</a>
+                  </li>
+                </div>
               {% endfor %}
             </ul>
             <p>
