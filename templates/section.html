@@ -1,21 +1,27 @@
 {% extends "page.html" %}
 
-{% block title %}{{ config.title }} | {{ section.title }}{% endblock title %}
+{% block title %}
+    {{ config.title }} | {{ section.title }}
+{% endblock title %}
 
 {% block content %}
-<main>
-    <h1>{{ section.title }}</h1>
-    {% if section.pages %}
-    {% for year, posts in section.pages | group_by(attribute="year") %}
-    <h2>{{ year }}</h2>
-    <ul>
-        {% for post in posts %}
-        <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
+    <main>
+        <h1>{{ section.title }}</h1>
+
+        {% for year, posts in section.pages | group_by(attribute="year") %}
+            <h2>{{ year }}</h2>
+            <ul>
+                {% for post in posts %}
+                    <p class="secondary small date">
+                      {% if post.date -%}
+                        {{ post.date | date(format="%-d %B") }}
+                      {%- endif %}
+                    </p>
+                    <li>
+                      <a href="{{ post.permalink }}">{{ post.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
         {% endfor %}
-    </ul>
-    {% endfor %}
-    {% else %}
-    <p>No posts yet.</p>
-    {% endif %}
-</main>
+    </main>
 {% endblock content %}

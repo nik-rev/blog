@@ -1,38 +1,50 @@
 {% extends "index.html" %}
 
-{% block title %}{{ config.title }} | {{ page.title }}{% endblock title %}
-{% block description %}{{ page.description | default(value=config.description) }}{% endblock description %}
+{% block title %}
+  {{ config.title }} | {{ page.title }}
+{% endblock title %}
+
+{% block description %}
+  {{ page.description | default(value=config.description) }}
+{% endblock description %}
 
 {% block header %}
-<header class="space">
-    <a href="{{ config.base_url }}">&LeftArrow; Home</a>
-</header>
+  <header class="space">
+  <a href="{{ config.base_url }}">&LeftArrow; Home</a>
+  </header>
 {% endblock header %}
 
 {% block content %}
-<main>
-    <h1>{{ page.title }}</h1>
-    {% if page.date or page.taxonomies %}
-    <p class="secondary small">
-        {% if page.date %}{{ page.date | date(format="%-d %B, %Y") }}{% endif %}
+    <main>
+      <h1>{{ page.title }}</h1>
+      {% if page.date or page.taxonomies %}
+        <p class="secondary small">
+          {% if page.date %}
+            {{ page.date | date(format="%-d %B, %Y") }}
+          {% endif %}
 
-        {% set_global sorted_taxonomies = [] %}
-        {% for taxonomy_name, _ in page.taxonomies %}
-        {% set_global sorted_taxonomies = sorted_taxonomies | concat(with=taxonomy_name) %}
-        {% endfor %}
-        {% set_global sorted_taxonomies = sorted_taxonomies | sort %}
+          {% set_global sorted_taxonomies = [] %}
+          {% for taxonomy_name, _ in page.taxonomies %}
+            {% set_global sorted_taxonomies = sorted_taxonomies | concat(with=taxonomy_name) %}
+          {% endfor %}
 
-        {% for taxonomy_name in sorted_taxonomies %}
-        {% set terms = page.taxonomies[taxonomy_name] %}
-        - {{ taxonomy_name | capitalize }}:
-        {% for term_name in terms %}
-        {% set term = get_taxonomy_term(kind=taxonomy_name, term=term_name) %}
-        <a href="{{ term.permalink }}">{{ term.name }}</a>{% if not loop.last %},{% endif %}
-        {% endfor %}
-        {% endfor %}
-    </p>
-    {% endif %}
-    <div class="space"></div>
-    {{ page.content | safe }}
-</main>
+          {% set_global sorted_taxonomies = sorted_taxonomies | sort %}
+
+          {% for taxonomy_name in sorted_taxonomies %}
+            {% set terms = page.taxonomies[taxonomy_name] %}
+            - {{ taxonomy_name | capitalize }}:
+
+            {% for term_name in terms %}
+              {% set term = get_taxonomy_term(kind=taxonomy_name, term=term_name) %}
+              <a href="{{ term.permalink }}">
+                {{ term.name }}
+              </a>
+              {% if not loop.last %},{% endif %}
+            {% endfor %}
+          {% endfor %}
+        </p>
+      {% endif %}
+      <div class="space"></div>
+      {{ page.content | safe }}
+    </main>
 {% endblock content %}

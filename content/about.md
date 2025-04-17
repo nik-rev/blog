@@ -1,7 +1,7 @@
 +++
-title = "About"
-
-extra.in_header = true
+title = "Hello World"
+extra.in_header = false
+draft = true
 +++
 
-Hook is a theme for [Zola](https://getzola.org), a static site generator.
+How did I get here...?

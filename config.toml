@@ -1,6 +1,6 @@
 base_url = "https://nikrev.com"
 build_search_index = false
-title = "Nik Revenco"
+title = "Nik Revenco 🦀"
 description = "My personal blog"
 
 taxonomies = [{ name = "categories" }, { name = "tags" }]
@@ -13,7 +13,6 @@ bottom_footnotes = true
 
 [extra]
 links = [
-  { title = "Mail", href = "mailto:example@example.com" },
   { title = "GitHub", href = "https://github.com/nik-rev" },
   { title = "LinkedIn", href = "https://linkedin.com" },
 ]
