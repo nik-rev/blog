@@ -6,7 +6,6 @@ description = "My personal blog"
 taxonomies = [{ name = "categories" }, { name = "tags" }]
 
 [markdown]
-
 highlight_code = true
 highlight_theme = "css"
 bottom_footnotes = true
