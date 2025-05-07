@@ -1,5 +1,5 @@
 ---
-title: "Having fun with generics and complex types in Rust: Passing either a value or an updater to a function!"
+title: "Fun with traits, generics and complex types in Rust: Pass either a new value or compute the new value from a closure to a method"
 date: 2025-05-7
 readTime: true
 ---
