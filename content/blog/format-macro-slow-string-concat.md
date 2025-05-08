@@ -1,5 +1,5 @@
 ---
-title: Rust's `format!` macro is slow for simple string concatenation. But why?
+title: Rust's format! macro is slow for simple string concatenation. But why?
 date: 2025-03-29
 readTime: true
 ---
