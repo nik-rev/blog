@@ -3,7 +3,7 @@
 
 Hi! I love contributing to open source and programming in Rust. It is my _favorite_ language and I love how productive I am with it.
 
-I am working on [ferrishot](ferrishot.com), a powerful cross-platform screenshot app! ![GitHub Repo stars](https://img.shields.io/github/stars/nik-rev/ferrishot)
+I am working on [ferrishot](https://ferrishot.com), a powerful cross-platform screenshot app! ![GitHub Repo stars](https://img.shields.io/github/stars/nik-rev/ferrishot)
 
 Open source contributions I am most proud of:
 
