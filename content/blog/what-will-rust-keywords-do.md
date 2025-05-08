@@ -1,5 +1,5 @@
 ---
-title: What will these reserved Rust keywords do? Theory and speculation!
+title: What will these reserved Rust keywords do? Theory and speculation
 date: 2025-04-01
 readTime: true
 ---
