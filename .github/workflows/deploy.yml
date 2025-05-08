@@ -8,10 +8,8 @@ jobs:
     name: Build and deploy site
     runs-on: ubuntu-latest
     steps:
-      # Checkout
       - name: Checkout main
         uses: actions/checkout@v3.0.0
-      # Build & deploy
       - name: Deploy to gh-pages branch
         uses: shalzz/zola-deploy-action@v0.20.0
         env:
