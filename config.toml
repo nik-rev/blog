@@ -1,5 +1,6 @@
 base_url = "https://nikrev.com"
 build_search_index = false
+
 title = "Nik Revenco 🦀"
 
 description = "My personal blog"
