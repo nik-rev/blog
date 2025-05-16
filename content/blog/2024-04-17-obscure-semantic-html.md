@@ -1,6 +1,5 @@
 ---
 title: What you might not know about Semantic Blockquotes in HTML
-readTime: true
 ---
 
 I think most people know the basics about semantic HTML, where you use certain HTML elements to describe the structure of your page in order to make it more accessible for screen readers.

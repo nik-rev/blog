@@ -1,6 +1,5 @@
 ---
 title: Iced sets an example of a Rust UI library. It got me onboard in writing UIs in a functional, pure style. Here's why
-readTime: true
 ---
 
 I'm using [`iced`](https://github.com/iced-rs/iced), a native UI library for Rust _inspired_ by Elm architecture (which is a purely functional way of doing UI) for my app [`ferrishot`](https://github.com/nik-rev/ferrishot) (a desktop screenshot app inspired by flameshot)

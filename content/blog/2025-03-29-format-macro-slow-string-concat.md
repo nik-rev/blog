@@ -1,6 +1,5 @@
 ---
 title: Rust's format! macro is slow for simple string concatenation. But why?
-readTime: true
 ---
 
 I'm wondering why is `format!` (which is a compiler built-in macro) so much slower for string concatenation than doing it "manually" by calling `String::with_capacity` followed by a series of `String::push_str`

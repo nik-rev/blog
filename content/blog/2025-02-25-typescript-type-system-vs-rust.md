@@ -1,6 +1,5 @@
 ---
 title: I thought TypeScript's type system was powerful. Until I tried Rust.
-readTime: true
 ---
 
 My first language was JavaScript. Then TypeScript. TypeScript caught many bugs which I've experienced with JS, such as spending 2 hours debugging because I accidentally wrote "false" instead of false. TypeScript caught these bugs. I was amazed by how "powerful" its type system is

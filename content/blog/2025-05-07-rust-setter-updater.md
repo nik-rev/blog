@@ -1,6 +1,5 @@
 ---
 title: "Fun with traits, generics and complex types in Rust: Pass either a new value or compute the new value from a closure to a method"
-readTime: true
 ---
 
 I have a type `Person` as follows:

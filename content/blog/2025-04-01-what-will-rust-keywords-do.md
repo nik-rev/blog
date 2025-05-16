@@ -1,6 +1,5 @@
 ---
 title: What will these reserved Rust keywords do? Theory and speculation
-readTime: true
 ---
 
 I found this page which lists all reserved keywords for Rust: https://doc.rust-lang.org/reference/keywords.html

@@ -1,6 +1,5 @@
 ---
 title: I gave Helix a try and now I can't see myself using any other text editor
-readTime: true
 ---
 
 I've been using VSCode for several months when I first started programming. It was fine, but I was tired of using like 40 extensions and not using any of them to their capabilities. I wanted something new.

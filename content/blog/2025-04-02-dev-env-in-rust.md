@@ -1,6 +1,5 @@
 ---
 title: My Dev environment is fully written in Rust!
-readTime: true
 ---
 
 Since I started learning Rust 5 months ago, I have since replaced my full dev environment with software written in Rust.

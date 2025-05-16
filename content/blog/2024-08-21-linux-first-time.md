@@ -1,6 +1,5 @@
 ---
 title: I was forced to use Linux. But now I love it.
-readTime: true
 ---
 
 In December of 2023 I wanted to learn Web development out of curiosity. I was 6 months away from my A-Level exams and I was really bored.

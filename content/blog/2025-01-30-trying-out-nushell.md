@@ -1,6 +1,5 @@
 ---
 title: I switched from Zsh to Nushell. It's a beautiful shell, I'm never going back!
-readTime: true
 ---
 
 I switched from zsh to nushell. It is so good _wow_, I've been using it for a couple months as an interactive shell but recently just started writing scripts with it. I'm wondering why I didn't do it sooner!

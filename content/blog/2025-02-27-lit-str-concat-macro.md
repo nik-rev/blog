@@ -1,6 +1,5 @@
 ---
 title: Rust's std macros like include_str! and env! have a superpower, and how can we achieve it?
-readTime: true
 ---
 
 So you can use the `concat!` macro to pass string literals into macros:

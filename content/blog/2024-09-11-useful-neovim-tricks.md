@@ -1,6 +1,5 @@
 ---
 title: Neovim tips and life hacks that significantly improved my productivity
-readTime: true
 ---
 
 I've been using Neovim for quite some time and have went through the entire Wiki. I would like to share some of my most loved tricks that have really skyrocketed my productivity.

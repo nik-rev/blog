@@ -1,8 +1,6 @@
 ---
 title: Let's create a Tree Sitter grammar for Rust's string interpolation macros like println!
-readTime: true
 draft: true
-toc: true
 ---
 
 I am using the [Helix Editor](https://github.com/helix-editor/helix) which uses tree-sitter for syntax highlighting. However, the Rust tree-sitter grammar does _not_ support parsing the string interpolations of macros like `format!` and `eprintln!`. This means that Helix cannot have syntax highlighting for these macros. **_for now!_**
