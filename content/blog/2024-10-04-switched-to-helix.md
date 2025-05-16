@@ -1,6 +1,5 @@
 ---
 title: I gave Helix a try and now I can't see myself using any other text editor
-date: 2024-10-04
 readTime: true
 ---
 

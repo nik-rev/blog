@@ -1,6 +1,5 @@
 ---
 title: A cursed way to combine module paths in Rust's declarative macros
-date: 2025-05-16
 readTime: true
 ---
 

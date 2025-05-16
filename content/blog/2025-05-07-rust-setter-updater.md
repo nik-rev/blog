@@ -1,6 +1,5 @@
 ---
 title: "Fun with traits, generics and complex types in Rust: Pass either a new value or compute the new value from a closure to a method"
-date: 2025-05-7
 readTime: true
 ---
 

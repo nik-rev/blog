@@ -1,6 +1,5 @@
 ---
 title: How I install Arch Linux with full disk encryption
-date: 2024-09-02
 readTime: true
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: I switched to NixOS from Arch Linux and I'm never going back
-date: 2024-10-02
 readTime: true
 ---
 

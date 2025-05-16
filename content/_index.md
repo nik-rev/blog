@@ -3,7 +3,10 @@
 
 I love open source software and programming in Rust :)
 
-I am working on [ferrishot](https://ferrishot.com), a powerful cross-platform screenshot app! ![GitHub Repo stars](https://img.shields.io/github/stars/nik-rev/ferrishot)
+My software:
+
+- [ferrishot](https://ferrishot.com), a powerful cross-platform screenshot app[![ferrishot GitHub Repo stars](https://img.shields.io/github/stars/nik-rev/ferrishot)](https://github.com/nik-rev/ferrishot)
+- [countryfetch](https://github.com/nik-rev/countryfetch) is a command line app which displays your country's flag in beautiful ASCII art [![countryfetch GitHub Repo stars](https://img.shields.io/github/stars/nik-rev/countryfetch)](https://github.com/nik-rev/countryfetch)
 
 Open source contributions I am most proud of:
 

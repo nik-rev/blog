@@ -1,6 +1,5 @@
 ---
 title: Let's create a Tree Sitter grammar for Rust's string interpolation macros like println!
-date: 2025-01-18
 readTime: true
 draft: true
 toc: true

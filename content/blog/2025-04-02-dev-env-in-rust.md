@@ -1,6 +1,5 @@
 ---
 title: My Dev environment is fully written in Rust!
-date: 2025-04-02
 readTime: true
 ---
 

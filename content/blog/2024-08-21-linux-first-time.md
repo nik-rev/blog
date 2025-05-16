@@ -1,6 +1,5 @@
 ---
 title: I was forced to use Linux. But now I love it.
-date: 2024-08-21
 readTime: true
 ---
 

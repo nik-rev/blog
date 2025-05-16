@@ -1,6 +1,5 @@
 ---
 title: I switched from Zsh to Nushell. It's a beautiful shell, I'm never going back!
-date: 2025-01-30
 readTime: true
 ---
 

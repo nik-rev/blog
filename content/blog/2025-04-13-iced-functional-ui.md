@@ -1,6 +1,5 @@
 ---
 title: Iced sets an example of a Rust UI library. It got me onboard in writing UIs in a functional, pure style. Here's why
-date: 2025-04-13
 readTime: true
 ---
 

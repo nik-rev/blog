@@ -1,6 +1,5 @@
 ---
 title: Neovim tips and life hacks that significantly improved my productivity
-date: 2024-09-11
 readTime: true
 ---
 

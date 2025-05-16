@@ -1,6 +1,5 @@
 ---
 title: What you might not know about Semantic Blockquotes in HTML
-date: 2024-04-17
 readTime: true
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Rust's std macros like include_str! and env! have a superpower, and how can we achieve it?
-date: 2025-02-27
 readTime: true
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: I thought TypeScript's type system was powerful. Until I tried Rust.
-date: 2025-02-25
 readTime: true
 ---
 
