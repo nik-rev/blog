@@ -8,6 +8,8 @@ Today, I ran into an interesting problem with a not-so-obvious solution: How do 
 
 > **TLDR:**
 >
+> Use repetition `$($segment:ident)::*` with `::` separator. Each path segment is an identifier (`ident`).
+>
 > ```rust
 > mod a {
 >     pub mod b {
@@ -334,7 +336,7 @@ The above (with `path::to::some_module` as `$($segment)::*`) will expand to this
 path::to::some_module::some_identifier
 ```
 
-This feels like a "cheat", I have looked for a long time and haven't found anyone talk about this.
+I have looked for a long time and haven't found anyone talk about this.
 So the correct version of the macro I tried to make is this:
 
 ```rust
@@ -359,4 +361,4 @@ macro_rules! declare_commands {
 }
 ```
 
-The full code can be seen on GitHub.
+[The full code can be seen on GitHub.](https://github.com/nik-rev/nik-rev/blob/eef31f37006db091398ed65050a7582518dddf82/content/blog/2025-05-16-a-cursed-way-to-combine-module-paths-in-rust-s-declarative-macros.rs)
