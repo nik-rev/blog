@@ -1,14 +1,10 @@
 #!/usr/bin/env nu
 
 def main [title: string] {
-  let date = date now | format date "%Y-%m-%d";
+  let date = date now | format date "%Y-%m-%d"
   let filename = $"content/blog/($date)-($title | str kebab-case).md"
-  let contents = $"---
-title: ($title)
-date: ($date)
-readTime: true
----\n\n"
+  let contents = { title: $title, date: $date, readTime: true } | to yaml | $"---\n($in)---\n\n"
 
   $contents o> $filename
-  hx $"($filename):7"
+  hx $"($filename):($contents | lines | length | $in + 1)"
 }
