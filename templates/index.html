@@ -19,51 +19,51 @@
         href="{{ get_url(path='style.css', cachebust=true) }}"
       />
     {% endblock extra_head %}
-
-    {% block feed_link %}
-      {% if config.generate_feeds %}
-        {% if config.feed_filenames %}
-          {% for feed in config.feed_filenames %}
-            {% if feed == "atom.xml" %}
-              <link
-                rel="alternate"
-                type="application/atom+xml"
-                title="{{ config.title | safe }} - Atom Feed"
-                href="{{ get_url(path=feed, trailing_slash=false) | safe }}"
-              />
-            {% elif feed == "rss.xml" %}
-              <link
-                rel="alternate"
-                type="application/rss+xml"
-                title="{{ config.title | safe }} - RSS Feed"
-                href="{{ get_url(path=feed, trailing_slash=false) | safe }}"
-              />
-            {% else %}
-              <link
-                rel="alternate"
-                href="{{ get_url(path=feed, trailing_slash=false) | safe }}"
-              />
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          <link
-            rel="alternate"
-            type="application/atom+xml"
-            title="{{ config.title | safe }}"
-            href="{{ get_url(path='atom.xml', trailing_slash=false) | safe }}"
-          />
-        {% endif %}
-      {% endif %}
-    {% endblock %}
   </head>
   <style>
-    .date {
-      margin-bottom: 5px;
+    .posts__year, .posts {
+      list-style-type: none;
     }
-    .ul {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;      
+
+    .posts {
+      padding-left: 0;
+      .posts__title {
+        margin-bottom: 3rem;
+      }
+      .posts__year {
+        padding: 0;
+        width: 100%;
+      }
+      .post {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+        line-height: 1.6;
+        font-size: 1.4rem;
+        .post__date {
+          margin: 0;
+          color: var(--secondary);
+        }
+        .post__link {
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    @media (width >= 600px) {
+      .posts .post {
+        display: grid;
+        grid-template-columns: 5rem 1fr ;
+        column-gap: 6.0rem ;
+        margin-bottom: 2rem ;
+        width: full ;
+        .post__date {
+          width: max-content ;
+          align-content: center ;
+        }
+      }
     }
   </style>
   <body>
@@ -87,35 +87,24 @@
 
     {% block content %}
       {% set blog = get_section(path="blog/_index.md") %}
-      {% if section.content or blog.pages %}
-        <main>
-          {% if section.content %}
-            <div {% if blog.pages %}class="space" {% endif %}>
-              {{ section.content | safe }}
-            </div>
-          {% endif %}
-          {% if blog.pages %}
-            <h2>Recent posts</h2>
-            <ul class="ul">
-              {% for post in blog.pages | slice(end=20) %}
-                <div class="non">
-                  <p class="secondary small date">
-                    {% if post.date -%}
-                      {{ post.date | date(format="%-d %B, %Y") }}
-                    {%- endif %}
-                  </p>
-                  <li>
-                    <a href="{{ post.permalink }}">{{ post.title }}</a>
-                  </li>
-                </div>
+      <main>
+        <div class="space">
+          {{ section.content | safe }}
+        </div>
+        <ul class="posts">
+          {% for year, posts_that_year in blog.pages | group_by(attribute="year") %}
+            <h2 class="posts__title">Posts in {{ year }}</h2>
+            <ul class="posts__year">
+              {% for post in posts_that_year %}
+                <li class="post">
+                  <p class="post__date">{{ post.date | date(format="%-d %b") }}</p>
+                  <a href="{{ post.permalink }}" class="post__link">{{ post.title }}</a>
+                </li>
               {% endfor %}
             </ul>
-            <p>
-              <a href="{{ blog.permalink }}">All Posts</a>
-            </p>
-          {% endif %}
-        </main>
-      {% endif %}
+          {% endfor %}
+        </ul>
+      </main>
     {% endblock content %}
   </body>
 </html>
