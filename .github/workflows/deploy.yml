@@ -14,3 +14,4 @@ jobs:
         uses: shalzz/zola-deploy-action@v0.20.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OUT_DIR: .public
