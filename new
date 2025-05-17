@@ -2,7 +2,7 @@
 
 def main [title: string] {
   let date = date now | format date "%Y-%m-%d"
-  let filename = $"content/blog/($date)-($title | str kebab-case).md"
+  let filename = $"content/blog/($date)_($title | str snake-case).md"
   let contents = { title: $title } | to yaml | $"---\n($in)---\n\n"
 
   $contents o> $filename
