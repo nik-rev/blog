@@ -1,11 +1,11 @@
 base_url = "https://nikrev.com"
 build_search_index = false
 
+default_language = "en"
+author = "Nik Revenco"
 title = "Nik Revenco 🦀"
-
+output_dir = ".public"
 description = "My personal blog"
-
-taxonomies = [{ name = "categories" }, { name = "tags" }]
 
 [markdown]
 highlight_code = true
