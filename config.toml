@@ -11,9 +11,3 @@ description = "My personal blog"
 highlight_code = true
 highlight_theme = "css"
 bottom_footnotes = true
-
-[extra]
-links = [
-  { title = "GitHub", href = "https://github.com/nik-rev" },
-  { title = "LinkedIn", href = "https://linkedin.com" },
-]

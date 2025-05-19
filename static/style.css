@@ -167,9 +167,6 @@ body {
   font-size: 14pt;
   padding: 5em 25%;
 }
-.header-links a {
-  margin-right: 0.5em;
-}
 a:last-of-type {
   margin-right: 0;
 }
