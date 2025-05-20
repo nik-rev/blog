@@ -1,0 +1,26 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground: #222;
+    --background: #eee;
+    --background2: #f4f4f4;
+    --secondary: #808080;
+    --tertiary: #ddd;
+    --accent: #418001;
+    --link: #010101;
+    --table-border: #d0d0d0;
+    --table-row: #f7f7f7;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #ddd;
+    --background: #161616;
+    --background2: #131313;
+    --accent: #cbefa6;
+    --secondary: #999;
+    --tertiary: #444;
+    --link: #fefefe;
+    --table-border: var(--tertiary);
+    --table-row: #1e1e1e;
+  }
+}

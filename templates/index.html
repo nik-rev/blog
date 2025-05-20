@@ -100,7 +100,7 @@
               {% for post in posts_that_year %}
                 <li class="post">
                   <p class="post__date">{{ post.date | date(format="%-d %b") }}</p>
-                  <a href="{{ post.permalink }}" class="post__link">{{ post.title }}</a>
+                  <a href="{{ post.permalink }}" class="post__link">{{ post.title | markdown | replace(from="</p>", to="") | trim_start_matches(pat="<p>") | safe }}</a>
                 </li>
               {% endfor %}
             </ul>

@@ -1,5 +1,5 @@
 ---
-title: "Fun with traits, generics and complex types in Rust: Pass either a new value or compute the new value from a closure to a method"
+title: How to make a function in Rust which accepts either a value T, or an updater Fn(T) -> T
 ---
 
 I have a type `Person` as follows:
@@ -22,6 +22,8 @@ assert_eq!(person.age(years), Person { age: 11 });
 // update its age by passing a closure
 assert_eq!(person.age(|y| y + years), Person { age: 24 + 11 });
 ```
+
+<!-- more -->
 
 I know that you can do this sort of crazy, beautiful type-level dark magic using traits. I'm pretty new to Rust type-fu, but I had a go at creating an `Updater` trait that can do this:
 

@@ -11,3 +11,5 @@ description = "My personal blog"
 highlight_code = true
 highlight_theme = "css"
 bottom_footnotes = true
+insert_anchor_links = "heading"
+smart_punctuation = true

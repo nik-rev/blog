@@ -1,92 +1,16 @@
-/* fonts */
-@font-face {
-  font-family: "Literata";
-  src: url("fonts/Literata/Literata-Light.woff2") format("woff2");
-  font-weight: light;
-  font-style: normal;
-  font-display: swap;
-}
+@import "syntax.css";
+@import "theme.css";
+@import "fonts.css";
 
-@font-face {
-  font-family: "Literata";
-  src: url("fonts/Literata/Literata-LightItalic.woff2") format("woff2");
-  font-weight: light;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Literata";
-  src: url("fonts/Literata/Literata-SemiBold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Literata";
-  src: url("fonts/Literata/Literata-SemiBoldItalic.woff2") format("woff2");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Monaspace";
-  src: url("fonts/Monaspace/MonaspaceArgon-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Monaspace";
-  src: url("/fonts/Monaspace/MonaspaceArgon-SemiBold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-:root {
-  --font-body: "Literata", Georgia, Cambria, "Noto Serif", "Droif Serif",
-    ui-serif, serif;
-  --font-mono: "Monaspace", ui-monospace, monospace;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --foreground: #222;
-    --background: #eee;
-    --background2: #f4f4f4;
-    --secondary: #808080;
-    --tertiary: #ddd;
-    --accent: #418001;
-    --link: #010101;
-    --table-border: #d0d0d0;
-    --table-row: #f7f7f7;
+/* heading links */
+.zola-anchor {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
   }
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground: #ddd;
-    --background: #161616;
-    --background2: #131313;
-    --accent: #cbefa6;
-    --secondary: #999;
-    --tertiary: #444;
-    --link: #fefefe;
-    --table-border: var(--tertiary);
-    --table-row: #1e1e1e;
-  }
-}
-body {
-  color: var(--foreground);
-  font-family: var(--font-body);
-  background-color: var(--background);
-}
-.secondary {
-  color: var(--secondary);
-}
+
+/* links */
 a,
 a:link,
 a:visited {
@@ -95,15 +19,14 @@ a:visited {
     color: var(--link);
   }
 }
-code {
-  font-family: var(--font-mono);
-}
-a:has(code) {
-  text-decoration-color: var(--accent) !important;
-}
-a:hover {
+/* a:hover {
   color: var(--link);
 }
+a:last-of-type {
+  margin-right: 0;
+}
+
+/* code */
 code:not(pre code) {
   color: var(--accent);
 }
@@ -113,6 +36,20 @@ pre code {
 pre code ::before {
   content: "";
 }
+code {
+  padding: 0.1rem 0.2rem;
+  font-size: inherit;
+  line-height: 1;
+}
+pre {
+  overflow: auto;
+  padding: 0.3em;
+}
+pre code {
+  padding: 0;
+}
+
+/* footnote */
 .footnote-definition sup {
   color: var(--secondary);
 }
@@ -122,9 +59,30 @@ pre code ::before {
 .footnotes-list li p {
   color: var(--foreground);
 }
+.footnotes {
+  margin-top: 4em;
+}
+.footnotes-list {
+  font-size: 75%;
+}
+
+/* decoration */
 hr {
   border: none;
 }
+
+img {
+  max-width: 100%;
+}
+
+blockquote {
+  margin-left: 0;
+  padding-left: 0.4rem;
+  border-left: 0.2rem solid var(--tertiary);
+}
+
+/* table */
+
 table th,
 table td {
   border-color: var(--table-border);
@@ -133,27 +91,8 @@ table thead,
 table tr:nth-child(even) {
   background-color: var(--table-row);
 }
-/* syntax highlighting */
-.z-code {
-  color: var(--foreground);
-  background-color: var(--background2);
-}
-.z-punctuation,
-.z-comment {
-  color: var(--secondary);
-}
-.z-string,
-.z-constant.z-numeric,
-.z-constant.z-language {
-  color: var(--link);
-  font-weight: bold;
-}
-.z-storage,
-.z-entity.z-name.z-tag,
-.z-shell.z-function,
-.z-keyword {
-  color: var(--accent);
-}
+
+/* container */
 
 main {
   max-width: 65ch;
@@ -166,82 +105,8 @@ body {
 body {
   font-size: 14pt;
   padding: 5em 25%;
-}
-a:last-of-type {
-  margin-right: 0;
-}
-.space {
-  margin-bottom: 2em;
-}
-.doublespace {
-  margin-bottom: 4em;
-}
-.small {
-  font-size: 75%;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.25;
-  code {
-    font-size: inherit;
-  }
-}
-h2 {
-  margin-top: 60px;
-}
-h3 {
-  margin-top: 40px;
-}
-h4 {
-  margin-top: 30px;
-}
-img {
-  max-width: 100%;
-}
-blockquote {
-  margin-left: 0;
-  padding-left: 1em;
-  border-left: 2px solid var(--tertiary);
-}
-code {
-  padding: 0.1em 0.2em;
-  font-size: 12pt;
-}
-pre {
-  overflow: auto;
-  padding: 0.3em;
-}
-pre code {
-  padding: 0;
-}
-.footnotes {
-  margin-top: 4em;
-}
-.footnotes-list {
-  font-size: 75%;
-}
-table {
-  border-spacing: 0;
-}
-table th,
-table td {
-  border-width: 1px;
-  /* border-style: solid;
-	 */
-  border-left-style: none;
-  padding: 0.6em;
-}
-table th {
-  border-top-width: 1px;
-  /* border-top-style: solid;
-	 */
-}
-table td {
-  border-top-style: none;
+  color: var(--foreground);
+  background-color: var(--background);
 }
 @media all and (max-width: 1200px) {
   body {
@@ -252,4 +117,57 @@ table td {
   body {
     padding: 1em 1em;
   }
+}
+
+/* utility classes */
+
+.secondary {
+  color: var(--secondary);
+}
+.space {
+  margin-bottom: 2em;
+}
+.doublespace {
+  margin-bottom: 4em;
+}
+.small {
+  font-size: 75%;
+}
+
+/* heading */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.25;
+}
+
+h2 {
+  margin-top: 60px;
+}
+h3 {
+  margin-top: 40px;
+}
+h4 {
+  margin-top: 30px;
+}
+
+/* table */
+table {
+  border-spacing: 0;
+}
+table th,
+table td {
+  border-width: 1px;
+  border-left-style: none;
+  padding: 0.6em;
+}
+table th {
+  border-top-width: 1px;
+}
+table td {
+  border-top-style: none;
 }

@@ -1,36 +1,50 @@
 ---
-title: My Dev environment is fully written in Rust!
+title: My development environment is fully written in Rust! 7 Alternatives written in Rust I'm excited to share
 ---
 
-Since I started learning Rust 5 months ago, I have since replaced my full dev environment with software written in Rust.
+Since I started learning Rust 5 months ago, I have since replaced my full development environment with software written in Rust.
 
-Why? Well, I like Rust and I also love contributing to open source. I contribute features I would use myself, and I like to contributes to projects that I believe in. Not only does it keep me motivated to work on them, but also it's very fun to use something I made myself. So using software written in Rust gives me all of these opportunities.
+## But why?!
 
-I also like to understand how the software I use actually works. So IDEs, shells, terminal emulators. What actually happens under the hood? And Rust makes it fun for me to just dig into the codebase and read
+Well, I _like_ Rust and I also _love_ contributing to open source.
 
-So far, I've made the following replacements:
+I contribute features I would use myself, and I like to contributes to projects that I believe in.
+
+Not only does it keep me motivated to work on them, but also it's very fun to use something I made myself. So using software written in Rust enables me to enjoy using tools that I understand and develop.
+
+I also like to understand how the software I use actually works. IDEs, shells, terminal emulators. What actually happens _under the hood_? Rust makes it **fun** for me to just dig into the codebase and read to my heart's desire.
 
 ## Neovim → Helix (IDE)
 
-Helix is just ready to go out of the box. Everything is setup, it doesn't support plugins yet but they're not needed for me. Helix has custom keybindings and allows running TUIs inside of it like a git UI or a file manager which is extremely powerful.
+Helix is just ready to go out of the box. Everything is setup, it doesn't support plugins yet but they're not needed for me (probably because I have freedom to modify any part of Helix anyways).
+
+Helix has custom keybindings and allows running TUIs inside of it like a git UI or a file manager which is extremely powerful.
 
 ## Kitty → Rio (Terminal Emulator)
 
-The other two Rust terminals I've used is Alacritty and WezTerm. I loved Alacritty for its performance, and I love WezTerm for how many features it has. Alacritty is quite conservative on features so they don't support stuff like ligatures or tabs. Rio is basically a blend of these 2 terminals, Rio uses the high-performance crates developed by Alacritty while having all the features I needed from WezTerm
+The other two Rust terminals I've used is Alacritty and WezTerm.
+
+I _loved_ Alacritty for its performance, and I using WezTerm was pure joy, for how many features it has. Alacritty is quite conservative on features so they don't support stuff like ligatures or tabs which is a deal-breaker for me.
+
+Rio is basically a blend of these 2 terminals, Rio uses the high-performance crates developed by Alacritty while having all the features I needed from WezTerm
 
 ## Lazygit → GitUI
 
-While GitUI has less features than Lazygit, I still find it plenty for my use cases. It uses gitoxide under the hood (where possible) for its operations. gitoxide is a Rust implementation of Git that's making very good progress, and really a very underrated project. Already powering projects like Helix for git hunks and (hopefully soon!) inline blame.
+While [GitUI](https://github.com/gitui-org/gitui) has less features than [Lazygit](https://github.com/jesseduffield/lazygit), I still find it plenty for my use cases.
+
+GitUI uses [gitoxide](https://github.com/GitoxideLabs/gitoxide) under the hood where possible for its operations.
+
+gitoxide is a Rust implementation of Git that's making very good progress, and is a project I am really excited about plus believe is criminally underrated. Gitoxide is powering projects like Helix for git hunks and (hopefully soon!) [inline blame](https://github.com/helix-editor/helix/pull/13133).
 
 I do find GitUI snappier than Lazygit is, in fact I experienced about 3X performance increase when undoing changes for 1,200 files so I'd say it is very promising and looking forward to seeing where it can be improved to have more a feature parity with Lazygit!
 
 ## zsh → nushell
 
-nushell is very different from zsh, bash, fish and similar shells. Every command is colored and syntax highlighting comes out of the box. Traditional shells output text, whilst in nushell commands output structured data like tables and arrays, on which you can easily use high-level commands like `filter`, `map`, `first`, `reverse` etc. to operate on them.
+[Nushell](https://github.com/nushell/nushell) is _very_ different from zsh, bash, fish and similar shells. Every command is colored and syntax highlighting comes out of the box. Traditional shells output text, whilst in nushell commands output **structured data** like tables and arrays, on which you can use high-level commands like `filter`, `map`, `first`, `reverse` etc. to operate on them.
 
 It comes with a swiss-army knife of utility commands that fit into Nushell's model. Utilities for parsing text into structured data, as well as operating on them. The `nu` language is the most beautiful scripting language I have come across. It's like the Rust of scripting languages, in a sense.
 
-I'd say this shell is much easier to learn and is a lot more intuitive than any other shell. Also being cross-platform is a huge bonus. Nushell to Zsh is strikingly similar to what Helix is to Neovim
+I'd say this shell is much easier to learn and is a lot more intuitive than any other shell. Also being cross-platform is a huge bonus. Nushell to Zsh is strikingly similar to what Helix is to Neovim.
 
 ## lf → yazi (file manager)
 
@@ -74,3 +88,5 @@ Some things I hope to replace in my lifetime with pure Rust alternatives would b
 - [Linux](https://www.kernel.org/) → [RedoxOS](https://github.com/redox-os/redox)
 - [Firefox](https://www.mozilla.org/firefox/) → [Servo](https://github.com/servo/servo)
 - [GIMP](https://www.gimp.org/) and [Inkscape](https://inkscape.org/) → [Graphite.rs](https://github.com/GraphiteEditor/Graphite)
+
+[I use these tools in my dotfiles](https://github.com/nik-rev/dotfiles).

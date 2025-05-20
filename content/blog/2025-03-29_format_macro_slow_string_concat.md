@@ -1,12 +1,21 @@
 ---
-title: Rust's format! macro is slow for simple string concatenation. But why?
+title: Rust's `format!` macro is slow for simple string concatenation. But *why*?
 ---
 
-I'm wondering why is `format!` (which is a compiler built-in macro) so much slower for string concatenation than doing it "manually" by calling `String::with_capacity` followed by a series of `String::push_str`
+Why is the `format!` _compiler built-in_ macro so much slower for string concatenation than doing it "manually" by calling `String::with_capacity` followed by a series of `String::push_str`?
 
-Here is the benchmark that I am running:
+<!-- more -->
+
+I'm going to test this with a benchmark that will join 3 variables together with a space 100,000 times using both the `format!` macro and the manual method.
 
 ```rs
+// We'll need black_box to make sure the
+// compiler does not make any optimizations that
+// would ruin the benchmark.
+
+// For instance it could concatenate the strings at compile time
+// as an optimization. We want to simulate how it would be like in
+// real code, where we don't know what the values will be.
 use std::hint::black_box;
 use std::time::Instant;
 
@@ -14,7 +23,7 @@ fn concat_format(a: &str, b: &str, c: &str) -> String {
     format!("{a} {b} {c}")
 }
 
-fn concat_capacity(a: &str, b: &str, c: &str) -> String {
+fn concat_manual(a: &str, b: &str, c: &str) -> String {
     let mut buf = String::with_capacity(a.len() + 1 + b.len() + 1 + c.len());
     buf.push_str(a);
     buf.push(' ');
@@ -25,14 +34,17 @@ fn concat_capacity(a: &str, b: &str, c: &str) -> String {
 }
 
 fn main() {
+    // Manual concat
     let now = Instant::now();
     for _ in 0..100_000 {
         let a = black_box("first");
         let b = black_box("second");
         let c = black_box("third");
-        black_box(concat_capacity(a, b, c));
+        black_box(concat_manual(a, b, c));
     }
-    println!("concat_capacity: {:?}", now.elapsed());
+    println!("concat_manual: {:?}", now.elapsed());
+
+    // Concat with `format!`
     let now = Instant::now();
     for _ in 0..100_000 {
         let a = black_box("first");
@@ -47,23 +59,48 @@ fn main() {
 These are the results, running in `--release` mode:
 
 ```
-concat_capacity: 1.879225ms
+concat_manual: 1.879225ms
 concat_format: 9.984558ms
 ```
 
-Using `format!` is about 5x slower than preallocating the correct amount then pushing the strings manually.
+Using `format!` is about **5x slower** than preallocating the correct amount of memory, then pushing the strings manually.
 
-My question is why. Since `format!` is built-in, at compile time the Rust compiler should be able optimize a simple use of `format!` that is only for string concatenation to be just as fast as using the "manual" approach of concatenating the string.
+My question is why. Since `format!` is built-in, at compile time the Rust compiler _should_ be able optimize a simple use of `format!` that is only for string concatenation to be just as fast as using the "manual" approach of concatenating the string.
 
-I am aware that strings passing through the `std::fmt` machinery have to do more work. But couldn't this extra work be skipped in more simple cases such as string concatenation? All of this can happen at compile time as well.
+I am aware that strings passing through the `std::fmt` machinery have to do more work. But couldn't this extra work be skipped in more simple cases such as string concatenation?
 
 In theory, the Rust compiler could optimize the `format!` macro and friends to use a different, much simpler algorithm if none of the fancy formatting options are used, so only the `Display` impls are.
 
 Using `format!` is so much nicer than having to resort to manual string preallocation then pushing into a buffer, and used quite a lot in Rust. I would love to see this area get some performance improvements.
 
-## Research
+## Declarative utility macro for efficient string concatenation
 
-It turns out that the library team is absolutely aware about this. In fact [there are efforts](https://github.com/rust-lang/rust/issues/99012) to make this formatting faster.
+I've written a declarative macro that can concatenate strings in a more efficient way. Granted, this efficiency is unlikely to matter in most situations since `format_args!` is still incredibly fast.
+
+```rs
+/// Concatenates strings together.
+///
+/// `str_concat!(a, " ", b, " ", c)` is:
+/// - more performant than `format!("{a} {b} {c}")`
+/// - more ergonomic than using `String::with_capacity` followed by a series of `String::push_str`
+#[macro_export]
+macro_rules! str_concat {
+    ($($value:expr),*) => {{
+        // Rust does not allow using `+` as separator between value
+        // so we must add that at the end of everything. The `0` is necessary
+        // at the end so it does not end with "+ " (which would be invalid syntax)
+        let mut buf = String::with_capacity($($value.len() + )* 0);
+        $(
+            buf.push_str(&$value);
+        )*
+        buf
+    }}
+}
+```
+
+## However, there's hope!
+
+As it turns out, the library team is absolutely aware about this. In fact [there are efforts](https://github.com/rust-lang/rust/issues/99012) to make this formatting faster.
 
 Thanks to [`u/joboet`](https://www.reddit.com/user/joboet/) for these 2 additional points:
 
