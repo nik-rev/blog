@@ -1,0 +1,23 @@
+#obfuscated-email {
+  position: relative;
+}
+
+/* Bots will spam my inbox, I'd like to avoid that */
+#obfuscated-email-copy-to-clipboard:not(.copied) #obfuscated-email::before {
+  content: attr(data-website) "\0040" attr(data-user);
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+#obfuscated-email-copy-to-clipboard.copied #obfuscated-email::after {
+  content: "Copied!";
+  position: absolute;
+  top: -14.5px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#obfuscated-email-copy-to-clipboard {
+  all: unset;
+  cursor: pointer;
+}

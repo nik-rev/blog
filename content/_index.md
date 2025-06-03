@@ -1,14 +1,16 @@
 ---
 ---
 
-I love open source software and programming in Rust :)
+Hello, world!
 
-Favorite things I've built:
+I [love](/open-source) open source software and programming in Rust :)
 
-- [ferrishot](https://ferrishot.com), a powerful cross-platform screenshot app[![ferrishot GitHub Repo stars](https://img.shields.io/github/stars/nik-rev/ferrishot)](https://github.com/nik-rev/ferrishot)
+On this website you'll find my [blog](/blog).
 
-Open source contributions I am most proud of:
+---
 
-- Helix
-  - [Inline git blame](https://github.com/helix-editor/helix/pull/13133)
-  - [Color swatches](https://github.com/helix-editor/helix/pull/12308)
+You can find me at...
+
+- GitHub: [github.com/nik-rev](https://github.com/nik-rev)
+- LinkedIn: [linkedin.com/nik-revenco](https://www.linkedin.com/in/nik-revenco-897b91310/)
+- Email: <button title="Copy Email" id="obfuscated-email-copy-to-clipboard"><code><span id="obfuscated-email" data-user="mp" data-website="moc.verkin" /></code></button>
