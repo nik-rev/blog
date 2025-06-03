@@ -1,0 +1,3 @@
+[submodule "themes/carbon"]
+	path = themes/carbon
+	url = https://github.com/nik-rev/carbon.git

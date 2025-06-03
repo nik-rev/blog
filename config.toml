@@ -1,11 +1,15 @@
 base_url = "https://nikrev.com"
 build_search_index = false
-
+theme = "carbon"
 default_language = "en"
 author = "Nik Revenco"
-title = "Nik Revenco 🦀"
+title = "Nik 🦀"
 output_dir = ".public"
 description = "My personal blog"
+generate_feeds = true
+
+[extra]
+header_links = [{ name = "/home", link = "/" }, "/blog", "/open-source"]
 
 [markdown]
 highlight_code = true
