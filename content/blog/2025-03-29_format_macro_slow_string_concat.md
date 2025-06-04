@@ -13,9 +13,12 @@ I'm going to test this with a benchmark that will join 3 variables together with
 // compiler does not make any optimizations that
 // would ruin the benchmark.
 
-// For instance it could concatenate the strings at compile time
-// as an optimization. We want to simulate how it would be like in
-// real code, where we don't know what the values will be.
+// For instance it could concatenate the strings
+// at compile time as an optimization.
+//
+// We want to simulate how it would be like in
+// real code, where we don't know what the values
+// will be.
 use std::hint::black_box;
 use std::time::Instant;
 
@@ -24,7 +27,9 @@ fn concat_format(a: &str, b: &str, c: &str) -> String {
 }
 
 fn concat_manual(a: &str, b: &str, c: &str) -> String {
-    let mut buf = String::with_capacity(a.len() + 1 + b.len() + 1 + c.len());
+    let mut buf = String::with_capacity(
+        a.len() + 1 + b.len() + 1 + c.len()
+    );
     buf.push_str(a);
     buf.push(' ');
     buf.push_str(b);
@@ -82,14 +87,21 @@ I've written a declarative macro that can concatenate strings in a more efficien
 ///
 /// `str_concat!(a, " ", b, " ", c)` is:
 /// - more performant than `format!("{a} {b} {c}")`
-/// - more ergonomic than using `String::with_capacity` followed by a series of `String::push_str`
+/// - more ergonomic than using `String::with_capacity`
+///   followed by a series of `String::push_str`
 #[macro_export]
 macro_rules! str_concat {
     ($($value:expr),*) => {{
-        // Rust does not allow using `+` as separator between value
-        // so we must add that at the end of everything. The `0` is necessary
-        // at the end so it does not end with "+ " (which would be invalid syntax)
-        let mut buf = String::with_capacity($($value.len() + )* 0);
+        // Rust does not allow using `+` as separator
+        // between value, so we must add that
+        // at the end of everything.
+        //
+        // The `0` is necessary at the end so
+        // it does not end with "+ " like "1 + 2 +"
+        // is invalid syntax
+        let mut buf = String::with_capacity(
+            $($value.len() + )* 0
+        );
         $(
             buf.push_str(&$value);
         )*

@@ -18,7 +18,7 @@ I found a [page in the Rust reference](https://doc.rust-lang.org/reference/keywo
 - `yield`
 - `try`
 
-I am really curious what they will do. I did some research, compiling a list of rfcs which use these keywords with my own speculations mixed in:
+I am really curious what they will do. I did some research, compiling a list of RFCs which use these keywords with my own speculations mixed in:
 
 - `priv`: Everything in Rust is already private by default[^1] except trait items, enum variants, and fields in enum variants. Perhaps at some point these can be made opt-in private.
 - `become`: [Tail call optimization](https://github.com/rust-lang/rfcs/pull/3407) for recursive functions.

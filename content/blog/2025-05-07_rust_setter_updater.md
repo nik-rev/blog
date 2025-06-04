@@ -1,5 +1,5 @@
 ---
-title: How to make a function in Rust which accepts either a value T, or an updater Fn(T) -> T
+title: How to make a function in Rust which accepts either a value `T`, or an updater `Fn(T) -> T`
 ---
 
 I have a type `Person` as follows:

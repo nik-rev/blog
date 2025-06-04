@@ -10,13 +10,13 @@ I found this website called [The Odin Project](https://www.theodinproject.com/),
 
 ## Forced into Linux
 
-"Unfortunately", one of the requirements for the course was to use Linux. Odin Project didn't support Windows, only Mac and Linux at the time. I didn't have a Mac, so...
+One of the requirements for the course was to use Linux. Odin Project didn't support Windows, only Mac and Linux at the time. I didn't have a Mac, so...
 
-It was an all-or-nothing situation. Either I use Linux, or I can't complete this course. Mind you, I had absolutely zero idea what a Linux was. I've only ever been using Windows before. (_and I didn't know much about programming either._)
+It was an all-or-nothing situation. Either I use Linux, or I can't complete this course. Mind you, I had absolutely zero idea what a Linux was. I've only ever been using Windows before. _And I didn't know much about programming either._
 
 But despite that fact, my curiosity got the best of me and I decided to try it out.
 
-Having zero idea that it will change my life, I followed their installation instructions for Ubuntu. It took me an entire day to install it, but after lots of pain I was able to do it (having never installed an operating system before :D).
+I followed their installation instructions for Ubuntu. It took me an entire day to install it, but after lots of pain I was able to do it. And I was pretty proud of myself! (Having never installed an operating system before :D).
 
 ## Descent into Madness
 
@@ -58,7 +58,7 @@ But better yet, I discovered there was a way to do that much more concisely:
 touch file{1..67}
 ```
 
-And oh wow. That just worked. It worked like a charm. I saved so much time from this. And from there on, I started learning more about Unix commands.
+And oh wow. That just worked. I saved so much time from this. And from there on, I started learning more about Unix commands.
 
 I learned how to use `grep` to search for strings fast, and `find` to dig through the filesystem in order to find a file matching a pattern, which turned out _very_ useful for adjusting to unfamiliar codebases.
 

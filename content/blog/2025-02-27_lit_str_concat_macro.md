@@ -19,15 +19,16 @@ asset!("/assets/icons/github.svg")
 
 Will _not_ be able to receive `concat!`.
 
-This does not compile. **`ERROR: Expected a string literal`**.
+This does not compile.
 
 ```rs
 asset!(concat!("/assets/icons/", "github", ".svg"))
 ```
+**<code style="color: var(--red);">ERROR: Expected a string literal</code>**.
 
 I assume this is because the `asset!` macro expects a string literal. But _is_ `concat!("...", "...")` a string literal?
 
-Because `concat!(...)` itself only accepts string literals, and you can use it inside of itself: inside of itself: `concat!(concat!(""))`, it **must** be, right? For this to work, the macro has to be evaluated in this order.
+Because `concat!(...)` itself only accepts string literals, and you can use it inside of itself: `concat!(concat!(""))`, it **must** be, right? For this to work, the macro has to be evaluated in this order.
 
 1. Macro expands
 1. The expanded form is passed inside the `concat!`
@@ -48,4 +49,4 @@ Thankfully, the amazing [David Tolnay](https://github.com/dtolnay) shared a pret
 - `include_str!`
 - `stringify!`
 
-Meaning you'll be able to pass them into macros that expect a string literal, and they'll get expanded _before_!
+Meaning you'll be able to pass them into macros that expect a string literal, and they'll get expanded _before_ being passed to the macro!

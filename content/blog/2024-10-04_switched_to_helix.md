@@ -6,7 +6,7 @@ I've been using VSCode for several months when I first started programming. It w
 
 <!--more-->
 
-With VSCode it felt like I had no control over my editor and I didn't have an idea of how things were going on. With VSCode I feel like a consumer that just installs extensions.
+With VSCode it felt like I had no control over my editor and I didn't have an idea of how things were going on.
 
 I have been hearing about Neovim for a while until this point decided to give it a try. I expected it to be difficult to get started, because it's a mouseless modal editor -- a completely new way of editing code than what I've been used to.
 
@@ -16,7 +16,7 @@ Thankfully, Neovim supported all of those. But actually getting any of it setup 
 
 There was quite a lot of bloat in my config, a lot of "eye candy" that I ended up getting rid of. For instance
 [noice <!--typos-ignore-->
-.nvim](https://github.com/folke/noice.nvim) which becomes distracting after a while.
+.nvim](https://github.com/folke/noice.nvim) which yes, is really beautiful but at some point it became distracting for me.
 
 I've been using Neovim for several months by this point and things were starting to settle. But every week or so I had to spend **several hours** fixing my configs because a new error arose due to one of my 60+ plugins updating.
 
@@ -24,7 +24,7 @@ Sometimes you just want to open your text editor and use it to write code. But w
 
 I loved Neovim a lot as well as the mouse-less terminal lifestyle I've gotten used to, thanks to Neovim. But the amount of time I spent on my editor vs actually using it to write code was just insane. So I was just thinking of switching back to VSCode and using vim motions plugin, since I just wanted to become productive again.
 
-Yes, Neovim made me write code _way faster_, but at what cost? I have to maintain my configuration as if it was some kind of project. Think of breaking changes when updating my dependencies. Maybe even should add automated tests? Configure a CI/CD pipeline to make sure my editor works?!
+Yes, Neovim made me write code _way faster_, but at what cost? I have to maintain my configuration as if it was some kind of project. Think of *breaking changes* when updating my dependencies. Maybe even should add automated tests? Configure a CI/CD pipeline to make sure my editor works?!
 
 So I stumbled upon Helix, which is a terminal modal editor written in Rust. I decided to give it a try, and I was _seriously impressed_. Not only did it do literally everything I want Neovim to be out of the box with ZERO configuration, its editing model was also signifincalty more intuitive than Neovim's. I also found myself way more productive with Helix due to Helix's multiple cursor feature.
 

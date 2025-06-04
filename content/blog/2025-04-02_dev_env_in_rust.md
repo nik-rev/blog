@@ -1,5 +1,5 @@
 ---
-title: My development environment is fully written in Rust! 7 Alternatives written in Rust I'm excited to share
+title: My development environment is fully written in Rust! And 7 Alternatives written in Rust I'm excited about
 ---
 
 Since I started learning Rust 5 months ago, I have since replaced my full development environment with software written in Rust.
@@ -12,7 +12,7 @@ I contribute features I would use myself, and I like to contributes to projects 
 
 Not only does it keep me motivated to work on them, but also it's very fun to use something I made myself. So using software written in Rust enables me to enjoy using tools that I understand and develop.
 
-I also like to understand how the software I use actually works. IDEs, shells, terminal emulators. What actually happens _under the hood_? Rust makes it **fun** for me to just dig into the codebase and read to my heart's desire.
+I also like to understand how the software I use actually works. IDEs, shells, terminal emulators. What actually happens _under the hood_? Rust makes it **exciting** for me to just dig into the codebase and read to my heart's desire.
 
 ## Neovim → Helix (IDE)
 

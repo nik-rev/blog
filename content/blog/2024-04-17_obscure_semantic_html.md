@@ -38,7 +38,7 @@ Semantic HTML is extremely important for websites due to two main factors:
 
   Bots such as Google crawler use HTML to understand the structure of a page.
 
-But there are some semantic HTML patterns that aren't as obvious. For instance, if you want to cite the original author when using `blockquote`.
+But there are some semantic HTML patterns that aren't as obvious. For instance, if you want to cite the original author when using the `<blockquote>` tag.
 
 ## Properly representing blockquotes with a caption
 
@@ -46,8 +46,8 @@ To quote, you can use the `blockquote` element:
 
 ```html
 <blockquote>
-  We cannot solve our problems with the same thinking we used when we created
-  them.
+  We cannot solve our problems with the
+  same thinking we used when we created them.
 </blockquote>
 ```
 
@@ -57,8 +57,8 @@ But what if you wanted to give credit to the original author? You might try some
 
 ```html
 <blockquote>
-  We cannot solve our problems with the same thinking we used when we created
-  them.
+  We cannot solve our problems with the
+  same thinking we used when we created them.
   <cite> Albert Einstein </cite>
 </blockquote>
 ```

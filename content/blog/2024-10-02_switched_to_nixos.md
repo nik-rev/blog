@@ -12,7 +12,22 @@ I tested them all for a few months and was mostly happy with my Arch Linux for a
 
 NixOS was frequently talked about and I was curious to learn about it. I heard that it is an operating system where the config is declarative instead of imperative.
 
-So for example, instead of saying "I want to install firefox on my computer: `apt get firefox`", instead we say "My computer has firefox" then specify `firefox` as one of the _dependencies_ of my system.
+So for example, instead of saying:
+
+> I want to install firefox on my computer:
+>
+> ```sh
+> $ apt get firefox
+> ```
+
+Instead we say
+
+> My computer has firefox:
+> 
+> ```toml
+> packages = "firefox"
+> ```
+
 
 That was about it, in terms of how much I knew. I wanted to found out what NixOS is like so I installed it on my computer.
 
@@ -32,13 +47,13 @@ But after I've installed the system, it is _identical_ to the one I have on my c
 
 ## Switching to Helix Editor
 
-During the setup, I decided to ditch my bloated Neovim configuration which I've kept adding on and on to and it was becoming hard to maintain, with breaking changes in my plugins at least once a week ([more on that in another post](/post/switched-to-helix)).
+During the setup, I decided to ditch my bloated Neovim configuration which I've kept adding on and on to and it was becoming hard to maintain, with breaking changes in my plugins at least once a week ([more on that in another post](/blog/switched-to-helix)).
 
-I wanted something that has everything built-in, is lightweight, fast, and made with Rust, so I am motivated to dig into the codebase and contribute to it :P.
+I wanted something that has everything built-in, is lightweight, fast, and written in Rust, so I am motivated to dig into the codebase and contribute to it :P
 
 Helix is awesome at what it does, and I was mostly happy with it.
 
-### Hard Times
+### I almost went back to Neovim
 
 But I was about to switch back to Neovim, because the only thing Helix is missing is a way to properly navigate files. However, while looking at the pull requests for Helix I noticed that it has a [pull request](https://github.com/helix-editor/helix/pull/11285) which adds a basic file navigator that really covers all my needs -- viewing file names in the same directory as the current buffer, and opening new files.
 
@@ -52,13 +67,15 @@ Then I saw that they have a `flake.nix` file, so I researched flakes. I previous
 
 But, as it turns out -- flakes make the process I described above _comically easy_. I converted my setup to flakes, and then I pointed one of the inputs at my helix fork, that had additional pull requests merged into it:
 
-<!-- TODO: add styles for code blocks with titles -->
+In `flake.nix`:
 
-```nix {title="flake.nix"}
+```nix
 helix.url = "github:NikitaRevenco/helix/master";
 ```
 
-```nix {title="home.nix"}
+In `home.nix`:
+
+```nix
 programs.helix.package =
   inputs.helix.packages.${pkgs.system}.helix;
 ```
