@@ -1,6 +1,6 @@
 {% extends "carbon/templates/index.html" %}
 
-{% block head %}
+{% block extra_head %}
   <link rel="stylesheet" href="{{ get_url(path='custom.css', cachebust=true) }}" />
   <script src="{{ get_url(path='custom.js') }}" type="text/javascript" defer></script>
-{% endblock head %}
+{% endblock extra_head %}

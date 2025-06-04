@@ -22,13 +22,13 @@ Open source projects I'm _really excited_ about:
 
 ## My stuff
 
-My open source projects:
+Open source projects:
 
 - [ferrishot](https://ferrishot.com), a powerful cross-platform screenshot app[![ferrishot GitHub Repo stars](https://img.shields.io/github/stars/nik-rev/ferrishot)](https://github.com/nik-rev/ferrishot)
 - [countryfetch](https://github.com/nik-rev/countryfetch) renders beautiful ASCII art of your country's flag, with additional information[![countryfetch GitHub Repo stars](https://img.shields.io/github/stars/nik-rev/countryfetch)](https://github.com/nik-rev/countryfetch)
 - [patchy](https://github.com/nik-rev/patchy) automatically merges pull requests into your own fork. Useful for test-driving a bunch of pull requests and hot-swapping them with ease! [![patchy GitHub Repo stars](https://img.shields.io/github/stars/nik-rev/patchy)](https://github.com/nik-rev/patchy)
 
-My open source contributions I am most proud of:
+Open source contributions I am most proud of:
 
 - Helix
   - [Inline git blame](https://github.com/helix-editor/helix/pull/13133)
