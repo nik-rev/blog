@@ -1,0 +1,292 @@
+<!-- Entry point to every rendered page -->
+
+
+  
+
+
+<!doctype html>
+<html
+  lang="en"
+  data-theme="dark"
+>
+  
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#418001" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#cbefa6" />
+
+      
+      
+
+      
+  
+
+
+      
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  
+  
+
+  
+    
+      
+    
+  
+
+
+      
+  
+
+
+      
+  
+
+
+      <title>
+        Nik&#x27;s Blog 🦀 | I switched from Zsh to Nushell. It&#x27;s a beautiful shell, I&#x27;m never going back!
+      </title>
+
+      
+        <link
+          rel="stylesheet"
+          href="https://nikrev.com/css/index.css?h=3e22f41332e248e40d6e"
+        />
+      
+
+      
+        <script src="/js/code_blocks.js" type="text/javascript" defer></script>
+        <script src="/js/theme_toggle.js" type="text/javascript" defer></script>
+      
+
+      
+        <meta name="author" content="Nik Revenco" />
+      
+
+      
+        <!-- og-image-generator specific -->
+        
+          <meta property="og-image-generator" key="title" value="I switched from Zsh to Nushell. It&#x27;s a beautiful shell, I&#x27;m never going back!" />
+        
+        
+        
+      
+
+      <!-- SEO Tags -->
+      <meta property="og:title" content="Nik&#x27;s Blog 🦀 | I switched from Zsh to Nushell. It&#x27;s a beautiful shell, I&#x27;m never going back!" />
+      <meta property="og:description" content="My personal blog" />
+      <meta itemprop="headline" content="Nik&#x27;s Blog 🦀 | I switched from Zsh to Nushell. It&#x27;s a beautiful shell, I&#x27;m never going back!" />
+      <meta name="description" content="My personal blog" />
+
+      
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;trying-out-nushell&#x2F;" />
+
+        <!-- OG image -->
+        
+          <meta name="og:type" content="summary_large_image" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:title" content="Nik&#x27;s Blog 🦀 | I switched from Zsh to Nushell. It&#x27;s a beautiful shell, I&#x27;m never going back!" />
+          <meta property="og:image" content="https://nikrev.com/blog/trying-out-nushell/og.png" />
+          <meta property="og:image:alt" content="Nik&#x27;s Blog 🦀 | I switched from Zsh to Nushell. It&#x27;s a beautiful shell, I&#x27;m never going back!" />
+
+          <meta property="og:image:width" content="1280" />
+          <meta property="og:image:height" content="675" />
+          <meta property="twitter:image:width" content="1280" />
+          <meta property="twitter:image:height" content="675" />
+        
+      
+
+      <!-- Allow adding custom elements to the <head> -->
+      
+  <link rel="stylesheet" href="https://nikrev.com/custom.css?h=5c0931769459f5c98bfb" />
+  <script src="https://nikrev.com/custom.js" type="text/javascript" defer></script>
+
+    </head>
+  
+  <body>
+    <div id="site">
+      
+        <header class="header">
+
+          <!-- Header -->
+    
+          
+            <div class="header__heading">
+              
+                <h1 class="header__heading__title">
+                  
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  
+    
+    
+    Nik&#x27;s Blog 🦀
+  
+
+                </h1>
+              
+              <!-- Icons, after the title -->
+              
+                <div class="header__heading__icon-container">
+                  <!-- Light / dark mode toggle -->
+                  
+                    
+                      
+                    
+                    
+                    <button type="button" class="header__heading__theme-toggle" aria-label="Change to light theme" title="Change to light theme">
+                      <!--
+                        A sun or moon icon gets inserted here with JavaScript
+                        The default icons are here only to prevent layout shift
+                      -->
+                      
+                        <!-- Sun icon (dark) -->
+                        <svg class="header__heading__theme-toggle__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M264 480A232 232 0 0 1 32 248c0-94 54-178.28 137.61-214.67a16 16 0 0 1 21.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0 1 21.06 21.06C442.28 426 358 480 264 480z"></path></svg>
+                      
+                    </button>
+                  
+
+                  
+                    
+                      <button type="button" class="header__heading__rss" aria-label="RSS Feed" title="RSS Feed">
+                        <a href="https:&#x2F;&#x2F;nikrev.com/atom.xml">
+                          <svg class="header__heading__rss__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M119.9 336.1c-30.8 0-55.9 25.1-55.9 55.8 0 30.8 25.1 55.6 55.9 55.6 30.9 0 55.9-24.9 55.9-55.6 0-30.7-25-55.8-55.9-55.8z"></path><path d="M64 192v79.9c48 0 94.1 14.2 128 48.1 33.9 33.9 48 79.9 48 128h80c0-139.9-116-256-256-256z"></path><path d="M64 64v79.9c171 0 303.9 133 303.9 304.1H448C448 236.3 276 64 64 64z"></path></svg>
+                        </a>
+                      </button>
+                    
+                  
+
+                  <!-- Allow adding more icons -->
+                  
+                  
+                </div>
+              
+            </div>
+          
+
+          <!-- Navigation -->
+
+          
+            
+              <nav>
+                <ul class="header__links">
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;home
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;blog"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;blog
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;open-source"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;open-source
+                      </a>
+                    </li>
+                  
+                </ul>
+              </nav>
+            
+          
+        </header>
+      
+
+      <!-- Actual content of the page -->
+
+      
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  <main class="post-content">
+    <!-- Standalone pages should not have a 2nd level 1 heading -->
+    
+      
+        <h1 class="post-content__title">I switched from Zsh to Nushell. It’s a beautiful shell, I’m never going back!</h1>
+      
+    
+
+    <!-- Date of the page -->
+    
+      <p class="post-content__date">
+        30 January, 2025
+      </p>
+    
+
+    <!-- Main content of the page -->
+    <p>I switched from zsh to nushell. It is so good <em>wow</em>, I’ve been using it for a couple months as an interactive shell but recently just started writing scripts with it. I’m wondering why I didn’t do it sooner!</p>
+<ol>
+<li>No need to memorize flags for commands anymore. I dont need a <code>--reverse</code> for every command. Instead, if I want to reverse something I just pipe my data with <code>| reverse</code>. Instead of memorizing N flags for M commands, memorize N commands and compose with any command. Elegant.</li>
+<li>Every nushell command reads like plain english. Sometimes I forget I’m even talking to a computer. “What’s the largest file in the current directory?” = <code>ls | sort-by size | reverse | first</code> = List all files, sort them by size from largest to smallest, then take the first file.</li>
+<li>No more <code>sed</code> and <code>awk</code>. Nushell’s string manipulation is a pleasure to work with. The <code>str</code> command can even convert text between snake_case, PascalCase, camelCase etc.</li>
+<li>Data manipulation on <strong>steroids</strong>. It works on so many file formats, with dozens of utility functions to get output of data. You can convert JSON to Markdown tables!</li>
+<li>Each function does one thing and does it well. Wait, isn’t this Unix’s philosophy? Yes, Nushell feels like what we should have had from the beginning. It feels a lot “more UNIX” than bash or zsh, despite it technically being “not POSIX-compliant”</li>
+<li>it ships with its own tools. no need to worry about stuff like <code>curl</code> not being available. you always have <code>http get</code> if you can execute the script</li>
+<li>Performance. It feels a lot snappier than zsh.</li>
+<li>The scripting language is just expressive, beautiful and so much easier to read and write than bash is. I’ll say that it’s the best scripting language out of all of them. It is like the Rust of scripting languages.</li>
+<li>It’s <strong>cross platform</strong>! Huge deal for people who need to use their shell on Windows.</li>
+<li>Beautiful help pages. Everything is colored with usage examples for each command.</li>
+</ol>
+<p>More people should be using nushell! In my opinion it is really underrated and I encourage you to give it a go</p>
+
+  </main>
+
+
+      <!-- Footer -->
+
+      
+        
+          <footer>
+            <p>Powered by <a href="https://github.com/getzola/zola">Zola</a> and <a href="https://github.com/nik-rev/carbon">nik-rev/carbon</a></p>
+
+          </footer>
+        
+      
+    </div>
+  </body>
+</html>

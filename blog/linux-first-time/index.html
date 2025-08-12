@@ -1,0 +1,308 @@
+<!-- Entry point to every rendered page -->
+
+
+  
+
+
+<!doctype html>
+<html
+  lang="en"
+  data-theme="dark"
+>
+  
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#418001" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#cbefa6" />
+
+      
+      
+
+      
+  
+
+
+      
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  
+  
+
+  
+    
+      
+    
+  
+
+
+      
+  
+
+
+      
+  
+
+
+      <title>
+        Nik&#x27;s Blog 🦀 | I was forced to use Linux. But now I love it.
+      </title>
+
+      
+        <link
+          rel="stylesheet"
+          href="https://nikrev.com/css/index.css?h=3e22f41332e248e40d6e"
+        />
+      
+
+      
+        <script src="/js/code_blocks.js" type="text/javascript" defer></script>
+        <script src="/js/theme_toggle.js" type="text/javascript" defer></script>
+      
+
+      
+        <meta name="author" content="Nik Revenco" />
+      
+
+      
+        <!-- og-image-generator specific -->
+        
+          <meta property="og-image-generator" key="title" value="I was forced to use Linux. But now I love it." />
+        
+        
+        
+      
+
+      <!-- SEO Tags -->
+      <meta property="og:title" content="Nik&#x27;s Blog 🦀 | I was forced to use Linux. But now I love it." />
+      <meta property="og:description" content="My personal blog" />
+      <meta itemprop="headline" content="Nik&#x27;s Blog 🦀 | I was forced to use Linux. But now I love it." />
+      <meta name="description" content="My personal blog" />
+
+      
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;linux-first-time&#x2F;" />
+
+        <!-- OG image -->
+        
+          <meta name="og:type" content="summary_large_image" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:title" content="Nik&#x27;s Blog 🦀 | I was forced to use Linux. But now I love it." />
+          <meta property="og:image" content="https://nikrev.com/blog/linux-first-time/og.png" />
+          <meta property="og:image:alt" content="Nik&#x27;s Blog 🦀 | I was forced to use Linux. But now I love it." />
+
+          <meta property="og:image:width" content="1280" />
+          <meta property="og:image:height" content="675" />
+          <meta property="twitter:image:width" content="1280" />
+          <meta property="twitter:image:height" content="675" />
+        
+      
+
+      <!-- Allow adding custom elements to the <head> -->
+      
+  <link rel="stylesheet" href="https://nikrev.com/custom.css?h=5c0931769459f5c98bfb" />
+  <script src="https://nikrev.com/custom.js" type="text/javascript" defer></script>
+
+    </head>
+  
+  <body>
+    <div id="site">
+      
+        <header class="header">
+
+          <!-- Header -->
+    
+          
+            <div class="header__heading">
+              
+                <h1 class="header__heading__title">
+                  
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  
+    
+    
+    Nik&#x27;s Blog 🦀
+  
+
+                </h1>
+              
+              <!-- Icons, after the title -->
+              
+                <div class="header__heading__icon-container">
+                  <!-- Light / dark mode toggle -->
+                  
+                    
+                      
+                    
+                    
+                    <button type="button" class="header__heading__theme-toggle" aria-label="Change to light theme" title="Change to light theme">
+                      <!--
+                        A sun or moon icon gets inserted here with JavaScript
+                        The default icons are here only to prevent layout shift
+                      -->
+                      
+                        <!-- Sun icon (dark) -->
+                        <svg class="header__heading__theme-toggle__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M264 480A232 232 0 0 1 32 248c0-94 54-178.28 137.61-214.67a16 16 0 0 1 21.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0 1 21.06 21.06C442.28 426 358 480 264 480z"></path></svg>
+                      
+                    </button>
+                  
+
+                  
+                    
+                      <button type="button" class="header__heading__rss" aria-label="RSS Feed" title="RSS Feed">
+                        <a href="https:&#x2F;&#x2F;nikrev.com/atom.xml">
+                          <svg class="header__heading__rss__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M119.9 336.1c-30.8 0-55.9 25.1-55.9 55.8 0 30.8 25.1 55.6 55.9 55.6 30.9 0 55.9-24.9 55.9-55.6 0-30.7-25-55.8-55.9-55.8z"></path><path d="M64 192v79.9c48 0 94.1 14.2 128 48.1 33.9 33.9 48 79.9 48 128h80c0-139.9-116-256-256-256z"></path><path d="M64 64v79.9c171 0 303.9 133 303.9 304.1H448C448 236.3 276 64 64 64z"></path></svg>
+                        </a>
+                      </button>
+                    
+                  
+
+                  <!-- Allow adding more icons -->
+                  
+                  
+                </div>
+              
+            </div>
+          
+
+          <!-- Navigation -->
+
+          
+            
+              <nav>
+                <ul class="header__links">
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;home
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;blog"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;blog
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;open-source"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;open-source
+                      </a>
+                    </li>
+                  
+                </ul>
+              </nav>
+            
+          
+        </header>
+      
+
+      <!-- Actual content of the page -->
+
+      
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  <main class="post-content">
+    <!-- Standalone pages should not have a 2nd level 1 heading -->
+    
+      
+        <h1 class="post-content__title">I was forced to use Linux. But now I love it.</h1>
+      
+    
+
+    <!-- Date of the page -->
+    
+      <p class="post-content__date">
+        21 August, 2024
+      </p>
+    
+
+    <!-- Main content of the page -->
+    <p>In December of 2023 I wanted to learn Web development out of curiosity. I was 6 months away from my A-Level exams and I was really bored.</p>
+<p>I found this website called <a href="https://www.theodinproject.com/">The Odin Project</a>, which is a free and open-source curriculum for learning web development. Perfect…!</p>
+<span id="continue-reading"></span><h2 id="forced-into-linux"><a class="zola-anchor" href="#forced-into-linux" aria-label="Anchor link for: forced-into-linux">Forced into Linux</a></h2>
+<p>One of the requirements for the course was to use Linux. Odin Project didn’t support Windows, only Mac and Linux at the time. I didn’t have a Mac, so…</p>
+<p>It was an all-or-nothing situation. Either I use Linux, or I can’t complete this course. Mind you, I had absolutely zero idea what a Linux was. I’ve only ever been using Windows before. <em>And I didn’t know much about programming either.</em></p>
+<p>But despite that fact, my curiosity got the best of me and I decided to try it out.</p>
+<p>I followed their installation instructions for Ubuntu. It took me an entire day to install it, but after lots of pain I was able to do it. And I was pretty proud of myself! (Having never installed an operating system before :D).</p>
+<h2 id="descent-into-madness"><a class="zola-anchor" href="#descent-into-madness" aria-label="Anchor link for: descent-into-madness">Descent into Madness</a></h2>
+<p>Once I did, I opened the file manager and was terrified – I had no idea what was going on. Where are all the Program Files? Why is everything empty?</p>
+<p>Initially I thought that on Linux you can’t access any of the “system files”. I thought to myself, hey – I’ll just complete this course and then go back to my familiar Windows.</p>
+<p>The Odin Project also had several lessons on the command line, such as creating new files, changing directories, etc. The basics.</p>
+<p>It was extremely confusing to me, because I had no idea what was happening. But it was also super interesting and I wanted to learn more.</p>
+<h3 id="researching-commands"><a class="zola-anchor" href="#researching-commands" aria-label="Anchor link for: researching-commands">Researching Commands</a></h3>
+<p>I spent several days researching various Linux commands. Odin Project said that Linux is used everywhere in development, that’s why I continued to go through with it.</p>
+<p>But to be honest, I didn’t really see a point in it. I thought that typing out all of these commands is a waste of time. That was just in the beginning.</p>
+<p>As I continued to use Linux full-time as my computer for several weeks, I slowly became more accustomed to it. I found myself more efficient in the command line than with their file explorer.</p>
+<h3 id="becoming-more-efficient"><a class="zola-anchor" href="#becoming-more-efficient" aria-label="Anchor link for: becoming-more-efficient">Becoming more Efficient</a></h3>
+<p>And it all started from there. I found out that I can make aliases in bash, so I aliased <code>e</code> to <code>ls</code>, and <code>t</code> to <code>cd</code> and then <code>ls</code> in the new directory.</p>
+<p>Worked like a charm, it was very much an improvement in efficiency. I found myself always using <code>ls</code> when <code>cd</code> so might as well combine them.</p>
+<p>I started tinkering with my system more and more over time, learning about various configuration options and programs like <code>cat</code>.</p>
+<p>At some point I needed to create a bunch of files with a number at the end, for example like this:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">touch</span></span><span class="z-meta z-function-call z-arguments z-shell"> file1 file2 file3 file4 file5 ... file67</span>
+</span></code></pre>
+<p>Typing out the above is actually so much faster than if I were to use a GUI like a file manager to do the same thing.</p>
+<p>But better yet, I discovered there was a way to do that much more concisely:</p>
+<pre data-lang="sh" class="language-sh z-code"><code class="language-sh" data-lang="sh"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">touch</span></span><span class="z-meta z-function-call z-arguments z-shell"> file<span class="z-meta z-group z-expansion z-brace z-shell"><span class="z-punctuation z-section z-expansion z-brace z-begin z-shell">{</span>1..67<span class="z-punctuation z-section z-expansion z-brace z-end z-shell">}</span></span></span>
+</span></code></pre>
+<p>And oh wow. That just worked. I saved so much time from this. And from there on, I started learning more about Unix commands.</p>
+<p>I learned how to use <code>grep</code> to search for strings fast, and <code>find</code> to dig through the filesystem in order to find a file matching a pattern, which turned out <em>very</em> useful for adjusting to unfamiliar codebases.</p>
+<p>And ever since then I’ve been using Linux. I embraced the commandline and my productivity skyrocketed!</p>
+
+  </main>
+
+
+      <!-- Footer -->
+
+      
+        
+          <footer>
+            <p>Powered by <a href="https://github.com/getzola/zola">Zola</a> and <a href="https://github.com/nik-rev/carbon">nik-rev/carbon</a></p>
+
+          </footer>
+        
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+[data-theme="light"] {
+  --foreground: #222222;
+  --background: #eeeeee;
+  --background2: #f4f4f4;
+  --secondary: #808080;
+  --tertiary: #dddddd;
+  --link: #010101;
+  --table-border: #d0d0d0;
+  --table-row: #f7f7f7;
+  --accent: #418001;
+  /* same as --accent but hue is 215 */
+  --blue: #013680;
+  /* same as --accent but hue is 281 */
+  --purple: #580180;
+  /* same as --accent but hue is 4 */
+  --red: #800901;
+  /* same as --accent but hue is 138 */
+  --green: #018027;
+  /* same as --accent but hue is 59 */
+  --yellow: #7e7801;
+  /* same as --accent but hue is 180 */
+  --cyan: #018080;
+}
+
+[data-theme="dark"] {
+  --foreground: #dddddd;
+  --background: #161616;
+  --background2: #131313;
+  --secondary: #999999;
+  --tertiary: #444444;
+  --link: #fefefe;
+  --table-border: #444444;
+  --table-row: #1e1e1e;
+  --accent: #cbefa6;
+  /* same as --accent but hue is 215 */
+  --blue: #a4c3ef;
+  /* same as --accent but hue is 281 */
+  --purple: #d7a4ef;
+  /* same as --accent but hue is 4 */
+  --red: #efa9a4;
+  /* same as --accent but hue is 138 */
+  --green: #a4efba;
+  /* same as --accent but hue is 57 */
+  --yellow: #efeba4;
+  /* same as --accent but hue is 180 */
+  --cyan: #a4efef;
+}

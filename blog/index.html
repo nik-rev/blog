@@ -1,0 +1,393 @@
+<!-- Entry point to every rendered page -->
+
+
+  
+
+
+<!doctype html>
+<html
+  lang="en"
+  data-theme="dark"
+>
+  
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#418001" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#cbefa6" />
+
+      
+      
+
+      
+  
+
+
+      
+  
+
+
+      
+  
+
+
+      
+  
+
+
+      <title>
+        Nik&#x27;s Blog 🦀
+      </title>
+
+      
+        <link
+          rel="stylesheet"
+          href="https://nikrev.com/css/index.css?h=3e22f41332e248e40d6e"
+        />
+      
+
+      
+        <script src="/js/code_blocks.js" type="text/javascript" defer></script>
+        <script src="/js/theme_toggle.js" type="text/javascript" defer></script>
+      
+
+      
+        <meta name="author" content="Nik Revenco" />
+      
+
+      
+        <!-- og-image-generator specific -->
+        
+          <meta property="og-image-generator" key="title" value="Nik&#x27;s Blog 🦀" />
+        
+        
+        
+      
+
+      <!-- SEO Tags -->
+      <meta property="og:title" content="Nik&#x27;s Blog 🦀" />
+      <meta property="og:description" content="" />
+      <meta itemprop="headline" content="Nik&#x27;s Blog 🦀" />
+      <meta name="description" content="" />
+
+      
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;" />
+
+        <!-- OG image -->
+        
+          <meta name="og:type" content="summary_large_image" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:title" content="Nik&#x27;s Blog 🦀" />
+          <meta property="og:image" content="https://nikrev.com/blog/og.png" />
+          <meta property="og:image:alt" content="Nik&#x27;s Blog 🦀" />
+
+          <meta property="og:image:width" content="1280" />
+          <meta property="og:image:height" content="675" />
+          <meta property="twitter:image:width" content="1280" />
+          <meta property="twitter:image:height" content="675" />
+        
+      
+
+      <!-- Allow adding custom elements to the <head> -->
+      
+  <link rel="stylesheet" href="https://nikrev.com/custom.css?h=5c0931769459f5c98bfb" />
+  <script src="https://nikrev.com/custom.js" type="text/javascript" defer></script>
+
+    </head>
+  
+  <body>
+    <div id="site">
+      
+        <header class="header">
+
+          <!-- Header -->
+    
+          
+            <div class="header__heading">
+              
+                <h1 class="header__heading__title">
+                  
+  
+  Nik&#x27;s Blog 🦀
+
+                </h1>
+              
+              <!-- Icons, after the title -->
+              
+                <div class="header__heading__icon-container">
+                  <!-- Light / dark mode toggle -->
+                  
+                    
+                      
+                    
+                    
+                    <button type="button" class="header__heading__theme-toggle" aria-label="Change to light theme" title="Change to light theme">
+                      <!--
+                        A sun or moon icon gets inserted here with JavaScript
+                        The default icons are here only to prevent layout shift
+                      -->
+                      
+                        <!-- Sun icon (dark) -->
+                        <svg class="header__heading__theme-toggle__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M264 480A232 232 0 0 1 32 248c0-94 54-178.28 137.61-214.67a16 16 0 0 1 21.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0 1 21.06 21.06C442.28 426 358 480 264 480z"></path></svg>
+                      
+                    </button>
+                  
+
+                  
+                    
+                      <button type="button" class="header__heading__rss" aria-label="RSS Feed" title="RSS Feed">
+                        <a href="https:&#x2F;&#x2F;nikrev.com/atom.xml">
+                          <svg class="header__heading__rss__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M119.9 336.1c-30.8 0-55.9 25.1-55.9 55.8 0 30.8 25.1 55.6 55.9 55.6 30.9 0 55.9-24.9 55.9-55.6 0-30.7-25-55.8-55.9-55.8z"></path><path d="M64 192v79.9c48 0 94.1 14.2 128 48.1 33.9 33.9 48 79.9 48 128h80c0-139.9-116-256-256-256z"></path><path d="M64 64v79.9c171 0 303.9 133 303.9 304.1H448C448 236.3 276 64 64 64z"></path></svg>
+                        </a>
+                      </button>
+                    
+                  
+
+                  <!-- Allow adding more icons -->
+                  
+                  
+                </div>
+              
+            </div>
+          
+
+          <!-- Navigation -->
+
+          
+            
+              <nav>
+                <ul class="header__links">
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;home
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;blog"
+                        class="
+                          header__links__link
+
+                          
+                            active
+                          
+                        "
+                      >
+                        &#x2F;blog
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;open-source"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;open-source
+                      </a>
+                    </li>
+                  
+                </ul>
+              </nav>
+            
+          
+        </header>
+      
+
+      <!-- Actual content of the page -->
+
+      
+  <main>
+    <!-- Contents of `blog/_index.md` -->
+    <div class="posts-content">
+      
+    </div>
+
+    <!-- List of blog posts, by year -->
+    
+    
+      <ul class="posts">
+        
+          <h2 class="posts__title">Posts in 2025</h2>
+          <ul class="posts__year">
+            
+              <li class="post">
+                <p class="post__date">26 Jun</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;associated-traits-will-bring-rust-1-step-closer-to-having-higher-kinded-types&#x2F;" class="post__link">
+                  Associated traits will bring Rust 1 step closer to having higher-kinded types
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">19 May</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;evil-rust&#x2F;" class="post__link">
+                  I forked Clippy to write 5 custom lints in order to enforce Evil Rust
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">16 May</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;a-cursed-way-to-combine-module-paths-in-rust-declarative-macros&#x2F;" class="post__link">
+                  A cursed way to combine module paths in Rust’s declarative macros
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">7 May</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;rust-setter-updater&#x2F;" class="post__link">
+                  How to make a function in Rust which accepts either a value <code>T</code>, or an updater <code>Fn(T) -&gt; T</code>
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">13 Apr</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;iced-functional-ui&#x2F;" class="post__link">
+                  Iced sets an example of a Rust UI library. It got me onboard in writing UIs in a functional, pure style. Here’s why
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">7 Apr</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;what-will-rust-keywords-do&#x2F;" class="post__link">
+                  Rust has many reserved keywords like <code>become</code>. But what will they do?
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">2 Apr</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;dev-env-in-rust&#x2F;" class="post__link">
+                  My development environment is fully written in Rust! And 7 Alternatives written in Rust I’m excited about
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">29 Mar</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;format-macro-slow-string-concat&#x2F;" class="post__link">
+                  Rust’s <code>format!</code> macro is slow for simple string concatenation. But <em>why</em>?
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">27 Feb</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;lit-str-concat-macro&#x2F;" class="post__link">
+                  Rust’s macros like <code>include_str!</code> have a superpower, but how can <em>our</em> code achieve it?
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">25 Feb</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;typescript-type-system-vs-rust&#x2F;" class="post__link">
+                  I thought TypeScript’s type system was powerful. And then I tried Rust.
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">30 Jan</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;trying-out-nushell&#x2F;" class="post__link">
+                  I switched from Zsh to Nushell. It’s a beautiful shell, I’m never going back!
+                </a>
+              </li>
+            
+          </ul>
+        
+          <h2 class="posts__title">Posts in 2024</h2>
+          <ul class="posts__year">
+            
+              <li class="post">
+                <p class="post__date">4 Oct</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;switched-to-helix&#x2F;" class="post__link">
+                  I gave Helix a try and now I can’t see myself using any other text editor
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">2 Oct</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;switched-to-nixos&#x2F;" class="post__link">
+                  I switched to NixOS from Arch Linux and I’m never going back
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">22 Sep</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;everything-is-a-file&#x2F;" class="post__link">
+                  Quest to understand the idea of “Everything is a file” in Linux
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">11 Sep</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;useful-neovim-tricks&#x2F;" class="post__link">
+                  Neovim tips and life hacks that significantly improved my productivity
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">2 Sep</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;arch-install&#x2F;" class="post__link">
+                  How I install Arch Linux with full disk encryption
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">21 Aug</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;linux-first-time&#x2F;" class="post__link">
+                  I was forced to use Linux. But now I love it.
+                </a>
+              </li>
+            
+              <li class="post">
+                <p class="post__date">17 Apr</p>
+                <a href="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;obscure-semantic-html&#x2F;" class="post__link">
+                  What you might not know about Semantic Blockquotes in HTML
+                </a>
+              </li>
+            
+          </ul>
+        
+      </ul>
+    
+  </main>
+
+
+      <!-- Footer -->
+
+      
+        
+          <footer>
+            <p>Powered by <a href="https://github.com/getzola/zola">Zola</a> and <a href="https://github.com/nik-rev/carbon">nik-rev/carbon</a></p>
+
+          </footer>
+        
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,310 @@
+<!-- Entry point to every rendered page -->
+
+
+  
+
+
+<!doctype html>
+<html
+  lang="en"
+  data-theme="dark"
+>
+  
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#418001" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#cbefa6" />
+
+      
+      
+
+      
+  
+
+
+      
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  
+  
+
+  
+    
+      
+    
+  
+
+
+      
+  
+
+
+      
+  
+
+
+      <title>
+        Nik&#x27;s Blog 🦀 | Rust&#x27;s macros like `include_str!` have a superpower, but how can *our* code achieve it?
+      </title>
+
+      
+        <link
+          rel="stylesheet"
+          href="https://nikrev.com/css/index.css?h=3e22f41332e248e40d6e"
+        />
+      
+
+      
+        <script src="/js/code_blocks.js" type="text/javascript" defer></script>
+        <script src="/js/theme_toggle.js" type="text/javascript" defer></script>
+      
+
+      
+        <meta name="author" content="Nik Revenco" />
+      
+
+      
+        <!-- og-image-generator specific -->
+        
+          <meta property="og-image-generator" key="title" value="Rust&#x27;s macros like `include_str!` have a superpower, but how can *our* code achieve it?" />
+        
+        
+        
+      
+
+      <!-- SEO Tags -->
+      <meta property="og:title" content="Nik&#x27;s Blog 🦀 | Rust&#x27;s macros like `include_str!` have a superpower, but how can *our* code achieve it?" />
+      <meta property="og:description" content="My personal blog" />
+      <meta itemprop="headline" content="Nik&#x27;s Blog 🦀 | Rust&#x27;s macros like `include_str!` have a superpower, but how can *our* code achieve it?" />
+      <meta name="description" content="My personal blog" />
+
+      
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;lit-str-concat-macro&#x2F;" />
+
+        <!-- OG image -->
+        
+          <meta name="og:type" content="summary_large_image" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:title" content="Nik&#x27;s Blog 🦀 | Rust&#x27;s macros like `include_str!` have a superpower, but how can *our* code achieve it?" />
+          <meta property="og:image" content="https://nikrev.com/blog/lit-str-concat-macro/og.png" />
+          <meta property="og:image:alt" content="Nik&#x27;s Blog 🦀 | Rust&#x27;s macros like `include_str!` have a superpower, but how can *our* code achieve it?" />
+
+          <meta property="og:image:width" content="1280" />
+          <meta property="og:image:height" content="675" />
+          <meta property="twitter:image:width" content="1280" />
+          <meta property="twitter:image:height" content="675" />
+        
+      
+
+      <!-- Allow adding custom elements to the <head> -->
+      
+  <link rel="stylesheet" href="https://nikrev.com/custom.css?h=5c0931769459f5c98bfb" />
+  <script src="https://nikrev.com/custom.js" type="text/javascript" defer></script>
+
+    </head>
+  
+  <body>
+    <div id="site">
+      
+        <header class="header">
+
+          <!-- Header -->
+    
+          
+            <div class="header__heading">
+              
+                <h1 class="header__heading__title">
+                  
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  
+    
+    
+    Nik&#x27;s Blog 🦀
+  
+
+                </h1>
+              
+              <!-- Icons, after the title -->
+              
+                <div class="header__heading__icon-container">
+                  <!-- Light / dark mode toggle -->
+                  
+                    
+                      
+                    
+                    
+                    <button type="button" class="header__heading__theme-toggle" aria-label="Change to light theme" title="Change to light theme">
+                      <!--
+                        A sun or moon icon gets inserted here with JavaScript
+                        The default icons are here only to prevent layout shift
+                      -->
+                      
+                        <!-- Sun icon (dark) -->
+                        <svg class="header__heading__theme-toggle__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M264 480A232 232 0 0 1 32 248c0-94 54-178.28 137.61-214.67a16 16 0 0 1 21.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0 1 21.06 21.06C442.28 426 358 480 264 480z"></path></svg>
+                      
+                    </button>
+                  
+
+                  
+                    
+                      <button type="button" class="header__heading__rss" aria-label="RSS Feed" title="RSS Feed">
+                        <a href="https:&#x2F;&#x2F;nikrev.com/atom.xml">
+                          <svg class="header__heading__rss__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M119.9 336.1c-30.8 0-55.9 25.1-55.9 55.8 0 30.8 25.1 55.6 55.9 55.6 30.9 0 55.9-24.9 55.9-55.6 0-30.7-25-55.8-55.9-55.8z"></path><path d="M64 192v79.9c48 0 94.1 14.2 128 48.1 33.9 33.9 48 79.9 48 128h80c0-139.9-116-256-256-256z"></path><path d="M64 64v79.9c171 0 303.9 133 303.9 304.1H448C448 236.3 276 64 64 64z"></path></svg>
+                        </a>
+                      </button>
+                    
+                  
+
+                  <!-- Allow adding more icons -->
+                  
+                  
+                </div>
+              
+            </div>
+          
+
+          <!-- Navigation -->
+
+          
+            
+              <nav>
+                <ul class="header__links">
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;home
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;blog"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;blog
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;open-source"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;open-source
+                      </a>
+                    </li>
+                  
+                </ul>
+              </nav>
+            
+          
+        </header>
+      
+
+      <!-- Actual content of the page -->
+
+      
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  <main class="post-content">
+    <!-- Standalone pages should not have a 2nd level 1 heading -->
+    
+      
+        <h1 class="post-content__title">Rust’s macros like <code>include_str!</code> have a superpower, but how can <em>our</em> code achieve it?</h1>
+      
+    
+
+    <!-- Date of the page -->
+    
+      <p class="post-content__date">
+        27 February, 2025
+      </p>
+    
+
+    <!-- Main content of the page -->
+    <p>You can use the <code>concat!</code> macro to pass string literals into macros:</p>
+<pre data-lang="rs" class="language-rs z-code"><code class="language-rs" data-lang="rs"><span class="z-source z-rust"><span class="z-support z-macro z-rust">env!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span><span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>ab<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span>
+</span><span class="z-source z-rust"><span class="z-support z-macro z-rust">env!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span><span class="z-support z-macro z-rust">concat!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span><span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>a<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span><span class="z-punctuation z-separator z-rust">,</span> <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>b<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span>
+</span></code></pre>
+<p>Both of the above calls will <strong>become</strong> <code>env!("ab")</code>.</p>
+<p>However, a macro created using the <a href="https://crates.io/crates/syn"><code>syn</code></a> crate that expects a literal string <code>syn::LitStr</code> as its input, such as Dioxus’s <a href="https://docs.rs/dioxus/0.6.3/dioxus/prelude/macro.asset.html"><code>asset!</code></a> macro:</p>
+<pre data-lang="rs" class="language-rs z-code"><code class="language-rs" data-lang="rs"><span class="z-source z-rust"><span class="z-support z-macro z-rust">asset!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span><span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>/assets/icons/github.svg<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span>
+</span></code></pre>
+<p>Will <em>not</em> be able to receive <code>concat!</code>.</p>
+<p>This does not compile.</p>
+<pre data-lang="rs" class="language-rs z-code"><code class="language-rs" data-lang="rs"><span class="z-source z-rust"><span class="z-support z-macro z-rust">asset!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span><span class="z-support z-macro z-rust">concat!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span><span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>/assets/icons/<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span><span class="z-punctuation z-separator z-rust">,</span> <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>github<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span><span class="z-punctuation z-separator z-rust">,</span> <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>.svg<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span>
+</span></code></pre>
+<p><strong><code style="color: var(--red);">ERROR: Expected a string literal</code></strong>.</p>
+<p>I assume this is because the <code>asset!</code> macro expects a string literal. But <em>is</em> <code>concat!("...", "...")</code> a string literal?</p>
+<p>Because <code>concat!(...)</code> itself only accepts string literals, and you can use it inside of itself: <code>concat!(concat!(""))</code>, it <strong>must</strong> be, right? For this to work, the macro has to be evaluated in this order.</p>
+<ol>
+<li>Macro expands</li>
+<li>The expanded form is passed inside the <code>concat!</code></li>
+</ol>
+<p>When you try to write your own macro that can do the above, you’ll notice it isn’t possible.</p>
+<p>Rust’s macros such as <code>include_str!</code> and <code>env!</code> have a special “superpower” where they can expand the <code>concat!</code> macro <em>before</em> parsing. However, user-created declarative macros using the <code>syn</code> crate are unable to.</p>
+<p>These macros get the raw <code>TokenStream</code> corresponding to the tokens in <code>"concat!("/assets/icons/", "github", ".svg"))"</code></p>
+<h2 id="solution"><a class="zola-anchor" href="#solution" aria-label="Anchor link for: solution">Solution</a></h2>
+<p>Thankfully, the amazing <a href="https://github.com/dtolnay">David Tolnay</a> shared a pretty cool crate called <a href="https://crates.io/crates/macro-string"><code>macro-string</code></a> which allows creating a derive macro which eagerly evaluates the following <code>std</code> macros, at the time of writing:</p>
+<ul>
+<li><code>concat!</code></li>
+<li><code>env!</code></li>
+<li><code>include!</code></li>
+<li><code>include_str!</code></li>
+<li><code>stringify!</code></li>
+</ul>
+<p>Meaning you’ll be able to pass them into macros that expect a string literal, and they’ll get expanded <em>before</em> being passed to the macro!</p>
+
+  </main>
+
+
+      <!-- Footer -->
+
+      
+        
+          <footer>
+            <p>Powered by <a href="https://github.com/getzola/zola">Zola</a> and <a href="https://github.com/nik-rev/carbon">nik-rev/carbon</a></p>
+
+          </footer>
+        
+      
+    </div>
+  </body>
+</html>
