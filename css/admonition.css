@@ -1,0 +1,60 @@
+/* Adds styling for various admonitions
+  Blockquotes:
+
+  > hello world
+
+  And the special tags:
+
+  <note>hello world</note>
+  <tip>hello world</tip>
+  <important>hello world</important>
+  <warning>hello world</warning>
+  <caution>hello world</caution>
+ */
+
+note,
+blockquote,
+tip,
+important,
+warning,
+caution {
+  display: block;
+  margin-left: 0;
+  padding-left: 0.8rem;
+  border-left: 0.4rem solid var(--color);
+  margin-top: 19px;
+  margin-bottom: 40px;
+  position: relative;
+
+  &::before {
+    content: var(--content);
+    display: block;
+    font-weight: bold;
+    color: var(--color);
+  }
+}
+
+blockquote {
+  font-style: italic;
+  --color: var(--tertiary);
+}
+note {
+  --content: "NOTE:";
+  --color: var(--blue);
+}
+tip {
+  --content: "TIP:";
+  --color: var(--green);
+}
+important {
+  --content: "IMPORTANT:";
+  --color: var(--purple);
+}
+warning {
+  --content: "WARNING:";
+  --color: var(--yellow);
+}
+caution {
+  --content: "CAUTION:";
+  --color: var(--red);
+}

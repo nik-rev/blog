@@ -1,0 +1,337 @@
+<!-- Entry point to every rendered page -->
+
+
+  
+
+
+<!doctype html>
+<html
+  lang="en"
+  data-theme="dark"
+>
+  
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#418001" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#cbefa6" />
+
+      
+      
+
+      
+  
+
+
+      
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  
+  
+
+  
+    
+      
+    
+  
+
+
+      
+  
+
+
+      
+  
+
+
+      <title>
+        Nik&#x27;s Blog 🦀 | My development environment is fully written in Rust! And 7 Alternatives written in Rust I&#x27;m excited about
+      </title>
+
+      
+        <link
+          rel="stylesheet"
+          href="https://nikrev.com/css/index.css?h=3e22f41332e248e40d6e"
+        />
+      
+
+      
+        <script src="/js/code_blocks.js" type="text/javascript" defer></script>
+        <script src="/js/theme_toggle.js" type="text/javascript" defer></script>
+      
+
+      
+        <meta name="author" content="Nik Revenco" />
+      
+
+      
+        <!-- og-image-generator specific -->
+        
+          <meta property="og-image-generator" key="title" value="My development environment is fully written in Rust! And 7 Alternatives written in Rust I&#x27;m excited about" />
+        
+        
+        
+      
+
+      <!-- SEO Tags -->
+      <meta property="og:title" content="Nik&#x27;s Blog 🦀 | My development environment is fully written in Rust! And 7 Alternatives written in Rust I&#x27;m excited about" />
+      <meta property="og:description" content="My personal blog" />
+      <meta itemprop="headline" content="Nik&#x27;s Blog 🦀 | My development environment is fully written in Rust! And 7 Alternatives written in Rust I&#x27;m excited about" />
+      <meta name="description" content="My personal blog" />
+
+      
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;dev-env-in-rust&#x2F;" />
+
+        <!-- OG image -->
+        
+          <meta name="og:type" content="summary_large_image" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:title" content="Nik&#x27;s Blog 🦀 | My development environment is fully written in Rust! And 7 Alternatives written in Rust I&#x27;m excited about" />
+          <meta property="og:image" content="https://nikrev.com/blog/dev-env-in-rust/og.png" />
+          <meta property="og:image:alt" content="Nik&#x27;s Blog 🦀 | My development environment is fully written in Rust! And 7 Alternatives written in Rust I&#x27;m excited about" />
+
+          <meta property="og:image:width" content="1280" />
+          <meta property="og:image:height" content="675" />
+          <meta property="twitter:image:width" content="1280" />
+          <meta property="twitter:image:height" content="675" />
+        
+      
+
+      <!-- Allow adding custom elements to the <head> -->
+      
+  <link rel="stylesheet" href="https://nikrev.com/custom.css?h=5c0931769459f5c98bfb" />
+  <script src="https://nikrev.com/custom.js" type="text/javascript" defer></script>
+
+    </head>
+  
+  <body>
+    <div id="site">
+      
+        <header class="header">
+
+          <!-- Header -->
+    
+          
+            <div class="header__heading">
+              
+                <h1 class="header__heading__title">
+                  
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  
+    
+    
+    Nik&#x27;s Blog 🦀
+  
+
+                </h1>
+              
+              <!-- Icons, after the title -->
+              
+                <div class="header__heading__icon-container">
+                  <!-- Light / dark mode toggle -->
+                  
+                    
+                      
+                    
+                    
+                    <button type="button" class="header__heading__theme-toggle" aria-label="Change to light theme" title="Change to light theme">
+                      <!--
+                        A sun or moon icon gets inserted here with JavaScript
+                        The default icons are here only to prevent layout shift
+                      -->
+                      
+                        <!-- Sun icon (dark) -->
+                        <svg class="header__heading__theme-toggle__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M264 480A232 232 0 0 1 32 248c0-94 54-178.28 137.61-214.67a16 16 0 0 1 21.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0 1 21.06 21.06C442.28 426 358 480 264 480z"></path></svg>
+                      
+                    </button>
+                  
+
+                  
+                    
+                      <button type="button" class="header__heading__rss" aria-label="RSS Feed" title="RSS Feed">
+                        <a href="https:&#x2F;&#x2F;nikrev.com/atom.xml">
+                          <svg class="header__heading__rss__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M119.9 336.1c-30.8 0-55.9 25.1-55.9 55.8 0 30.8 25.1 55.6 55.9 55.6 30.9 0 55.9-24.9 55.9-55.6 0-30.7-25-55.8-55.9-55.8z"></path><path d="M64 192v79.9c48 0 94.1 14.2 128 48.1 33.9 33.9 48 79.9 48 128h80c0-139.9-116-256-256-256z"></path><path d="M64 64v79.9c171 0 303.9 133 303.9 304.1H448C448 236.3 276 64 64 64z"></path></svg>
+                        </a>
+                      </button>
+                    
+                  
+
+                  <!-- Allow adding more icons -->
+                  
+                  
+                </div>
+              
+            </div>
+          
+
+          <!-- Navigation -->
+
+          
+            
+              <nav>
+                <ul class="header__links">
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;home
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;blog"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;blog
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;open-source"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;open-source
+                      </a>
+                    </li>
+                  
+                </ul>
+              </nav>
+            
+          
+        </header>
+      
+
+      <!-- Actual content of the page -->
+
+      
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  <main class="post-content">
+    <!-- Standalone pages should not have a 2nd level 1 heading -->
+    
+      
+        <h1 class="post-content__title">My development environment is fully written in Rust! And 7 Alternatives written in Rust I’m excited about</h1>
+      
+    
+
+    <!-- Date of the page -->
+    
+      <p class="post-content__date">
+        2 April, 2025
+      </p>
+    
+
+    <!-- Main content of the page -->
+    <p>Since I started learning Rust 5 months ago, I have since replaced my full development environment with software written in Rust.</p>
+<h2 id="but-why"><a class="zola-anchor" href="#but-why" aria-label="Anchor link for: but-why">But why?!</a></h2>
+<p>Well, I <em>like</em> Rust and I also <em>love</em> contributing to open source.</p>
+<p>I contribute features I would use myself, and I like to contributes to projects that I believe in.</p>
+<p>Not only does it keep me motivated to work on them, but also it’s very fun to use something I made myself. So using software written in Rust enables me to enjoy using tools that I understand and develop.</p>
+<p>I also like to understand how the software I use actually works. IDEs, shells, terminal emulators. What actually happens <em>under the hood</em>? Rust makes it <strong>exciting</strong> for me to just dig into the codebase and read to my heart’s desire.</p>
+<h2 id="neovim-helix-ide"><a class="zola-anchor" href="#neovim-helix-ide" aria-label="Anchor link for: neovim-helix-ide">Neovim → Helix (IDE)</a></h2>
+<p>Helix is just ready to go out of the box. Everything is setup, it doesn’t support plugins yet but they’re not needed for me (probably because I have freedom to modify any part of Helix anyways).</p>
+<p>Helix has custom keybindings and allows running TUIs inside of it like a git UI or a file manager which is extremely powerful.</p>
+<h2 id="kitty-rio-terminal-emulator"><a class="zola-anchor" href="#kitty-rio-terminal-emulator" aria-label="Anchor link for: kitty-rio-terminal-emulator">Kitty → Rio (Terminal Emulator)</a></h2>
+<p>The other two Rust terminals I’ve used is Alacritty and WezTerm.</p>
+<p>I <em>loved</em> Alacritty for its performance, and I using WezTerm was pure joy, for how many features it has. Alacritty is quite conservative on features so they don’t support stuff like ligatures or tabs which is a deal-breaker for me.</p>
+<p>Rio is basically a blend of these 2 terminals, Rio uses the high-performance crates developed by Alacritty while having all the features I needed from WezTerm</p>
+<h2 id="lazygit-gitui"><a class="zola-anchor" href="#lazygit-gitui" aria-label="Anchor link for: lazygit-gitui">Lazygit → GitUI</a></h2>
+<p>While <a href="https://github.com/gitui-org/gitui">GitUI</a> has less features than <a href="https://github.com/jesseduffield/lazygit">Lazygit</a>, I still find it plenty for my use cases.</p>
+<p>GitUI uses <a href="https://github.com/GitoxideLabs/gitoxide">gitoxide</a> under the hood where possible for its operations.</p>
+<p>gitoxide is a Rust implementation of Git that’s making very good progress, and is a project I am really excited about plus believe is criminally underrated. Gitoxide is powering projects like Helix for git hunks and (hopefully soon!) <a href="https://github.com/helix-editor/helix/pull/13133">inline blame</a>.</p>
+<p>I do find GitUI snappier than Lazygit is, in fact I experienced about 3X performance increase when undoing changes for 1,200 files so I’d say it is very promising and looking forward to seeing where it can be improved to have more a feature parity with Lazygit!</p>
+<h2 id="zsh-nushell"><a class="zola-anchor" href="#zsh-nushell" aria-label="Anchor link for: zsh-nushell">zsh → nushell</a></h2>
+<p><a href="https://github.com/nushell/nushell">Nushell</a> is <em>very</em> different from zsh, bash, fish and similar shells. Every command is colored and syntax highlighting comes out of the box. Traditional shells output text, whilst in nushell commands output <strong>structured data</strong> like tables and arrays, on which you can use high-level commands like <code>filter</code>, <code>map</code>, <code>first</code>, <code>reverse</code> etc. to operate on them.</p>
+<p>It comes with a swiss-army knife of utility commands that fit into Nushell’s model. Utilities for parsing text into structured data, as well as operating on them. The <code>nu</code> language is the most beautiful scripting language I have come across. It’s like the Rust of scripting languages, in a sense.</p>
+<p>I’d say this shell is much easier to learn and is a lot more intuitive than any other shell. Also being cross-platform is a huge bonus. Nushell to Zsh is strikingly similar to what Helix is to Neovim.</p>
+<h2 id="lf-yazi-file-manager"><a class="zola-anchor" href="#lf-yazi-file-manager" aria-label="Anchor link for: lf-yazi-file-manager">lf → yazi (file manager)</a></h2>
+<p>I don’t really use file managers much aside from occasionally viewing images with them, as that is very handy. However, with Helix there is a direct integration available for yazi that lets you use it like a plugin. It integrates so well and is really seamless, not requiring tmux or zellij or whatever. this made me use yazi far, far more now. I like how fast yazi is.</p>
+<h2 id="tmux-zellij-terminal-multiplexer"><a class="zola-anchor" href="#tmux-zellij-terminal-multiplexer" aria-label="Anchor link for: tmux-zellij-terminal-multiplexer">tmux → zellij (terminal multiplexer)</a></h2>
+<p>I don’t use terminal multiplexers often, but I appreciate that zellij has more intuitive keybindings and is easier to customize, also feels a lot snappier than tmux</p>
+<h2 id="sway-niri-tiling-window-manager-wayland-compositor"><a class="zola-anchor" href="#sway-niri-tiling-window-manager-wayland-compositor" aria-label="Anchor link for: sway-niri-tiling-window-manager-wayland-compositor">sway → niri (tiling window manager + wayland compositor)</a></h2>
+<p>I’d like to give niri a mention too. I haven’t tried it as it simply doesn’t work with my Nvidia 4070 GPU unfortunately but I do hope support improves for it. I’ve been really wanting to switch to a tiling window manager + wayland compositor but there aren’t really many options in this field. Niri is also doing things the “new way” like Helix and Nushell are. I’m super happy to see these software not afraid of experimentation, this is exactly how things get better!</p>
+<hr />
+<p>Some honorary mentions:</p>
+<ul>
+<li>grep → ripgrep</li>
+<li>find → fd</li>
+<li>latex → typst</li>
+</ul>
+<p>Some things I hope to replace in my lifetime with pure Rust alternatives would be:</p>
+<ul>
+<li>Operating System (Linux) → e.g. RedoxOS</li>
+<li>Browser (Firefox) → e.g. Servo</li>
+<li>Image Editor (Gimp and Inkscape) → e.g. Graphite.rs</li>
+<li>Media Player (mpv), Video Editor (kdenlive), Recording Software (obs studio) → ??? rewriting FFMPEG in Rust is left as an exercise to the reader :)</li>
+</ul>
+<h2 id="references"><a class="zola-anchor" href="#references" aria-label="Anchor link for: references">References</a></h2>
+<ul>
+<li><a href="https://github.com/neovim/neovim">Neovim</a> → <a href="https://github.com/helix-editor/helix">Helix</a></li>
+<li><a href="https://sw.kovidgoyal.net/kitty/">Kitty</a> → <a href="https://github.com/raphamorim/rio">Rio</a></li>
+<li><a href="https://github.com/jesseduffield/lazygit">Lazygit</a> → <a href="https://github.com/extrawurst/gitui">GitUI</a></li>
+<li><a href="https://www.zsh.org/">zsh</a> → <a href="https://github.com/nushell/nushell">nushell</a></li>
+<li><a href="https://github.com/gokcehan/lf">lf</a> → <a href="https://github.com/sxyazi/yazi">yazi</a></li>
+<li><a href="https://github.com/tmux/tmux">tmux</a> → <a href="https://github.com/zellij-org/zellij">zellij</a></li>
+<li><a href="https://github.com/swaywm/sway">sway</a> → <a href="https://github.com/YaLTeR/niri">niri</a></li>
+<li><a href="https://www.gnu.org/software/grep/">grep</a> → <a href="https://github.com/BurntSushi/ripgrep">ripgrep</a></li>
+<li><a href="https://www.gnu.org/software/findutils/">find</a> → <a href="https://github.com/sharkdp/fd">fd</a></li>
+<li><a href="https://www.latex-project.org/">LaTeX</a> → <a href="https://github.com/typst/typst">typst</a></li>
+<li><a href="https://www.kernel.org/">Linux</a> → <a href="https://github.com/redox-os/redox">RedoxOS</a></li>
+<li><a href="https://www.mozilla.org/firefox/">Firefox</a> → <a href="https://github.com/servo/servo">Servo</a></li>
+<li><a href="https://www.gimp.org/">GIMP</a> and <a href="https://inkscape.org/">Inkscape</a> → <a href="https://github.com/GraphiteEditor/Graphite">Graphite.rs</a></li>
+</ul>
+<p><a href="https://github.com/nik-rev/dotfiles">I use these tools in my dotfiles</a>.</p>
+
+  </main>
+
+
+      <!-- Footer -->
+
+      
+        
+          <footer>
+            <p>Powered by <a href="https://github.com/getzola/zola">Zola</a> and <a href="https://github.com/nik-rev/carbon">nik-rev/carbon</a></p>
+
+          </footer>
+        
+      
+    </div>
+  </body>
+</html>

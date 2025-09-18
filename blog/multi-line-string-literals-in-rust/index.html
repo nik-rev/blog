@@ -1,0 +1,390 @@
+<!-- Entry point to every rendered page -->
+
+
+  
+
+
+<!doctype html>
+<html
+  lang="en"
+  data-theme="dark"
+>
+  
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#418001" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#cbefa6" />
+
+      
+      
+
+      
+  
+
+
+      
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  
+  
+
+  
+    
+      
+    
+  
+
+
+      
+  
+
+
+      
+  
+
+
+      <title>
+        Nik&#x27;s Blog 🦀 | Multi-line string literals in Rust
+      </title>
+
+      
+        <link
+          rel="stylesheet"
+          href="https://nikrev.com/css/index.css?h=3e22f41332e248e40d6e"
+        />
+      
+
+      
+        <script src="/js/code_blocks.js" type="text/javascript" defer></script>
+        <script src="/js/theme_toggle.js" type="text/javascript" defer></script>
+      
+
+      
+        <meta name="author" content="Nik Revenco" />
+      
+
+      
+        <!-- og-image-generator specific -->
+        
+          <meta property="og-image-generator" key="title" value="Multi-line string literals in Rust" />
+        
+        
+        
+      
+
+      <!-- SEO Tags -->
+      <meta property="og:title" content="Nik&#x27;s Blog 🦀 | Multi-line string literals in Rust" />
+      <meta property="og:description" content="My personal blog" />
+      <meta itemprop="headline" content="Nik&#x27;s Blog 🦀 | Multi-line string literals in Rust" />
+      <meta name="description" content="My personal blog" />
+
+      
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;multi-line-string-literals-in-rust&#x2F;" />
+
+        <!-- OG image -->
+        
+          <meta name="og:type" content="summary_large_image" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:title" content="Nik&#x27;s Blog 🦀 | Multi-line string literals in Rust" />
+          <meta property="og:image" content="https://nikrev.com/blog/multi-line-string-literals-in-rust/og.png" />
+          <meta property="og:image:alt" content="Nik&#x27;s Blog 🦀 | Multi-line string literals in Rust" />
+
+          <meta property="og:image:width" content="1280" />
+          <meta property="og:image:height" content="675" />
+          <meta property="twitter:image:width" content="1280" />
+          <meta property="twitter:image:height" content="675" />
+        
+      
+
+      <!-- Allow adding custom elements to the <head> -->
+      
+  <link rel="stylesheet" href="https://nikrev.com/custom.css?h=5c0931769459f5c98bfb" />
+  <script src="https://nikrev.com/custom.js" type="text/javascript" defer></script>
+
+    </head>
+  
+  <body>
+    <div id="site">
+      
+        <header class="header">
+
+          <!-- Header -->
+    
+          
+            <div class="header__heading">
+              
+                <h1 class="header__heading__title">
+                  
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  
+    
+    
+    Nik&#x27;s Blog 🦀
+  
+
+                </h1>
+              
+              <!-- Icons, after the title -->
+              
+                <div class="header__heading__icon-container">
+                  <!-- Light / dark mode toggle -->
+                  
+                    
+                      
+                    
+                    
+                    <button type="button" class="header__heading__theme-toggle" aria-label="Change to light theme" title="Change to light theme">
+                      <!--
+                        A sun or moon icon gets inserted here with JavaScript
+                        The default icons are here only to prevent layout shift
+                      -->
+                      
+                        <!-- Sun icon (dark) -->
+                        <svg class="header__heading__theme-toggle__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M264 480A232 232 0 0 1 32 248c0-94 54-178.28 137.61-214.67a16 16 0 0 1 21.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0 1 21.06 21.06C442.28 426 358 480 264 480z"></path></svg>
+                      
+                    </button>
+                  
+
+                  
+                    
+                      <button type="button" class="header__heading__rss" aria-label="RSS Feed" title="RSS Feed">
+                        <a href="https:&#x2F;&#x2F;nikrev.com/atom.xml">
+                          <svg class="header__heading__rss__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M119.9 336.1c-30.8 0-55.9 25.1-55.9 55.8 0 30.8 25.1 55.6 55.9 55.6 30.9 0 55.9-24.9 55.9-55.6 0-30.7-25-55.8-55.9-55.8z"></path><path d="M64 192v79.9c48 0 94.1 14.2 128 48.1 33.9 33.9 48 79.9 48 128h80c0-139.9-116-256-256-256z"></path><path d="M64 64v79.9c171 0 303.9 133 303.9 304.1H448C448 236.3 276 64 64 64z"></path></svg>
+                        </a>
+                      </button>
+                    
+                  
+
+                  <!-- Allow adding more icons -->
+                  
+                  
+                </div>
+              
+            </div>
+          
+
+          <!-- Navigation -->
+
+          
+            
+              <nav>
+                <ul class="header__links">
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;home
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;blog"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;blog
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;open-source"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;open-source
+                      </a>
+                    </li>
+                  
+                </ul>
+              </nav>
+            
+          
+        </header>
+      
+
+      <!-- Actual content of the page -->
+
+      
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  <main class="post-content">
+    <!-- Standalone pages should not have a 2nd level 1 heading -->
+    
+      
+        <h1 class="post-content__title">Multi-line string literals in Rust</h1>
+      
+    
+
+    <!-- Date of the page -->
+    
+      <p class="post-content__date">
+        18 September, 2025
+      </p>
+    
+
+    <!-- Main content of the page -->
+    <p>Writing multi-line strings in Rust is quite awkward:</p>
+<pre data-lang="rust" class="language-rust z-code"><code class="language-rust" data-lang="rust"><span class="z-source z-rust"><span class="z-storage z-type z-rust">let</span> sql <span class="z-keyword z-operator z-assignment z-rust">=</span> <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>create table student(
+</span></span><span class="z-source z-rust"><span class="z-string z-quoted z-double z-rust">    id int primary key,
+</span></span><span class="z-source z-rust"><span class="z-string z-quoted z-double z-rust">    name text
+</span></span><span class="z-source z-rust"><span class="z-string z-quoted z-double z-rust">)<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span><span class="z-punctuation z-terminator z-rust">;</span>
+</span></code></pre>
+<p>I like how it works in Zig, I think Zig’s multi-line string literal syntax is one of the best:</p>
+<pre data-lang="zig" class="language-zig z-code"><code class="language-zig" data-lang="zig"><span class="z-source z-zig"><span class="z-storage z-modifier z-zig">const</span> sql <span class="z-keyword z-operator z-assignment z-zig">=</span>
+</span><span class="z-source z-zig">    <span class="z-string z-quoted z-other z-zig">\\ create table student(
+</span></span><span class="z-source z-zig">    <span class="z-string z-quoted z-other z-zig">\\     id int primary key,
+</span></span><span class="z-source z-zig">    <span class="z-string z-quoted z-other z-zig">\\     name text
+</span></span><span class="z-source z-zig">    <span class="z-string z-quoted z-other z-zig">\\ )
+</span></span><span class="z-source z-zig"><span class="z-punctuation z-terminator z-zig">;</span>
+</span></code></pre>
+<p>Comments in Zig use <code>//</code> and make content until end of the line part of the comment. Same with multi-line string literals, <code>\\</code> makes everything after it a part of the string.
+Incredible consistency.</p>
+<p>I’ve been missing this feature a lot in Rust. There are some solutions for this problem, like the <code>indoc</code> crate:</p>
+<pre data-lang="rs" class="language-rs z-code"><code class="language-rs" data-lang="rs"><span class="z-source z-rust"><span class="z-storage z-type z-rust">let</span> sql <span class="z-keyword z-operator z-assignment z-rust">=</span> <span class="z-support z-macro z-rust">indoc!</span> <span class="z-meta z-block z-rust"><span class="z-punctuation z-section z-block z-begin z-rust">{</span><span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-block z-rust"><span class="z-string z-quoted z-double z-rust">    create table student(
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-block z-rust"><span class="z-string z-quoted z-double z-rust">        id int primary key,
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-block z-rust"><span class="z-string z-quoted z-double z-rust">        name text
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-block z-rust"><span class="z-string z-quoted z-double z-rust">    )
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-block z-rust"><span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span></span><span class="z-meta z-block z-rust"><span class="z-punctuation z-section z-block z-end z-rust">}</span></span><span class="z-punctuation z-terminator z-rust">;</span>
+</span></code></pre>
+<p>Or you can do it using one of the following alternatives:</p>
+<pre data-lang="rs" class="language-rs z-code"><code class="language-rs" data-lang="rs"><span class="z-source z-rust"><span class="z-storage z-type z-rust">let</span> sql <span class="z-keyword z-operator z-assignment z-rust">=</span> <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span><span class="z-punctuation z-separator z-continuation z-line z-rust">\</span>
+</span></span><span class="z-source z-rust"><span class="z-string z-quoted z-double z-rust">create table student(
+</span></span><span class="z-source z-rust"><span class="z-string z-quoted z-double z-rust">    id int primary key,
+</span></span><span class="z-source z-rust"><span class="z-string z-quoted z-double z-rust">    name text
+</span></span><span class="z-source z-rust"><span class="z-string z-quoted z-double z-rust">)<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span><span class="z-punctuation z-terminator z-rust">;</span>
+</span></code></pre>
+<pre data-lang="rs" class="language-rs z-code"><code class="language-rs" data-lang="rs"><span class="z-source z-rust"><span class="z-storage z-type z-rust">let</span> sql <span class="z-keyword z-operator z-assignment z-rust">=</span> <span class="z-support z-macro z-rust">concat!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span>
+</span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">    <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>create table student<span class="z-constant z-character z-escape z-rust">\n</span><span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span><span class="z-punctuation z-separator z-rust">,</span>
+</span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">    <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>    id int primary key,<span class="z-constant z-character z-escape z-rust">\n</span><span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span><span class="z-punctuation z-separator z-rust">,</span>
+</span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">    <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>    name text<span class="z-constant z-character z-escape z-rust">\n</span><span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span><span class="z-punctuation z-separator z-rust">,</span>
+</span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">    <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>)<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span><span class="z-punctuation z-separator z-rust">,</span>
+</span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust"></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span><span class="z-punctuation z-terminator z-rust">;</span>
+</span></code></pre>
+<pre data-lang="rs" class="language-rs z-code"><code class="language-rs" data-lang="rs"><span class="z-source z-rust"><span class="z-storage z-type z-rust">let</span> sql <span class="z-keyword z-operator z-assignment z-rust">=</span> <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span><span class="z-punctuation z-separator z-continuation z-line z-rust">\</span>
+</span></span><span class="z-source z-rust"><span class="z-string z-quoted z-double z-rust">    create table student(<span class="z-constant z-character z-escape z-rust">\n</span><span class="z-punctuation z-separator z-continuation z-line z-rust">\</span>
+</span></span><span class="z-source z-rust"><span class="z-string z-quoted z-double z-rust">        id int primary key,<span class="z-constant z-character z-escape z-rust">\n</span><span class="z-punctuation z-separator z-continuation z-line z-rust">\</span>
+</span></span><span class="z-source z-rust"><span class="z-string z-quoted z-double z-rust">        name text<span class="z-constant z-character z-escape z-rust">\n</span><span class="z-punctuation z-separator z-continuation z-line z-rust">\</span>
+</span></span><span class="z-source z-rust"><span class="z-string z-quoted z-double z-rust">    )<span class="z-punctuation z-separator z-continuation z-line z-rust">\</span>
+</span></span><span class="z-source z-rust"><span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span><span class="z-punctuation z-terminator z-rust">;</span>
+</span></code></pre>
+<p>But none of those are satsifying to me.
+The biggest selling point of multi-line string literals is that they would be automatically formatted by <code>rustfmt</code> to match the surrounding indentation.</p>
+<p>But wait… apparently Rust already has multi-line string literals? It’s just as elegant as Zig’s, and I’ve never seen anyone use it!</p>
+<pre data-lang="rust" class="language-rust z-code"><code class="language-rust" data-lang="rust"><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-support z-function z-rust">macro_rules!</span> <span class="z-entity z-name z-macro z-rust">multi</span> <span class="z-meta z-block z-rust"><span class="z-punctuation z-section z-block z-begin z-rust">{</span></span></span><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust">
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust">    <span class="z-meta z-group z-macro-matcher z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span>
+</span></span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust"><span class="z-meta z-group z-macro-matcher z-rust">        #[doc = $first:literal]
+</span></span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust"><span class="z-meta z-group z-macro-matcher z-rust">        <span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust"><span class="z-keyword z-operator z-rust">$</span>(</span>#[doc = $rest:literal]<span class="z-punctuation z-section z-group z-end z-rust">)</span><span class="z-keyword z-operator z-rust">*</span></span>
+</span></span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust"><span class="z-meta z-group z-macro-matcher z-rust">    <span class="z-punctuation z-section z-group z-end z-rust">)</span></span> <span class="z-keyword z-operator z-rust">=&gt;</span> <span class="z-meta z-block z-macro-body z-rust"><span class="z-punctuation z-section z-block z-begin z-rust">{</span>
+</span></span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust"><span class="z-meta z-block z-macro-body z-rust">        <span class="z-support z-macro z-rust">concat!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span><span class="z-variable z-other z-rust">$first</span><span class="z-punctuation z-separator z-rust">,</span> <span class="z-keyword z-operator z-rust">$</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span><span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span><span class="z-constant z-character z-escape z-rust">\n</span><span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span><span class="z-punctuation z-separator z-rust">,</span> <span class="z-variable z-other z-rust">$rest</span><span class="z-punctuation z-separator z-rust">,</span></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span><span class="z-keyword z-operator z-arithmetic z-rust">*</span></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span>
+</span></span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust"><span class="z-meta z-block z-macro-body z-rust">    <span class="z-punctuation z-section z-block z-end z-rust">}</span></span><span class="z-punctuation z-terminator z-macro-matcher z-rust">;</span>
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust"></span></span><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust"><span class="z-punctuation z-section z-block z-end z-rust">}</span></span></span>
+</span><span class="z-source z-rust"><span class="z-storage z-type z-rust">let</span> sql <span class="z-keyword z-operator z-assignment z-rust">=</span> <span class="z-support z-macro z-rust">multi!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span>
+</span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">    <span class="z-comment z-line z-documentation z-rust"><span class="z-punctuation z-definition z-comment z-rust">///</span> create table student(
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">    <span class="z-comment z-line z-documentation z-rust"><span class="z-punctuation z-definition z-comment z-rust">///</span>     id int primary key,
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">    <span class="z-comment z-line z-documentation z-rust"><span class="z-punctuation z-definition z-comment z-rust">///</span>     name text
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">    <span class="z-comment z-line z-documentation z-rust"><span class="z-punctuation z-definition z-comment z-rust">///</span> );
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust"></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span><span class="z-punctuation z-terminator z-rust">;</span>
+</span></code></pre>
+<p>This works since <code>/// foo</code> is just syntax sugar for <code>#[doc = r"foo"]</code>.</p>
+<p>What I <em>really</em> like about this is that I can take the expression <code>multi!(...)</code> and copy-paste it wherever I feel like, <strong>and the indentation will be preserved!</strong>.</p>
+<p>And the best part, it is totally customizeable! You can make a cool new <code>format!</code> macro that makes use of that syntax:</p>
+<pre data-lang="rs" class="language-rs z-code"><code class="language-rs" data-lang="rs"><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-support z-function z-rust">macro_rules!</span> <span class="z-entity z-name z-macro z-rust">multi_format</span> <span class="z-meta z-block z-rust"><span class="z-punctuation z-section z-block z-begin z-rust">{</span></span></span><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust">
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust">    <span class="z-meta z-group z-macro-matcher z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span>
+</span></span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust"><span class="z-meta z-group z-macro-matcher z-rust">        #[doc = $first:literal]
+</span></span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust"><span class="z-meta z-group z-macro-matcher z-rust">        <span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust"><span class="z-keyword z-operator z-rust">$</span>(</span>#[doc = $rest:literal]<span class="z-punctuation z-section z-group z-end z-rust">)</span><span class="z-keyword z-operator z-rust">*</span></span>
+</span></span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust"><span class="z-meta z-group z-macro-matcher z-rust">        <span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust"><span class="z-keyword z-operator z-rust">$</span>(</span>, $(<span class="z-variable z-parameter z-macro z-rust">$tt</span><span class="z-punctuation z-separator z-rust">:</span><span class="z-storage z-type z-rust">tt</span><span class="z-punctuation z-section z-group z-end z-rust">)</span><span class="z-keyword z-operator z-rust">*</span></span><span class="z-punctuation z-section z-group z-end z-rust">)</span></span>?
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust">    ) =&gt; {
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust">        format!<span class="z-meta z-group z-macro-matcher z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span>concat!($first, <span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust"><span class="z-keyword z-operator z-rust">$</span>(</span>&quot;\n&quot;, $rest,<span class="z-punctuation z-section z-group z-end z-rust">)</span><span class="z-keyword z-operator z-rust">*</span></span><span class="z-punctuation z-section z-group z-end z-rust">)</span></span>$<span class="z-meta z-group z-macro-matcher z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span>, <span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust"><span class="z-keyword z-operator z-rust">$</span>(</span>$tt<span class="z-punctuation z-section z-group z-end z-rust">)</span><span class="z-keyword z-operator z-rust">*</span></span><span class="z-punctuation z-section z-group z-end z-rust">)</span></span>?)
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust">    </span></span><span class="z-meta z-macro z-rust"><span class="z-meta z-block z-rust"><span class="z-punctuation z-section z-block z-end z-rust">}</span></span></span><span class="z-punctuation z-terminator z-rust">;</span>
+</span><span class="z-source z-rust">}
+</span><span class="z-source z-rust">
+</span><span class="z-source z-rust"><span class="z-storage z-type z-rust">let</span> foo <span class="z-keyword z-operator z-assignment z-rust">=</span> <span class="z-support z-macro z-rust">multi_format!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span>
+</span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">     <span class="z-comment z-line z-documentation z-rust"><span class="z-punctuation z-definition z-comment z-rust">///</span> Hello, my name is {}
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">     <span class="z-punctuation z-separator z-rust">,</span> <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>bob<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span>
+</span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust"></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span><span class="z-punctuation z-terminator z-rust">;</span>
+</span></code></pre>
+<p>It won’t work with interpolated variables, though:</p>
+<pre data-lang="rs" class="language-rs z-code"><code class="language-rs" data-lang="rs"><span class="z-source z-rust"><span class="z-storage z-type z-rust">let</span> age <span class="z-keyword z-operator z-assignment z-rust">=</span> <span class="z-constant z-numeric z-integer z-decimal z-rust">0</span><span class="z-punctuation z-terminator z-rust">;</span>
+</span><span class="z-source z-rust"><span class="z-storage z-type z-rust">let</span> bob <span class="z-keyword z-operator z-assignment z-rust">=</span> <span class="z-support z-macro z-rust">multi_format!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span>
+</span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">     <span class="z-comment z-line z-documentation z-rust"><span class="z-punctuation z-definition z-comment z-rust">///</span> Hello, my name is {} and I am {age} years old!
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">     <span class="z-punctuation z-separator z-rust">,</span> <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>bob<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span>
+</span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust"></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span><span class="z-punctuation z-terminator z-rust">;</span>
+</span></code></pre>
+<blockquote>
+<p>“there is no argument named <code>age</code>”
+did you intend to capture a variable <code>age</code> from the surrounding scope?
+to avoid ambiguity, <code>format_args!</code> cannot capture variables when the format string is expanded from a macro</p>
+</blockquote>
+<p>That’s unfortunate, it takes away from the utility of a <em>naive</em> implementatio!
+That’s why I made a procedural macro <a href="https://github.com/nik-rev/docstr/tree/main"><code>docstr!</code></a>, which turns documentation into strings at compile-time:</p>
+<pre data-lang="rust" class="language-rust z-code"><code class="language-rust" data-lang="rust"><span class="z-source z-rust"><span class="z-keyword z-other z-rust">use</span> <span class="z-meta z-path z-rust">docstr<span class="z-punctuation z-accessor z-rust">::</span></span>docstr<span class="z-punctuation z-terminator z-rust">;</span>
+</span><span class="z-source z-rust">
+</span><span class="z-source z-rust"><span class="z-storage z-type z-rust">let</span> hello_world<span class="z-punctuation z-separator z-rust">:</span> <span class="z-keyword z-operator z-bitwise z-rust">&amp;</span><span class="z-storage z-modifier z-lifetime z-rust">&#39;static</span> <span class="z-storage z-type z-rust">str</span> <span class="z-keyword z-operator z-assignment z-rust">=</span> <span class="z-support z-macro z-rust">docstr!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span>format
+</span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">    <span class="z-comment z-line z-documentation z-rust"><span class="z-punctuation z-definition z-comment z-rust">///</span> fn main() {
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">    <span class="z-comment z-line z-documentation z-rust"><span class="z-punctuation z-definition z-comment z-rust">///</span>     println!(&quot;Hello, my name is {}&quot;);
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust">    <span class="z-comment z-line z-documentation z-rust"><span class="z-punctuation z-definition z-comment z-rust">///</span> }
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust"><span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>Bob<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span><span class="z-punctuation z-terminator z-rust">;</span>
+</span><span class="z-source z-rust">
+</span><span class="z-source z-rust"><span class="z-support z-macro z-rust">assert_eq!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span>hello_world_in_c<span class="z-punctuation z-separator z-rust">,</span> <span class="z-string z-quoted z-double z-raw z-rust"><span class="z-storage z-type z-string z-rust">r</span><span class="z-punctuation z-definition z-string z-begin z-rust">#&quot;</span>fn main() {
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust"><span class="z-string z-quoted z-double z-raw z-rust">    println!(&quot;Hello, my name is Bob&quot;);
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust"><span class="z-string z-quoted z-double z-raw z-rust">}<span class="z-punctuation z-definition z-string z-end z-rust">&quot;#</span></span></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-end z-rust">)</span></span>
+</span></code></pre>
+<p>Expands to this:</p>
+<pre data-lang="rust" class="language-rust z-code"><code class="language-rust" data-lang="rust"><span class="z-source z-rust"><span class="z-support z-macro z-rust">format!</span><span class="z-meta z-group z-rust"><span class="z-punctuation z-section z-group z-begin z-rust">(</span></span><span class="z-meta z-group z-rust"><span class="z-string z-quoted z-double z-raw z-rust"><span class="z-storage z-type z-string z-rust">r</span><span class="z-punctuation z-definition z-string z-begin z-rust">#</span>&quot;fn main() {
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust"><span class="z-string z-quoted z-double z-raw z-rust">    println!(&quot;Hello, my name is <span class="z-constant z-other z-placeholder z-rust">{}</span>&quot;);
+</span></span></span><span class="z-source z-rust"><span class="z-meta z-group z-rust"><span class="z-string z-quoted z-double z-raw z-rust">}<span class="z-punctuation z-definition z-string z-end z-rust">&quot;#</span></span></span><span class="z-meta z-group z-rust"><span class="z-punctuation z-separator z-rust">,</span> <span class="z-string z-quoted z-double z-rust"><span class="z-punctuation z-definition z-string z-begin z-rust">&quot;</span>Bob<span class="z-punctuation z-definition z-string z-end z-rust">&quot;</span></span><span class="z-punctuation z-section z-group z-end z-rust">)</span></span>
+</span></code></pre>
+
+  </main>
+
+
+      <!-- Footer -->
+
+      
+        
+          <footer>
+            <p>Powered by <a href="https://github.com/getzola/zola">Zola</a> and <a href="https://github.com/nik-rev/carbon">nik-rev/carbon</a></p>
+
+          </footer>
+        
+      
+    </div>
+  </body>
+</html>

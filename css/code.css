@@ -1,0 +1,147 @@
+.codeblock {
+  /* show name of the code block in the top-right corner */
+  &:has(pre[data-name]) {
+    position: relative;
+    &::before {
+      position: absolute;
+      font-family: monospace;
+      content: attr(data-name);
+      background-color: var(--background2);
+      padding: 5px 10px;
+      right: 0px;
+      top: -20%;
+      z-index: 20;
+    }
+  }
+
+  /* highlighted lines */
+  mark {
+    /* this makes each line take up the full width */
+    display: block;
+    background-color: var(--table-row);
+    color: var(--foreground);
+    margin-left: -0.3rem;
+    margin-right: -0.3rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    line-height: 1.5;
+  }
+  mark:first-child {
+    margin-top: -0.3rem;
+    padding-top: 0.3rem;
+  }
+  mark:last-child {
+    margin-bottom: -0.3rem;
+    padding-bottom: 0.3rem;
+  }
+  table {
+    table-layout: fixed;
+
+    thead,
+    tr:nth-child(even) {
+      background-color: transparent;
+    }
+    margin: 0 -0.3rem;
+    tr,
+    th,
+    td {
+      border: none;
+    }
+
+    tr {
+      width: 100% !important;
+    }
+
+    /* --- highlight rows in table with block with line numbers */
+    td:has(mark) {
+      background-color: var(--table-row);
+      padding: 3px;
+    }
+    td mark {
+      padding-left: 13px;
+    }
+    /* --- */
+
+    td {
+      --px: 0.14rem;
+      padding-top: var(--px);
+      padding-bottom: var(--px);
+    }
+
+    tbody {
+      width: 100%;
+    }
+  }
+  overflow: visible;
+  position: relative;
+  margin-top: 19px;
+  margin-bottom: 19px;
+  pre {
+    margin: 0;
+  }
+  .copy {
+    z-index: 9;
+    position: absolute;
+    right: 0.6rem;
+    top: 0.75rem;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: var(--foreground);
+    --foreground: var(--foreground);
+    --background: var(--background2);
+
+    &.copied,
+    &:hover {
+      display: block;
+      color: var(--accent);
+    }
+  }
+}
+
+code:not(pre code) {
+  color: var(--accent);
+}
+pre code {
+  background-color: transparent;
+}
+pre code ::before {
+  content: "";
+}
+code {
+  padding: 0.1rrem 0.2rrem;
+  font-size: inherit;
+  line-height: 1;
+}
+pre {
+  overflow: auto;
+  padding: 0.3rem;
+}
+pre code {
+  padding: 0;
+}
+
+pre.z-code {
+  position: relative;
+}
+
+pre:hover .copy-code-button {
+  display: block;
+}
+
+.copy-code-button {
+  background-color: var(--background);
+  font-family: var(--font-mono);
+  padding: 3px 6px;
+  font-size: 0.8rem;
+  border-radius: var(--copy-code-button-border-radius);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  display: none;
+  border: 1px solid var(--code-border);
+}

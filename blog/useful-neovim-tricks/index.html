@@ -1,0 +1,416 @@
+<!-- Entry point to every rendered page -->
+
+
+  
+
+
+<!doctype html>
+<html
+  lang="en"
+  data-theme="dark"
+>
+  
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#418001" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#cbefa6" />
+
+      
+      
+
+      
+  
+
+
+      
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  
+  
+
+  
+    
+      
+    
+  
+
+
+      
+  
+
+
+      
+  
+
+
+      <title>
+        Nik&#x27;s Blog 🦀 | Neovim tips and life hacks that significantly improved my productivity
+      </title>
+
+      
+        <link
+          rel="stylesheet"
+          href="https://nikrev.com/css/index.css?h=3e22f41332e248e40d6e"
+        />
+      
+
+      
+        <script src="/js/code_blocks.js" type="text/javascript" defer></script>
+        <script src="/js/theme_toggle.js" type="text/javascript" defer></script>
+      
+
+      
+        <meta name="author" content="Nik Revenco" />
+      
+
+      
+        <!-- og-image-generator specific -->
+        
+          <meta property="og-image-generator" key="title" value="Neovim tips and life hacks that significantly improved my productivity" />
+        
+        
+        
+      
+
+      <!-- SEO Tags -->
+      <meta property="og:title" content="Nik&#x27;s Blog 🦀 | Neovim tips and life hacks that significantly improved my productivity" />
+      <meta property="og:description" content="My personal blog" />
+      <meta itemprop="headline" content="Nik&#x27;s Blog 🦀 | Neovim tips and life hacks that significantly improved my productivity" />
+      <meta name="description" content="My personal blog" />
+
+      
+        
+        <meta property="og:url" content="https:&#x2F;&#x2F;nikrev.com&#x2F;blog&#x2F;useful-neovim-tricks&#x2F;" />
+
+        <!-- OG image -->
+        
+          <meta name="og:type" content="summary_large_image" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:title" content="Nik&#x27;s Blog 🦀 | Neovim tips and life hacks that significantly improved my productivity" />
+          <meta property="og:image" content="https://nikrev.com/blog/useful-neovim-tricks/og.png" />
+          <meta property="og:image:alt" content="Nik&#x27;s Blog 🦀 | Neovim tips and life hacks that significantly improved my productivity" />
+
+          <meta property="og:image:width" content="1280" />
+          <meta property="og:image:height" content="675" />
+          <meta property="twitter:image:width" content="1280" />
+          <meta property="twitter:image:height" content="675" />
+        
+      
+
+      <!-- Allow adding custom elements to the <head> -->
+      
+  <link rel="stylesheet" href="https://nikrev.com/custom.css?h=5c0931769459f5c98bfb" />
+  <script src="https://nikrev.com/custom.js" type="text/javascript" defer></script>
+
+    </head>
+  
+  <body>
+    <div id="site">
+      
+        <header class="header">
+
+          <!-- Header -->
+    
+          
+            <div class="header__heading">
+              
+                <h1 class="header__heading__title">
+                  
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  
+    
+    
+    Nik&#x27;s Blog 🦀
+  
+
+                </h1>
+              
+              <!-- Icons, after the title -->
+              
+                <div class="header__heading__icon-container">
+                  <!-- Light / dark mode toggle -->
+                  
+                    
+                      
+                    
+                    
+                    <button type="button" class="header__heading__theme-toggle" aria-label="Change to light theme" title="Change to light theme">
+                      <!--
+                        A sun or moon icon gets inserted here with JavaScript
+                        The default icons are here only to prevent layout shift
+                      -->
+                      
+                        <!-- Sun icon (dark) -->
+                        <svg class="header__heading__theme-toggle__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M264 480A232 232 0 0 1 32 248c0-94 54-178.28 137.61-214.67a16 16 0 0 1 21.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0 1 21.06 21.06C442.28 426 358 480 264 480z"></path></svg>
+                      
+                    </button>
+                  
+
+                  
+                    
+                      <button type="button" class="header__heading__rss" aria-label="RSS Feed" title="RSS Feed">
+                        <a href="https:&#x2F;&#x2F;nikrev.com/atom.xml">
+                          <svg class="header__heading__rss__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M119.9 336.1c-30.8 0-55.9 25.1-55.9 55.8 0 30.8 25.1 55.6 55.9 55.6 30.9 0 55.9-24.9 55.9-55.6 0-30.7-25-55.8-55.9-55.8z"></path><path d="M64 192v79.9c48 0 94.1 14.2 128 48.1 33.9 33.9 48 79.9 48 128h80c0-139.9-116-256-256-256z"></path><path d="M64 64v79.9c171 0 303.9 133 303.9 304.1H448C448 236.3 276 64 64 64z"></path></svg>
+                        </a>
+                      </button>
+                    
+                  
+
+                  <!-- Allow adding more icons -->
+                  
+                  
+                </div>
+              
+            </div>
+          
+
+          <!-- Navigation -->
+
+          
+            
+              <nav>
+                <ul class="header__links">
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;home
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;blog"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;blog
+                      </a>
+                    </li>
+                  
+                    
+                    
+                    
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    
+                    <li>
+                      <a
+                        href="&#x2F;open-source"
+                        class="
+                          header__links__link
+
+                          
+                        "
+                      >
+                        &#x2F;open-source
+                      </a>
+                    </li>
+                  
+                </ul>
+              </nav>
+            
+          
+        </header>
+      
+
+      <!-- Actual content of the page -->
+
+      
+  <!-- The page is not part of any collection, it is a standalone page -->
+  
+
+  <main class="post-content">
+    <!-- Standalone pages should not have a 2nd level 1 heading -->
+    
+      
+        <h1 class="post-content__title">Neovim tips and life hacks that significantly improved my productivity</h1>
+      
+    
+
+    <!-- Date of the page -->
+    
+      <p class="post-content__date">
+        11 September, 2024
+      </p>
+    
+
+    <!-- Main content of the page -->
+    <p>I’ve been using Neovim for a couple months now and by now have went through the entire Wiki.</p>
+<p>I would like to share some of my most loved tricks that have really skyrocketed my productivity.</p>
+<span id="continue-reading"></span><h2 id="basic-navigation"><a class="zola-anchor" href="#basic-navigation" aria-label="Anchor link for: basic-navigation">Basic Navigation</a></h2>
+<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>h</code></td><td>Move left by one character</td></tr>
+<tr><td><code>l</code></td><td>Move right by one character</td></tr>
+<tr><td><code>j</code></td><td>Move down by one line</td></tr>
+<tr><td><code>k</code></td><td>Move up by one line</td></tr>
+<tr><td><code>+</code></td><td>Move to the next non-whitespace character on line</td></tr>
+<tr><td><code>-</code></td><td>Move to the previous non-whitespace character</td></tr>
+<tr><td><code>^</code></td><td>Move to the first non-whitespace character</td></tr>
+<tr><td><code>_</code></td><td>Move to the first character on the line (takes count)</td></tr>
+<tr><td><code>$</code></td><td>Move to the last character on the line</td></tr>
+<tr><td><code>G</code></td><td>Move to the end of the file</td></tr>
+<tr><td><code>gg</code></td><td>Move to the beginning of the file</td></tr>
+<tr><td><code>40gg</code></td><td>Jump to line 40</td></tr>
+<tr><td><code>%</code></td><td>Jump to matching parenthesis or bracket</td></tr>
+<tr><td><code>t{char}</code></td><td>Jump before the next occurrence of <code>{char}</code></td></tr>
+<tr><td><code>f{char}</code></td><td>Jump to the next occurrence of <code>{char}</code></td></tr>
+<tr><td><code>T{char}</code></td><td>Jump before the previous occurrence of <code>{char}</code></td></tr>
+<tr><td><code>F{char}</code></td><td>Jump to the previous occurrence of <code>{char}</code></td></tr>
+<tr><td><code>,</code></td><td>Repeat <code>t</code>, <code>T</code>, <code>f</code>, <code>F</code> in opposite direction</td></tr>
+<tr><td><code>;</code></td><td>Repeat <code>t</code>, <code>T</code>, <code>f</code>, <code>F</code> in same direction</td></tr>
+</tbody></table>
+<h2 id="searching"><a class="zola-anchor" href="#searching" aria-label="Anchor link for: searching">Searching</a></h2>
+<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>/pattern</code></td><td>Search forward</td></tr>
+<tr><td><code>?pattern</code></td><td>Search backward</td></tr>
+<tr><td><code>#</code></td><td>Search backward for identifier under cursor</td></tr>
+<tr><td><code>*</code></td><td>Search forward for identifier under cursor</td></tr>
+<tr><td><code>/pattern/e</code></td><td>Place cursor on last character of match</td></tr>
+<tr><td><code>/pattern/e+1</code></td><td>Place cursor one character to the right of match</td></tr>
+<tr><td><code>/apple\C</code></td><td>Case-sensitive search</td></tr>
+<tr><td><code>:%s/pattern//n</code></td><td>Count occurrences of pattern</td></tr>
+<tr><td><code>/\%V</code></td><td>Search inside visual selection</td></tr>
+</tbody></table>
+<h2 id="editing"><a class="zola-anchor" href="#editing" aria-label="Anchor link for: editing">Editing</a></h2>
+<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>i</code></td><td>Insert at cursor</td></tr>
+<tr><td><code>I</code></td><td>Insert at start of line</td></tr>
+<tr><td><code>a</code></td><td>Append after cursor</td></tr>
+<tr><td><code>A</code></td><td>Append at end of line</td></tr>
+<tr><td><code>gi</code></td><td>Insert at last edit position</td></tr>
+<tr><td><code>o</code></td><td>Open new line below and enter insert mode</td></tr>
+<tr><td><code>O</code></td><td>Open new line above and enter insert mode</td></tr>
+<tr><td><code>r{char}</code></td><td>Replace character under cursor</td></tr>
+<tr><td><code>J</code></td><td>Join line with next one</td></tr>
+<tr><td><code>gJ</code></td><td>Join lines without inserting space</td></tr>
+<tr><td><code>xp</code></td><td>Swap two characters</td></tr>
+<tr><td><code>D</code></td><td>Delete to end of line</td></tr>
+<tr><td><code>Y</code></td><td>Yank to end of line</td></tr>
+<tr><td><code>C</code></td><td>Change to end of line</td></tr>
+<tr><td><code>gq</code></td><td>Wrap long lines</td></tr>
+</tbody></table>
+<h2 id="case-modification"><a class="zola-anchor" href="#case-modification" aria-label="Anchor link for: case-modification">Case Modification</a></h2>
+<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>guu</code></td><td>Make current line lowercase</td></tr>
+<tr><td><code>gUU</code></td><td>Make current line uppercase</td></tr>
+<tr><td><code>g~~</code></td><td>Toggle case of current line</td></tr>
+<tr><td><code>gu</code></td><td>Operator to make text lowercase</td></tr>
+<tr><td><code>gU</code></td><td>Operator to make text uppercase</td></tr>
+<tr><td><code>g~</code></td><td>Operator to toggle case</td></tr>
+</tbody></table>
+<h2 id="copying-deleting"><a class="zola-anchor" href="#copying-deleting" aria-label="Anchor link for: copying-deleting">Copying &amp; Deleting</a></h2>
+<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>yy</code></td><td>Yank entire line</td></tr>
+<tr><td><code>dd</code></td><td>Delete entire line</td></tr>
+<tr><td><code>yib</code></td><td>Yank inside <code>()</code></td></tr>
+<tr><td><code>d/hello</code></td><td>Delete until “hello”</td></tr>
+<tr><td><code>d/hello/e</code></td><td>Delete up to and including “hello”</td></tr>
+<tr><td><code>dk</code></td><td>Delete current and previous line</td></tr>
+<tr><td><code>dj</code></td><td>Delete current and next line</td></tr>
+<tr><td><code>gp</code></td><td>Paste like <code>p</code> but leave cursor after</td></tr>
+<tr><td><code>gP</code></td><td>Paste like <code>P</code> but leave cursor after</td></tr>
+</tbody></table>
+<h2 id="visual-mode-tricks"><a class="zola-anchor" href="#visual-mode-tricks" aria-label="Anchor link for: visual-mode-tricks">Visual Mode Tricks</a></h2>
+<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>CTRL v</code></td><td>Visual block mode</td></tr>
+<tr><td><code>&lt;</code></td><td>Dedent selected text</td></tr>
+<tr><td><code>&gt;</code></td><td>Indent selected text</td></tr>
+<tr><td><code>I</code></td><td>Insert text at beginning of each line (block mode)</td></tr>
+<tr><td><code>$A</code></td><td>Append text at end of each line (block mode)</td></tr>
+<tr><td><code>o</code></td><td>Jump to the other end of the selection</td></tr>
+<tr><td><code>gv</code></td><td>Reselect last visual selection</td></tr>
+<tr><td><code>g CTRL v</code></td><td>Increment each line numerically</td></tr>
+</tbody></table>
+<h2 id="window-management"><a class="zola-anchor" href="#window-management" aria-label="Anchor link for: window-management">Window Management</a></h2>
+<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>CTRL wx</code></td><td>Swap windows</td></tr>
+<tr><td><code>CTRL wv</code></td><td>Split window vertically</td></tr>
+<tr><td><code>CTRL ws</code></td><td>Split window horizontally</td></tr>
+<tr><td><code>CTRL wq</code></td><td>Quit window</td></tr>
+<tr><td><code>CTRL w=</code></td><td>Equalize window sizes</td></tr>
+</tbody></table>
+<h2 id="useful-operators-motions"><a class="zola-anchor" href="#useful-operators-motions" aria-label="Anchor link for: useful-operators-motions">Useful Operators &amp; Motions</a></h2>
+<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>vap</code></td><td>Select around paragraph</td></tr>
+<tr><td><code>[{</code></td><td>Move to previous unmatched <code>{</code></td></tr>
+<tr><td><code>]{</code></td><td>Move to next unmatched <code>{</code></td></tr>
+<tr><td><code>[( </code></td><td>Move to previous unmatched <code>(</code></td></tr>
+<tr><td><code>](</code></td><td>Move to next unmatched <code>(</code></td></tr>
+<tr><td><code>g;</code></td><td>Jump to previous insert location</td></tr>
+<tr><td><code>g,</code></td><td>Jump to next insert location</td></tr>
+<tr><td><code>''</code></td><td>Jump to position before last jump</td></tr>
+</tbody></table>
+<h2 id="command-line-mode-tricks"><a class="zola-anchor" href="#command-line-mode-tricks" aria-label="Anchor link for: command-line-mode-tricks">Command-line Mode Tricks</a></h2>
+<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>CTRL r+</code></td><td>Paste from system clipboard</td></tr>
+<tr><td><code>CTRL u</code></td><td>Delete all characters</td></tr>
+<tr><td><code>CTRL g</code></td><td>Next match in search results</td></tr>
+<tr><td><code>CTRL t</code></td><td>Previous match in search results</td></tr>
+<tr><td><code>:%norm</code></td><td>Apply command to every line (<code>:%norm $ciwhello</code>)</td></tr>
+<tr><td><code>:g/^#/d</code></td><td>Delete all comments from a Bash file</td></tr>
+<tr><td><code>:g/foo/s/bar/baz/g</code></td><td>Replace “bar” with “baz” in lines containing “foo”</td></tr>
+<tr><td><code>g&amp;</code></td><td>Repeat last substitution</td></tr>
+</tbody></table>
+<h2 id="clipboard-registers"><a class="zola-anchor" href="#clipboard-registers" aria-label="Anchor link for: clipboard-registers">Clipboard &amp; Registers</a></h2>
+<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>gx</code></td><td>Open link under cursor</td></tr>
+<tr><td><code>gf</code></td><td>Open file under cursor</td></tr>
+<tr><td></td><td>If <code>unnamedplus</code> is set, system clipboard won’t overwrite yank buffer</td></tr>
+</tbody></table>
+<h2 id="miscellaneous"><a class="zola-anchor" href="#miscellaneous" aria-label="Anchor link for: miscellaneous">Miscellaneous</a></h2>
+<table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>CTRL g</code></td><td>Show filename and line count</td></tr>
+<tr><td><code>zz</code></td><td>Center cursor on screen (middle)</td></tr>
+<tr><td><code>zt</code></td><td>Cursor to top of screen</td></tr>
+<tr><td><code>zb</code></td><td>Cursor to bottom of screen</td></tr>
+<tr><td><code>:center</code></td><td>Center text</td></tr>
+<tr><td><code>ga</code></td><td>Show character info under cursor</td></tr>
+<tr><td><code>g?</code></td><td>ROT13 encode input</td></tr>
+<tr><td><code>CTRL a</code></td><td>Increment number under cursor</td></tr>
+<tr><td><code>CTRL x</code></td><td>Decrement number under cursor</td></tr>
+<tr><td><code>:sort u</code></td><td>Sort lines uniquely</td></tr>
+<tr><td><code>:sort n</code></td><td>Sort lines numerically</td></tr>
+<tr><td><code>&lt;C-f&gt;</code></td><td>Edit Ex command in full-page view</td></tr>
+<tr><td><code>_</code></td><td>Move to first character on line, accepts a motion</td></tr>
+</tbody></table>
+
+  </main>
+
+
+      <!-- Footer -->
+
+      
+        
+          <footer>
+            <p>Powered by <a href="https://github.com/getzola/zola">Zola</a> and <a href="https://github.com/nik-rev/carbon">nik-rev/carbon</a></p>
+
+          </footer>
+        
+      
+    </div>
+  </body>
+</html>
