@@ -1,5 +1,5 @@
 ---
-title: Rust has many reserved keywords like `become`. But what will they do?
+title: Rust has many reserved keywords like `become`. What will they be used for?
 ---
 
 I found a [page in the Rust reference](https://doc.rust-lang.org/reference/keywords.html) that lists all of the currently reserved keywords:

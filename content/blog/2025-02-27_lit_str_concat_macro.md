@@ -1,5 +1,5 @@
 ---
-title: Rust's macros like `include_str!` have a superpower, but how can *our* code achieve it?
+title: Rust's built-in macros such as `include_str!` can eagerly expand inner macros. Can we do the same?
 ---
 
 You can use the `concat!` macro to pass string literals into macros:

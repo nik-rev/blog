@@ -1,5 +1,5 @@
 ---
-title: Multi-line string literals in Rust
+title: A novel approach to multi-line strings in Rust
 ---
 
 Writing multi-line strings in Rust is quite awkward:
