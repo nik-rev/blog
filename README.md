@@ -1,7 +1,3 @@
-# Carbon
+# nikrev.com
 
-A zola theme inspired by simplicity.
-
-![Carbon theme](screenshot.png)
-
-[Learn more](https://nik-rev.github.io/carbon)
+Source code for the blog. Built with [Zola](https://github.com/getzola/zola).
