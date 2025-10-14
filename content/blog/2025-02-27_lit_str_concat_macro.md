@@ -24,7 +24,14 @@ This does not compile.
 ```rs
 asset!(concat!("/assets/icons/", "github", ".svg"))
 ```
-**<code style="color: var(--red);">ERROR: Expected a string literal</code>**.
+
+<div class="error">
+
+```
+ERROR: Expected a string literal
+```
+
+</div>
 
 I assume this is because the `asset!` macro expects a string literal. But _is_ `concat!("...", "...")` a string literal?
 
