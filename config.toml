@@ -1,4 +1,4 @@
-base_url = "https://carbon.nikrev.com"
+base_url = "https://nikrev.com"
 output_dir = ".public"
 build_search_index = false
 
