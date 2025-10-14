@@ -1,5 +1,5 @@
 ---
-title: A cursed way to combine module paths in Rust's declarative macros
+title: A curious way to combine module paths in Rust's declarative macros
 ---
 
 Today, I ran into an interesting problem with a not-so-obvious solution: How do you concatenate path segments in Rust's declarative macros?
