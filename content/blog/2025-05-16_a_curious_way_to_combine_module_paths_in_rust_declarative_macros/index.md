@@ -4,42 +4,6 @@ title: A curious way to combine module paths in Rust's declarative macros
 
 Today, I ran into an interesting problem with a not-so-obvious solution: How do you concatenate path segments in Rust's declarative macros?
 
-> **TLDR:**
->
-> Use repetition `$($segment:ident)::*` with `::` separator. Each path segment is an identifier (`ident`).
->
-> ```rust
-> mod a {
->     pub mod b {
->         pub struct A;
->         pub struct B;
->     }
->     pub struct A;
->     pub struct B;
-> }
->
-> // Macro:
->
-> macro_rules! compose_paths {
->     ($($segment:ident)::*) => {
->         use $($segment)::*::A;
->         use $($segment)::*::B;
->     }
-> }
->
-> // Invoke:
->
-> compose_paths!(a);
-> compose_paths!(a::b);
->
-> // Expansion:
->
-> use a::A;
-> use a::B;
-> use a::b::A;
-> use a::b::B;
-> ```
-
 ## Why I need to do this
 
 In my project [ferrishot](https://github.com/nik-rev/ferrishot) I have two _very_ similar enums:
