@@ -1,4 +1,5 @@
 base_url = "https://carbon.nikrev.com"
+output_dir = ".public"
 build_search_index = false
 
 minify_html = true

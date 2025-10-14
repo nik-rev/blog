@@ -15,14 +15,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BUILD_ONLY: true
+          OUT_DIR: .public
       - run: |
           curl --proto '=https' --tlsv1.2 -LsSf https://github.com/nik-rev/og-image-generator/releases/download/v0.2.0/og-image-generator-installer.sh | sh
 
           export PATH="$HOME/.cargo/bin:$PATH"
           chmod +x $HOME/.cargo/bin/og-image-generator || true
 
-          sudo chmod -R u+w public
-          cd public
+          sudo chmod -R u+w .public
+          cd .public
 
           sudo /home/runner/.cargo/bin/og-image-generator all --font fonts/Literata/Literata.ttf open_graph_template.html .
 
