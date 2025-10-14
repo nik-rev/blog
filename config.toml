@@ -6,7 +6,7 @@ minify_html = true
 default_language = "en"
 author = "Nik Revenco"
 title = "nik-rev"
-description = "A minimalistic Zola theme"
+description = "Nik Revenco's blog"
 generate_feeds = true
 
 [markdown]
