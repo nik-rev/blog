@@ -1,0 +1,2 @@
+[alias]
+generate_markdown = "run --release --manifest-path generate_markdown/Cargo.toml --"

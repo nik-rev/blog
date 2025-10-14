@@ -1,0 +1,63 @@
+{% extends "index.html" %}
+
+<!-- The section renders a collection of links to various other pages -->
+
+{% block title %}
+  {% set title = section.title | default(value=config.title) %}
+{% endblock title %}
+
+{% block description %}
+  {% set description = section.description %}
+{% endblock description %}
+
+{% block og_image_title %}
+  {% set og_image_title = section.title %}
+{% endblock og_image_title %}
+
+{% block og_image_description %}
+  {% set og_image_description = section.description %}
+{% endblock og_image_description %}
+
+{% block heading %}
+  {% set title = section.title | default(value=config.title) %}
+  {{ title }}
+{% endblock heading %}
+
+{% block content %}
+  <main>
+    <!-- Contents of `blog/_index.md` -->
+    <div class="posts-content">
+      {{ section.content | safe }}
+    </div>
+
+    <!-- List of blog posts, by year -->
+    {% set parent = get_section(path=section.relative_path, metadata_only=true) %}
+    {% if parent.extra.order_by_year %}
+      <ul class="posts">
+        {% for year, posts_that_year in section.pages | group_by(attribute="year") %}
+          <h2 class="posts__title">Posts in {{ year }}</h2>
+          <ul class="posts__year">
+            {% for post in posts_that_year %}
+              <li class="post">
+                <p class="post__date">{{ post.date | date(format="%-d %b") }}</p>
+                <a href="{{ post.permalink }}" class="post__link">
+                  {{ post.title | markdown(inline=true) | safe }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <ul>
+        {% for post in section.pages %}
+          <li>
+            <a href="{{ post.permalink }}">
+              {{ post.title | markdown(inline=true) | safe }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </main>
+{% endblock content %}

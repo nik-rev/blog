@@ -1,0 +1,10 @@
+#!/usr/bin/env nu
+
+def main [title: string] {
+  let date = date now | format date "%Y-%m-%d"
+  let filename = $"content/blog/($date)_($title | str snake-case).md"
+  let contents = { title: $title } | to yaml | $"---\n($in)---\n\n"
+
+  $contents o> $filename
+  hx $"($filename):($contents | lines | length | $in + 1)"
+}

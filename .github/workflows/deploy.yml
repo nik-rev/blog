@@ -1,0 +1,43 @@
+name: Build and deploy GH Pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v3.0.0
+      - name: Deploy to gh-pages branch
+        uses: shalzz/zola-deploy-action@v0.20.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_ONLY: true
+      - run: |
+          curl --proto '=https' --tlsv1.2 -LsSf https://github.com/nik-rev/og-image-generator/releases/download/v0.2.0/og-image-generator-installer.sh | sh
+
+          export PATH="$HOME/.cargo/bin:$PATH"
+          chmod +x $HOME/.cargo/bin/og-image-generator || true
+
+          sudo chmod -R u+w public
+          cd public
+
+          sudo /home/runner/.cargo/bin/og-image-generator all --font fonts/Literata/Literata.ttf open_graph_template.html .
+
+          echo "Pushing artifacts to ${GITHUB_REPOSITORY}:gh-pages"
+
+          sudo touch .nojekyll
+
+          sudo git init
+          sudo git config user.name "GitHub Actions"
+          sudo git config user.email "github-actions-bot@users.noreply.github.com"
+          sudo git add .
+
+          sudo git commit -m "Deploy ${GITHUB_REPOSITORY} to ${GITHUB_REPOSITORY}:gh-pages"
+          sudo git push --force "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}" master:gh-pages
+
+          echo "Deploy complete"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

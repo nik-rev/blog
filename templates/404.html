@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+<!-- This page gets displayed when a HTML page couldn't be found for the given URL -->
+
+{% block title %}
+  {% set title = config.title ~ " | Page Not Found" %}
+{% endblock title %}
+
+{% block description %}
+  {% set description = config.title ~ " | Page Not Found" %}
+{% endblock description %}
+
+{% block og_image_title %}
+  {% set og_image_title = config.title %}
+{% endblock og_image_title %}
+
+{% block og_image_description %}
+  {% set og_image_description = "Page Not Found (404)" %}
+{% endblock og_image_description %}
+
+{% block content %}
+  <main>
+    <h1>Page Not Found (404)</h1>
+    <p>The page you were looking for could not be found :/</p>
+  </main>
+{% endblock content %}

@@ -1,0 +1,43 @@
+<style>
+  :root {
+    --background: #161616;
+    --foreground: #dddddd;
+    --background2: #131313;
+    --secondary: #999999;
+    --tertiary: #444444;
+  }
+  body {
+    background-color: var(--background);
+    font-family: "{{ font }}";
+    position: relative;
+  }
+  #title {
+    margin-left: 100px;
+    margin-top: 100px;
+    color: var(--foreground);
+    font-size: 80px;
+    margin-bottom: 60px;
+    max-width: 70%;
+  }
+  #description {
+    color: var(--secondary);
+    margin-left: 100px;
+    font-size: 45px;
+    max-width: 60%;
+  }
+  #date {
+    position: absolute;
+    color: var(--foreground);
+    font-size: 30px;
+    right: 100px;
+    bottom: 100px;
+  }
+</style>
+
+{% if title %}
+<p id="title">{{ title }}</p>
+{% endif %} {% if description %}
+<p id="description">{{ description }}</p>
+{% endif %} {% if date %}
+<p id="date">{{ date }}</p>
+{% endif %}
