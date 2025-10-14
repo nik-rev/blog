@@ -1,0 +1,184 @@
+<!-- Entry point to every rendered page -->
+
+<!doctype html>
+<html
+  lang="en"
+  data-theme="dark"
+>
+  {% block head %}
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#418001" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#cbefa6" />
+
+      {% set og_height = 675 %}
+      {% set og_width = 1280 %}
+
+      {% block description %}
+        {% set description = section.description | default(value=config.description) %}
+      {% endblock description %}
+
+      {% block title %}
+        {% set title = config.title %}
+      {% endblock title %}
+
+      {% block og_image_title %}
+        {% set og_image_title = config.title %}
+      {% endblock og_image_title %}
+
+      {% block og_image_description %}
+        {% set og_image_description = config.description %}
+      {% endblock og_image_description %}
+
+      <title>
+        {{ title }}
+      </title>
+
+      {% block carbon_css %}
+        <link
+          rel="stylesheet"
+          href="{{ get_url(path='css/index.css', cachebust=true) }}"
+        />
+      {% endblock %}
+
+      {% block carbon_javascript %}
+        <script src="/js/code_blocks.js" type="text/javascript" defer></script>
+        <script src="/js/theme_toggle.js" type="text/javascript" defer></script>
+      {% endblock carbon_javascript %}
+
+      {% if config.author %}
+        <meta name="author" content="{% block author %}{{ config.author }}{% endblock author %}" />
+      {% endif %}
+
+      {% block og_image_generator %}
+        <!-- og-image-generator specific -->
+        {% if og_image_title %}
+          <meta property="og-image-generator" key="title" value="{{ og_image_title }}" />
+        {% endif %}
+        {% if og_image_description %}
+          <meta property="og-image-generator" key="description" value="{{ og_image_description }}" />
+        {% endif %}
+        {% set has_og_image = og_image_title or or_image_description %}
+      {% endblock og_image_generator %}
+
+      <!-- SEO Tags -->
+      <meta property="og:title" content="{{ title }}" />
+      <meta property="og:description" content="{{ description }}" />
+      <meta itemprop="headline" content="{{ title }}" />
+      <meta name="description" content="{{ description }}" />
+
+      {% if current_url %}
+        {% set url = current_url | safe %}
+        <meta property="og:url" content="{{ url }}" />
+
+        <!-- OG image -->
+        {% if has_og_image %}
+          <meta name="og:type" content="summary_large_image" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:title" content="{{ title }}" />
+          <meta property="og:image" content="{{ url ~ 'og.png' }}" />
+          <meta property="og:image:alt" content="{{ title }}" />
+
+          <meta property="og:image:width" content="{{ og_width }}" />
+          <meta property="og:image:height" content="{{ og_height }}" />
+          <meta property="twitter:image:width" content="{{ og_width }}" />
+          <meta property="twitter:image:height" content="{{ og_height }}" />
+        {% endif %}
+      {% endif %}
+    </head>
+  {% endblock head %}
+  <body>
+    <div id="site">
+      {% block header %}
+        <header class="header">
+
+          <!-- Header -->
+    
+          {% block header_heading %}
+            <div class="header__heading">
+              <a href="/" class="header__heading__title">
+                {% block heading %}
+                  {{ config.title }}
+                {% endblock %}
+              </a>
+              <!-- Icons, after the title -->
+              {% block icons %}
+                <div class="header__heading__icon-container">
+                  <!-- Light / dark mode toggle -->
+                  {% block theme_toggle %}
+                    <button type="button" class="header__heading__theme-toggle" aria-label="Change to light theme" title="Change to light theme">
+                      <!--
+                        A sun or moon icon gets inserted here with JavaScript
+                        The default icons are here only to prevent layout shift
+                      -->
+                        <!-- Sun icon (dark) -->
+                      <svg class="header__heading__theme-toggle__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M264 480A232 232 0 0 1 32 248c0-94 54-178.28 137.61-214.67a16 16 0 0 1 21.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0 1 21.06 21.06C442.28 426 358 480 264 480z"></path></svg>
+                    </button>
+                  {% endblock theme_toggle %}
+
+                  {% block rss_feed %}
+                    {% if config.generate_feeds %}
+                      <button type="button" class="header__heading__rss" aria-label="RSS Feed" title="RSS Feed">
+                        <a href="{{ config.base_url }}/{{ config.feed_filenames | first }}">
+                          <svg class="header__heading__rss__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M119.9 336.1c-30.8 0-55.9 25.1-55.9 55.8 0 30.8 25.1 55.6 55.9 55.6 30.9 0 55.9-24.9 55.9-55.6 0-30.7-25-55.8-55.9-55.8z"></path><path d="M64 192v79.9c48 0 94.1 14.2 128 48.1 33.9 33.9 48 79.9 48 128h80c0-139.9-116-256-256-256z"></path><path d="M64 64v79.9c171 0 303.9 133 303.9 304.1H448C448 236.3 276 64 64 64z"></path></svg>
+                        </a>
+                      </button>
+                    {% endif %}
+                  {% endblock rss_feed %}
+
+                  <!-- Allow adding more icons -->
+                  {% block extra_icons %}
+                  {% endblock extra_icons %}
+                </div>
+              {% endblock icons %}
+            </div>
+          {% endblock heading %}
+
+          <!-- Navigation -->
+
+          {% block nav_bar %}
+            {% if config.extra.header_links %}
+              <nav>
+                <ul class="header__links">
+                  {% for link in config.extra.header_links %}
+                    {% set current_path = current_path | default(value="ERROR") %}
+                    {% set link = link.link | default(value=link) %}
+                    {% set name = link.name | default(value=link) %}
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    {% set is_active = link | trim_end_matches(pat='/') == current_path | trim_end_matches(pat='/') %}
+                    <li>
+                      <a
+                        href="{{ link }}"
+                        class="
+                          header__links__link
+
+                          {% if is_active %}
+                            active
+                          {% endif %}
+                        "
+                      >
+                        {{ name }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </nav>
+            {% endif %}
+          {% endblock nav_bar %}
+        </header>
+      {% endblock header_heading %}
+
+      <!-- Actual content of the page -->
+
+      {% block content %}
+        <main>
+          <div class="space">
+            {{ section.content | safe }}
+          </div>
+        </main>
+      {% endblock content %}
+    </div>
+  </body>
+</html>

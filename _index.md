@@ -1,4 +1,4 @@
 +++
-redirect_to = "/"
+aliases = ["blog"]
 sort_by = "date"
 +++

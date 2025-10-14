@@ -4,7 +4,7 @@ build_search_index = false
 minify_html = true
 default_language = "en"
 author = "Nik Revenco"
-title = "Carbon"
+title = "nik-rev"
 description = "A minimalistic Zola theme"
 generate_feeds = true
 
@@ -14,12 +14,3 @@ highlight_theme = "css"
 bottom_footnotes = true
 insert_anchor_links = "heading"
 smart_punctuation = true
-
-[extra]
-footer = "Powered by [Zola](https://github.com/getzola/zola) and [nik-rev/carbon](https://github.com/nik-rev/carbon)"
-header_links = [
-  { name = "/home", link = "/" },
-  "/features",
-  "/blog",
-  { name = "/installation.md", link = "/installation" },
-]
