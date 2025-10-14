@@ -15,3 +15,4 @@ highlight_theme = "css"
 bottom_footnotes = true
 insert_anchor_links = "heading"
 smart_punctuation = true
+github_alerts = true

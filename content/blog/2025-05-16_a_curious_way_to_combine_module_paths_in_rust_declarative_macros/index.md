@@ -135,7 +135,9 @@ $path::KeymappableCommand
 
 But an attempt to compile the above results in an error:
 
-```rust
+<div class="error">
+
+```
 error: missing angle brackets in associated item path
   --> src/main.rs:30:18
    |
@@ -169,11 +171,15 @@ error: missing angle brackets in associated item path
    | |_- in this macro invocation
 ```
 
+</div>
+
 The suggestion to add `< >` is incorrect here, as that is not valid syntax for referencing items in modules.
 
 If we try the advice, we get another error:
 
-```rust
+<div class="error">
+
+```
 error[E0573]: expected type, found module `crate::image::action`
   --> src/main.rs:43:16
    |
@@ -196,6 +202,8 @@ Some errors have detailed explanations: E0412, E0573.
 For more information about an error, try `rustc --explain E0412`.
 error: could not compile `macro_example` (bin "macro_example") due to 3 previous errors
 ```
+
+</div>
 
 Composing path segments like this does not have an obvious solution. I initially tried the [paste](https://crates.io/crates/paste) crate which lets you compose identifiers in this manner:
 
@@ -225,7 +233,9 @@ macro_rules! declare_commands {
 
 But `paste!` does not work for composing paths like that.
 
-```rust
+<div class="error">
+
+```
 error: expected identifier after `:`
   --> src/main.rs:44:22
    |
@@ -246,6 +256,8 @@ error: expected identifier after `:`
 
 error: could not compile `macro_example` (bin "macro_example") due to 6 previous errors
 ```
+
+</div>
 
 ## The Solution
 

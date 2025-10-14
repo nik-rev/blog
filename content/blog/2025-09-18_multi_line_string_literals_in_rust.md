@@ -119,9 +119,15 @@ let bob = multi_format!(
 );
 ```
 
-> "there is no argument named `age`"
-> did you intend to capture a variable `age` from the surrounding scope?
-> to avoid ambiguity, `format_args!` cannot capture variables when the format string is expanded from a macro
+<div class="error">
+
+There is no argument named `age`.
+
+Did you intend to capture a variable `age` from the surrounding scope?
+
+To avoid ambiguity, `format_args!` cannot capture variables when the format string is expanded from a macro
+
+</div>
 
 That's unfortunate, it takes away from the utility of a *naive* implementatio!
 That's why I made a procedural macro [`docstr!`](https://github.com/nik-rev/docstr/tree/main), which turns documentation into strings at compile-time:
