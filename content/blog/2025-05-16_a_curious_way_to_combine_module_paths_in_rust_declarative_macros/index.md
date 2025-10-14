@@ -359,4 +359,4 @@ macro_rules! declare_commands {
 }
 ```
 
-[The full code can be seen on GitHub.](https://github.com/nik-rev/nik-rev/blob/eef31f37006db091398ed65050a7582518dddf82/content/blog/2025-05-16-a-cursed-way-to-combine-module-paths-in-rust-s-declarative-macros.rs)
+[See the full code](main.rs)
