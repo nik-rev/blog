@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://nikrev.com/</loc>
+    </url>
+    <url>
+        <loc>https://nikrev.com/blog/</loc>
+    </url>
+    <url>
+        <loc>https://nikrev.com/blog/a-curious-way-to-combine-module-paths-in-rust-declarative-macros/</loc>
+        <lastmod>2025-05-16</lastmod>
+    </url>
+    <url>
+        <loc>https://nikrev.com/blog/lit-str-concat-macro/</loc>
+        <lastmod>2025-02-27</lastmod>
+    </url>
+    <url>
+        <loc>https://nikrev.com/blog/multi-line-string-literals-in-rust/</loc>
+        <lastmod>2025-09-18</lastmod>
+    </url>
+    <url>
+        <loc>https://nikrev.com/blog/what-will-rust-keywords-do/</loc>
+        <lastmod>2025-04-07</lastmod>
+    </url>
+</urlset>

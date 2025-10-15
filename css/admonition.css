@@ -1,0 +1,59 @@
+/* Adds styling for various admonitions */
+
+div.error {
+	display: block;
+	color: var(--red);
+	padding: 0.5rem 1rem;
+	margin: 2rem 0;
+	border-radius: 1rem;
+	background: rgb(from var(--red) r g b / 10%);
+	code {
+		color: var(--red);
+		font-weight: bold;
+	}
+	pre {
+		background-color: transparent;
+	}
+}
+
+blockquote {
+	display: block;
+	margin-left: 0;
+	padding-left: 0.8rem;
+	border-left: 0.4rem solid var(--color);
+	margin-top: 19px;
+	margin-bottom: 40px;
+	position: relative;
+
+	&::before {
+		content: var(--content);
+		display: block;
+		font-weight: bold;
+		color: var(--color);
+	}
+}
+
+blockquote {
+	font-style: italic;
+	--color: var(--tertiary);
+}
+blockquote.markdown-alert-note {
+	--content: "NOTE:";
+	--color: var(--blue);
+}
+blockquote.markdown-alert-tip {
+	--content: "TIP:";
+	--color: var(--green);
+}
+blockquote.markdown-alert-important {
+	--content: "IMPORTANT:";
+	--color: var(--purple);
+}
+blockquote.markdown-alert-warning {
+	--content: "WARNING:";
+	--color: var(--yellow);
+}
+blockquote.markdown-alert-caution {
+	--content: "CAUTION:";
+	--color: var(--red);
+}
